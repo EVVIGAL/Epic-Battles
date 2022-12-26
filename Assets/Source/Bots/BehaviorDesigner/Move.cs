@@ -7,11 +7,11 @@ public class Move : Action
     public MonoBehaviour MovementSource;
     public SharedVector2 Direction;
 
-    private IMovement Movement => (IMovement)MovementSource;
+    private IMovement _movement => (IMovement)MovementSource;
 
     public override TaskStatus OnUpdate()
     {
-        Movement.Move(Direction.Value);
+        _movement.Move(Direction.Value);
         return TaskStatus.Running;
     }
 }
