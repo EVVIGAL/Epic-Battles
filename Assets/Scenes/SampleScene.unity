@@ -1787,7 +1787,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 100
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1811,7 +1811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.47666526, y: -0, z: -0, w: 0.8790849}
-  m_LocalPosition: {x: -126, y: 75, z: -40.3}
+  m_LocalPosition: {x: -65.8, y: 120, z: -88.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1830,14 +1830,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef1d64a3882d714fbbdd7e0be6d5d6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftBound: -180
-  _rightBound: 76
-  _upBound: 35
-  _downBound: -108
+  _leftBound: -100
+  _rightBound: 0
+  _upBound: -100
+  _downBound: -110
   _speed: 100
   _zoomSpeed: 20
-  _zoomIn: 20
-  _zoomOut: 20
+  _zoomIn: 25
+  _zoomOut: 25
   _zoomInButton: {fileID: 1381731376}
   _zoomOutButton: {fileID: 1455661354}
 --- !u!1001 &964195026
