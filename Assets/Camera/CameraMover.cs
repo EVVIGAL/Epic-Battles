@@ -115,7 +115,9 @@ public class CameraMover : MonoBehaviour
 
         while (zoomed == false)
         {
-            _speed = slowSpeed;
+            if(_transform.position.x <= _zoomBounds.Left || _transform.position.x >= _zoomBounds.Right || _transform.position.z >= _zoomBounds.Top)
+                _speed = slowSpeed;
+
             Vector3 zoomTarget = new(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), targetY, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top));
             _transform.position = Vector3.Lerp(_transform.position, zoomTarget, Time.deltaTime * _zoomSpeed);
             yield return null;
