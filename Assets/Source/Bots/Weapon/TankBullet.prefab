@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5947286081805184900}
   - component: {fileID: 7609696762600524930}
   - component: {fileID: 2712427268161393221}
-  - component: {fileID: 354308921780540565}
   - component: {fileID: 5262670475972473972}
   - component: {fileID: -6957479366513155200}
+  - component: {fileID: 5716778813514096125}
+  - component: {fileID: 7297414131259590424}
   m_Layer: 0
   m_Name: TankBullet
   m_TagString: Untagged
@@ -64,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 45d7a6aa75d1ef740ba83d064e5ec9fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,19 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &354308921780540565
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986823653343027362}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5262670475972473972
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,5 +115,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85059f2fa7bd0374a87c8095ae35055a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
-  _speed: 40
+  _damage: 100
+  _speed: 100
+--- !u!114 &5716778813514096125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986823653343027362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dcf2ef49f11cc0499dbfc827c2fa63b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _liveTime: 4
+--- !u!136 &7297414131259590424
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986823653343027362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0}
