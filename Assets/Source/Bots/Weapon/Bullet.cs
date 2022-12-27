@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] public uint _damage;
+    [SerializeField] private uint _damage;
     [SerializeField] private float _speed;
 
     private void Update()
@@ -13,9 +13,12 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.TryGetComponent(out IHealth health))
+        {
             if (health.IsAlive)
+            {
                 health.TakeDamage(_damage);
-
-        Destroy(gameObject);
+                Destroy(gameObject);
+            }
+        }
     }
 }

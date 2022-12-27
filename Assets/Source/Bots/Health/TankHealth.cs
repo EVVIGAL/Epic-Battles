@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class TankHealth : Health
 {
-    [SerializeField] private Rigidbody _turretRigidbody;
-    [SerializeField] private float _explosionForce;
+    [SerializeField] private TurelExplosion _turelExplosion;
+    [SerializeField] private Team _team;
 
     protected override void Die()
     {
-        _turretRigidbody.transform.parent = null;
-        _turretRigidbody.isKinematic = false;
-        _turretRigidbody.AddForce(transform.up * _explosionForce, ForceMode.Impulse);
+        _turelExplosion.Explose();
+        _team.Remove(transform);
     }
 }
