@@ -910,6 +910,7 @@ GameObject:
   - component: {fileID: 499955486}
   - component: {fileID: 499955488}
   - component: {fileID: 499955487}
+  - component: {fileID: 499955489}
   m_Layer: 5
   m_Name: Money_txt
   m_TagString: Untagged
@@ -930,7 +931,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1279355080}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1034,6 +1035,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499955485}
   m_CullTransparentMesh: 1
+--- !u!114 &499955489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499955485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c625225413a1fd1448fcf49ac51523a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _amount: 100
 --- !u!4 &503898618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 399439229746213726, guid: d9ede8b507078194cb765d00130fd4d7, type: 3}
@@ -2107,6 +2121,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2201,6 +2216,19 @@ MonoBehaviour:
   _zoomDistance: 15
   _zoomInButton: {fileID: 1501412849}
   _zoomOutButton: {fileID: 1714536923}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7ae92aca4f41841944ba7965de50d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _money: {fileID: 499955489}
 --- !u!1001 &963797271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2776,10 +2804,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1969605425}
   - {fileID: 1501412848}
   - {fileID: 1714536922}
   - {fileID: 499955486}
-  - {fileID: 1969605425}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3106,7 +3134,7 @@ RectTransform:
   m_Children:
   - {fileID: 569479828}
   m_Father: {fileID: 1279355080}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3465,7 +3493,7 @@ RectTransform:
   m_Children:
   - {fileID: 1387306423}
   m_Father: {fileID: 1279355080}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -3980,7 +4008,7 @@ RectTransform:
   m_Children:
   - {fileID: 1871944662}
   m_Father: {fileID: 1279355080}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

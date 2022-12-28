@@ -12,6 +12,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 2e26ade1cc5ee6042af616aac791f629, type: 2}
     - target: {fileID: 5922764944504016748, guid: 9551679cb055b184bb2da74af286bf6e, type: 3}
+      propertyPath: gizmoViewMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922764944504016748, guid: 9551679cb055b184bb2da74af286bf6e, type: 3}
+      propertyPath: showBehaviorDesignerGizmo
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922764944504016748, guid: 9551679cb055b184bb2da74af286bf6e, type: 3}
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[1]
       value: 
       objectReference: {fileID: 0}
@@ -69,3 +77,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9551679cb055b184bb2da74af286bf6e, type: 3}
+--- !u!1 &1063068797735315940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6841120150045946424, guid: 9551679cb055b184bb2da74af286bf6e, type: 3}
+  m_PrefabInstance: {fileID: 5778204048214842332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-1671202679809364022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063068797735315940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fbccb28c589df842b6c95bdb570bd8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cost: 20
