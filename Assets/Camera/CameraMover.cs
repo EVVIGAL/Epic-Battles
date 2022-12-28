@@ -23,6 +23,9 @@ public class CameraMover : MonoBehaviour
     private Coroutine _zoom;
     private Zoom _zoomBounds;
 
+    private string _horizontalTxt = "Horizontal";
+    private string _verticalTxt = "Vertical";
+
     private void Awake()
     {
         _transform = GetComponent<Transform>();
@@ -33,25 +36,7 @@ public class CameraMover : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            Move(Vector3.left);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            Move(Vector3.right);
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            Move(Vector3.forward);
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            Move(Vector3.back);
-        }
+        Move(GetDirection());
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -62,6 +47,19 @@ public class CameraMover : MonoBehaviour
         {
             ZoomOut();
         }
+    }
+
+    public void Move(Vector3 direction)
+    {
+        _transform.position = Vector3.Lerp(_transform.position, new Vector3(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), _transform.position.y, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top)) + direction, Time.deltaTime * _speed);
+    }
+
+    private Vector3 GetDirection()
+    {
+        Vector3 direction = Vector3.zero;
+        direction.x = Input.GetAxis(_horizontalTxt);
+        direction.z = Input.GetAxis(_verticalTxt);
+        return direction;
     }
 
     private void ZoomIn()
@@ -98,11 +96,6 @@ public class CameraMover : MonoBehaviour
                 _zoom = StartCoroutine(Zoom(_zoomIn));
             }
         }
-    }
-
-    private void Move(Vector3 direction)
-    {
-        _transform.position = Vector3.Lerp(_transform.position, new Vector3(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), _transform.position.y, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top)) + direction, Time.deltaTime * _speed);
     }
 
     private IEnumerator Zoom(float zoomDistance)
