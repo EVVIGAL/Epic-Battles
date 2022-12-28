@@ -1,35 +1,37 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Team : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _units = new();
+    [SerializeField] private Team _enemyTeam;
 
+    private List<Bot> _bots = new();
+    
     private void Awake()
     {
         foreach (Transform child in transform)
-            _units.Add(child);
+        {
+            if (child.TryGetComponent(out Bot bot))
+            {
+                bot.Init(_enemyTeam);
+                _bots.Add(bot);
+            }
+        }
     }
 
-    public void Remove(Transform transform)
-    {
-        if (_units.Contains(transform) == false)
-            throw new InvalidOperationException();
-
-        _units.Remove(transform);
-    }
-
-    public Transform GetNearbyObject(Vector3 position)
+    public Transform GetNearbyBot(Vector3 position)
     {
         Transform nearbyObject = null;
         float nearbyObjectDistance = float.PositiveInfinity;
-        for (int i = 0; i < _units.Count; i++)
+        for (int i = 0; i < _bots.Count; i++)
         {
-            float distance = (position - _units[i].position).sqrMagnitude;
+            if (_bots[i].IsAlive == false)
+                continue;
+
+            float distance = (position - _bots[i].transform.position).sqrMagnitude;
             if (distance < nearbyObjectDistance)
             {
-                nearbyObject = _units[i];
+                nearbyObject = _bots[i].transform;
                 nearbyObjectDistance = distance;
             }
         }

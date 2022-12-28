@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Health : MonoBehaviour, IHealth
 {
     [field: SerializeField] public uint MaxValue { get; private set; }
-    
+
     public uint Value { get; private set; }
 
     public bool IsAlive => Value > 0;

@@ -5,11 +5,11 @@ using UnityEngine;
 public class SetNearbyObject : Action
 {
     public SharedTransform Target;
-    public Team EnemyTeam;
+    public SharedTeam EnemyTeam;
 
     public override TaskStatus OnUpdate()
     {
-        Transform target = EnemyTeam.GetNearbyObject(transform.position);
+        Transform target = EnemyTeam.Value.GetNearbyBot(transform.position);
         if (target == null)
             return TaskStatus.Failure;
 

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet<SelfTeam> : MonoBehaviour
 {
     [SerializeField] private uint _damage;
     [SerializeField] private float _speed;
@@ -12,6 +12,9 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.TryGetComponent(out SelfTeam self))
+            return;
+
         if (collision.gameObject.TryGetComponent(out IHealth health))
         {
             if (health.IsAlive)
