@@ -28,10 +28,19 @@ public class CameraMover : MonoBehaviour
 
     private void Awake()
     {
-        _transform = GetComponent<Transform>();
+        _transform = GetComponent<Transform>();       
+        _zoomBounds = new(_leftBound, _rightBound, _upBound, _downBound);
+    }
+    private void OnEnable()
+    {
         _zoomInButton.onClick.AddListener(ZoomIn);
         _zoomOutButton.onClick.AddListener(ZoomOut);
-        _zoomBounds = new(_leftBound, _rightBound, _upBound, _downBound);
+    }
+
+    private void OnDisable()
+    {
+        _zoomInButton.onClick.RemoveAllListeners();
+        _zoomOutButton.onClick.RemoveAllListeners();
     }
 
     private void Update()
@@ -39,14 +48,10 @@ public class CameraMover : MonoBehaviour
         Move(GetDirection());
 
         if (Input.GetKeyDown(KeyCode.E))
-        {
             ZoomIn();
-        }
 
         if (Input.GetKeyDown(KeyCode.Q))
-        {
             ZoomOut();
-        }
     }
 
     public void Move(Vector3 direction)
