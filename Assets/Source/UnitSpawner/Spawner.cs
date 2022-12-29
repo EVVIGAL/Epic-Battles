@@ -43,6 +43,7 @@ public class Spawner : MonoBehaviour
     {
         _unit = unit;
         _tankColliderSize = _unit.GetComponent<Collider>().bounds.extents;
+        Debug.Log(_tankColliderSize);
     }
 
     private void SpawnUnit(Vector3 position)

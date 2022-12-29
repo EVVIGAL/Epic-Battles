@@ -18,7 +18,7 @@ public class Remover : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            _currentTimer += Time.deltaTime;
+            _currentTimer += Time.unscaledDeltaTime;
 
             if (_currentTimer >= _timerToRemove)
             {
@@ -38,7 +38,10 @@ public class Remover : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if (hit.collider.TryGetComponent(out Unit unit))
+            if (hit.collider.GetComponentInParent<Unit>() == null)
+                return;
+
+            if (hit.collider.GetComponentInParent<Unit>().TryGetComponent(out Unit unit))
             {
                 unit.Remove();
                 _money.AddMoney(unit.Cost);
