@@ -7,10 +7,10 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private GameObject _blueTeam;
     [SerializeField] private GameObject _redTeam;
 
-    private Animator _animator;
     private Slider _slider;
-    private List<GameObject> _allies;
-    private List<GameObject> _enemies;
+    private Animator _animator;
+    private List<Unit> _allies;
+    private List<Unit> _enemies;
 
     private string _animName = "ProgressBar";
 
@@ -18,48 +18,51 @@ public class ProgressBar : MonoBehaviour
     {
         _slider = GetComponent<Slider>();
         _animator = GetComponent<Animator>();
+        _allies = new();
+        _enemies = new();
     }
 
     private void OnEnable()
     {
-        InitTeam(_allies, _blueTeam);
-        InitTeam(_enemies, _redTeam);
+        Refresh();
         _animator.Play(_animName);
     }
 
-    private void Update()
+    public void Refresh()
     {
+        InitTeam(_allies, _blueTeam);
+        InitTeam(_enemies, _redTeam);
         SetSliderValue();
     }
-
-    public void SetSliderValue()
+    private void SetSliderValue()
     {
         float bluePower = GetPower(_allies);
         float redPower = GetPower(_enemies);
         _slider.value = bluePower / (bluePower + redPower);
     }
 
-    private float GetPower(List<GameObject> team)
+    private float GetPower(List<Unit> team)
     {
         float power = 0;
 
-        foreach (GameObject unit in team)
-        {
-            Unit unit2 = unit.GetComponent<Unit>();
-            power += unit2.Cost;
-        }
+        foreach (Unit unit in team)
+            power += unit.Cost;
 
         return power;
     }
 
-    private void InitTeam(List<GameObject> teamList, GameObject team)
+    private void InitTeam(List<Unit> list, GameObject team)
     {
-        for (int i = 0; i < team.transform.childCount; i++)
+        foreach(Transform child in team.transform)
         {
-            if (team.transform.GetChild(i).TryGetComponent(out Unit unit))
-            {
-                teamList.Add(team.transform.GetChild(i).gameObject);
-            }
+            if (child.TryGetComponent(out Unit unit))
+                list.Add(unit);
         }
+
+        //for (int i = 0; i < team.transform.childCount; i++)
+        //{
+        //    if (team.transform.GetChild(i).TryGetComponent(out Unit unit))
+        //        list.Add(unit);
+        //}
     }
 }
