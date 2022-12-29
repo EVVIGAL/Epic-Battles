@@ -7,19 +7,24 @@ public class ProgressBar : MonoBehaviour
     [SerializeField] private GameObject _blueTeam;
     [SerializeField] private GameObject _redTeam;
 
+    private Animator _animator;
     private Slider _slider;
     private List<GameObject> _allies;
     private List<GameObject> _enemies;
 
+    private string _animName = "ProgressBar";
+
     private void Awake()
     {
         _slider = GetComponent<Slider>();
+        _animator = GetComponent<Animator>();
     }
 
-    private void Start()
+    private void OnEnable()
     {
         InitTeam(_allies, _blueTeam);
         InitTeam(_enemies, _redTeam);
+        _animator.Play(_animName);
     }
 
     private void Update()
