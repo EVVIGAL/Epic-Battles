@@ -6,7 +6,7 @@ public class Team : MonoBehaviour
     [SerializeField] private Team _enemyTeam;
 
     private List<Bot> _bots = new();
-    
+
     private void Awake()
     {
         foreach (Transform child in transform)
@@ -37,5 +37,19 @@ public class Team : MonoBehaviour
         }
 
         return nearbyObject;
+    }
+
+    public void AddBot()
+    {
+        _bots.Clear();
+
+        foreach (Transform child in transform)
+        {
+            if (child.TryGetComponent(out Bot bot))
+            {
+                bot.Init(_enemyTeam);
+                _bots.Add(bot);
+            }
+        }
     }
 }
