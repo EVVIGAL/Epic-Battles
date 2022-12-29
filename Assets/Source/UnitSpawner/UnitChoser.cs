@@ -4,7 +4,7 @@ using TMPro;
 
 public class UnitChoser : MonoBehaviour
 {
-    [SerializeField] private Creator _creator;
+    [SerializeField] private Spawner _creator;
     [SerializeField] private Unit _unit;
 
     private Button _button;

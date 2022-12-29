@@ -1,15 +1,18 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Creator : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] private Money _money;
+    [SerializeField] private Team _alliedTeam;
+    [SerializeField] private Team _enemyTeam;
 
     private Vector3 _tankColliderSize;
     private Collider[] _colliders;
     private Camera _camera;
     private Unit _unit;
     private int _groundLayer = 3;
+    private string _boundNameStr = "Bounds";
 
     private void Awake()
     {
@@ -26,6 +29,9 @@ public class Creator : MonoBehaviour
                 {
                     Vector3 position = GetPosition();
 
+                    if (position == Vector3.zero)
+                        return;
+
                     if (CheckSpawnPoint(position))
                         SpawnUnit(position);
                 }
@@ -41,17 +47,23 @@ public class Creator : MonoBehaviour
 
     private void SpawnUnit(Vector3 position)
     {
-        Instantiate(_unit, position, Quaternion.identity);
+        Instantiate(_unit, position, Quaternion.identity, _alliedTeam.transform);
         _money.SpendMoney(_unit.Cost);
+
+        if (_unit.TryGetComponent(out Bot bot))
+            _alliedTeam.AddBot();
     }
 
     private Vector3 GetPosition()
     {
-        Vector3 position;
+        Vector3 position = Vector3.zero;
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
-            position = hit.point;
+        {
+            if(hit.collider.name == _boundNameStr)
+                position = hit.point;
+        }
         else
             position = Vector3.zero;
 
