@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Money _money;
     [SerializeField] private Team _alliedTeam;
     [SerializeField] private Team _enemyTeam;
+    [SerializeField] private Quaternion _rotation;
 
     private Vector3 _tankColliderSize;
     private Collider[] _colliders;
@@ -43,12 +44,11 @@ public class Spawner : MonoBehaviour
     {
         _unit = unit;
         _tankColliderSize = _unit.GetComponent<Collider>().bounds.extents;
-        Debug.Log(_tankColliderSize);
     }
 
     private void SpawnUnit(Vector3 position)
     {
-        Instantiate(_unit, position, Quaternion.identity, _alliedTeam.transform);
+        Instantiate(_unit, position, _rotation, _alliedTeam.transform);
         _money.SpendMoney(_unit.Cost);
     }
 

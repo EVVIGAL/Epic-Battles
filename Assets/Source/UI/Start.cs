@@ -5,6 +5,7 @@ public class Start : MonoBehaviour
 {
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _line;
+    [SerializeField] private Spawner _spawner;
 
     private Button _startButton;
 
@@ -30,5 +31,7 @@ public class Start : MonoBehaviour
         gameObject.SetActive(false);
         _slider.SetActive(true);
         _line.SetActive(false);
+        _spawner.enabled = false;
+        _spawner.GetComponent<Remover>().enabled = false;
     }
 }
