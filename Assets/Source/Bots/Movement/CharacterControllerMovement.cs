@@ -5,15 +5,24 @@ public class CharacterControllerMovement : Movement
 {
     private CharacterController _characterController;
 
+    private Vector3 _direction;
+
     private void Awake()
     {
         _characterController = GetComponent<CharacterController>();
     }
 
+    private void Update()
+    {
+        Rotate(_direction);
+        Vector3 movement = _direction == Vector3.zero ? Vector3.zero : transform.forward * MoveSpeed;
+        _characterController.SimpleMove(movement);
+        _direction = Vector3.zero;
+    }
+
     public override void Move(Vector2 direction)
     {
-        Rotate(direction);
-        _characterController.SimpleMove(transform.forward * MoveSpeed);
+        _direction = direction;
     }
 
     private void Rotate(Vector2 direction)

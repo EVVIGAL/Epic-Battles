@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TankWeapon : Weapon
+public class DefaultGun : Weapon
 {
     [SerializeField] private Bullet<RedTeam> _bulletTemplate;
     [SerializeField] private Transform _shootPoint;

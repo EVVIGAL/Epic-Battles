@@ -2,7 +2,7 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class SetNearbyObject : Action
+public class SetNearbyObject : Conditional
 {
     public SharedTransform Target;
     public SharedTeam EnemyTeam;

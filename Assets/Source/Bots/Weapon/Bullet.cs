@@ -10,12 +10,12 @@ public class Bullet<SelfTeam> : MonoBehaviour
         transform.position += transform.forward * _speed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.TryGetComponent(out SelfTeam self))
+        if (other.TryGetComponent(out SelfTeam self))
             return;
 
-        if (collision.gameObject.TryGetComponent(out IHealth health))
+        if (other.TryGetComponent(out IHealth health))
         {
             if (health.IsAlive)
             {

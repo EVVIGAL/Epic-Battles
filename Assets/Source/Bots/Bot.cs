@@ -1,4 +1,5 @@
 using BehaviorDesigner.Runtime;
+using System;
 using UnityEngine;
 
 [RequireComponent (typeof(BehaviorTree), typeof(Health))]
@@ -15,11 +16,13 @@ public class Bot : MonoBehaviour, IHealth
     {
         _behaviorTree = GetComponent<BehaviorTree>();
         _health = GetComponent<Health>();
-    }
+        
+        Team team = transform.parent.GetComponent<Team>();
+        if (team == null)
+            throw new InvalidOperationException("Team not found!");
 
-    public void Init(Team team)
-    {
-        _behaviorTree.SetVariableValue(EnemyTeam, team);
+        team.AddBot(this);
+        _behaviorTree.SetVariableValue(EnemyTeam, team.EnemyTeam);
     }
 
     public void TakeDamage(uint damage)

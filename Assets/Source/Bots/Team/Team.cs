@@ -1,22 +1,26 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Team : MonoBehaviour
 {
-    [SerializeField] private Team _enemyTeam;
+    [field: SerializeField] public Team EnemyTeam { get; private set; }
 
     private List<Bot> _bots = new();
     
     private void Awake()
     {
         foreach (Transform child in transform)
-        {
             if (child.TryGetComponent(out Bot bot))
-            {
-                bot.Init(_enemyTeam);
                 _bots.Add(bot);
-            }
-        }
+    }
+
+    public void AddBot(Bot bot)
+    {
+        if (_bots.Contains(bot))
+            throw new InvalidOperationException(bot.name + " already contained in " + gameObject.name);
+
+        _bots.Add(bot);
     }
 
     public Transform GetNearbyBot(Vector3 position)
