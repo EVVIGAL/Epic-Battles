@@ -22,9 +22,6 @@ public class CameraMover : MonoBehaviour
     private Coroutine _zoom;
     private Zoom _zoomBounds;
 
-    private string _horizontalTxt = "Horizontal";
-    private string _verticalTxt = "Vertical";
-
     private void Awake()
     {
         _transform = GetComponent<Transform>();       
@@ -55,14 +52,25 @@ public class CameraMover : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        _transform.position = Vector3.Lerp(_transform.position, new Vector3(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), _transform.position.y, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top)) + direction, Time.deltaTime * _speed);
+        _transform.position = Vector3.Lerp(_transform.position, new Vector3(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), _transform.position.y, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top)) + direction, Time.unscaledDeltaTime * _speed);
     }
 
     private Vector3 GetDirection()
     {
         Vector3 direction = Vector3.zero;
-        direction.x = Input.GetAxis(_horizontalTxt);
-        direction.z = Input.GetAxis(_verticalTxt);
+
+        if (Input.GetKey(KeyCode.A))
+            direction.x = -1;
+
+        if (Input.GetKey(KeyCode.D))
+            direction.x = 1;
+
+        if (Input.GetKey(KeyCode.W))
+            direction.z = 1;
+
+        if (Input.GetKey(KeyCode.S))
+            direction.z = -1;
+
         return direction;
     }
 
@@ -116,7 +124,7 @@ public class CameraMover : MonoBehaviour
                 _speed = slowSpeed;
 
             Vector3 zoomTarget = new(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), targetY, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top));
-            _transform.position = Vector3.Lerp(_transform.position, zoomTarget, Time.deltaTime * _zoomSpeed);
+            _transform.position = Vector3.Lerp(_transform.position, zoomTarget, Time.unscaledDeltaTime * _zoomSpeed);
             yield return null;
 
             if(_transform.position.y >= targetY - offset && _transform.position.y <= targetY + offset)
