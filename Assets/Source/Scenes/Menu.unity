@@ -232,6 +232,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedTank Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 727880578536746282, guid: 2a4bd442998b3b345b12475c9b9ea3a5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 727880578536746285, guid: 2a4bd442998b3b345b12475c9b9ea3a5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 978207985499884227, guid: 2a4bd442998b3b345b12475c9b9ea3a5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -606,6 +614,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 144588671861757104, guid: d9ede8b507078194cb765d00130fd4d7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 144588671861757104, guid: d9ede8b507078194cb765d00130fd4d7, type: 3}
+      propertyPath: gizmoViewMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 144588671861757104, guid: d9ede8b507078194cb765d00130fd4d7, type: 3}
+      propertyPath: showBehaviorDesignerGizmo
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 144588671861757111, guid: d9ede8b507078194cb765d00130fd4d7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 399439229746213726, guid: d9ede8b507078194cb765d00130fd4d7, type: 3}
       propertyPath: m_RootOrder
       value: 2
