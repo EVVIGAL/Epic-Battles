@@ -49,9 +49,6 @@ public class Spawner : MonoBehaviour
     {
         Instantiate(_unit, position, Quaternion.identity, _alliedTeam.transform);
         _money.SpendMoney(_unit.Cost);
-
-        if (_unit.TryGetComponent(out Bot bot))
-            _alliedTeam.AddBot();
     }
 
     private Vector3 GetPosition()

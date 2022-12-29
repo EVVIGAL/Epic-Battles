@@ -42,18 +42,4 @@ public class Team : MonoBehaviour
 
         return nearbyObject;
     }
-
-    public void AddBot()
-    {
-        _bots.Clear();
-
-        foreach (Transform child in transform)
-        {
-            if (child.TryGetComponent(out Bot bot))
-            {
-                bot.Init(_enemyTeam);
-                _bots.Add(bot);
-            }
-        }
-    }
 }
