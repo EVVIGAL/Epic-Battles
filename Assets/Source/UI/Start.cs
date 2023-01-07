@@ -8,13 +8,18 @@ public class Start : MonoBehaviour
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Animator _unitButtonsAnimator;
 
+    private static bool _isPause;
+
     private Button _startButton;
     private string _animName = "Hide";
+
+    public static bool IsPause => _isPause;
 
     private void Awake()
     {
         _startButton = GetComponent<Button>();
         Time.timeScale = 0;
+        _isPause = true;
     }
 
     private void OnEnable()
@@ -30,6 +35,7 @@ public class Start : MonoBehaviour
     public void StartBattle()
     {
         Time.timeScale = 1;
+        _isPause = false;
         gameObject.SetActive(false);
         _slider.SetActive(true);
         _line.SetActive(false);
