@@ -6,8 +6,10 @@ public class Start : MonoBehaviour
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _line;
     [SerializeField] private Spawner _spawner;
+    [SerializeField] private Animator _unitButtonsAnimator;
 
     private Button _startButton;
+    private string _animName = "Hide";
 
     private void Awake()
     {
@@ -33,5 +35,6 @@ public class Start : MonoBehaviour
         _line.SetActive(false);
         _spawner.enabled = false;
         _spawner.GetComponent<Remover>().enabled = false;
+        _unitButtonsAnimator.Play(_animName);
     }
 }

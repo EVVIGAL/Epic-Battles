@@ -58,11 +58,5 @@ public class ProgressBar : MonoBehaviour
             if (child.TryGetComponent(out Unit unit))
                 list.Add(unit);
         }
-
-        //for (int i = 0; i < team.transform.childCount; i++)
-        //{
-        //    if (team.transform.GetChild(i).TryGetComponent(out Unit unit))
-        //        list.Add(unit);
-        //}
     }
 }
