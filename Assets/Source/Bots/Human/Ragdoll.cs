@@ -18,7 +18,7 @@ public class Ragdoll : MonoBehaviour, IRagdoll
             rigidbody.isKinematic = false;
 
         foreach (Collider collider in _colliders)
-            collider.enabled = true;
+            collider.isTrigger = false;
     }
 
     public void Disable()
@@ -27,6 +27,6 @@ public class Ragdoll : MonoBehaviour, IRagdoll
             rigidbody.isKinematic = true;
 
         foreach (Collider collider in _colliders)
-            collider.enabled = false;
+            collider.isTrigger = true;
     }
 }

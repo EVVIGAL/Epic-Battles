@@ -11,7 +11,7 @@ public class TurnTurret : Action
 
     public override TaskStatus OnUpdate()
     {
-        Vector3 direction = (Target.Value.position - Turret.position).normalized;
+        Vector3 direction = (Target.Value.position + Vector3.up - Turret.position).normalized;
         var turretDirection = new Vector3(direction.x, 0f, direction.z);
         var gunDirection = new Vector3(0f, direction.y, 0f);
 

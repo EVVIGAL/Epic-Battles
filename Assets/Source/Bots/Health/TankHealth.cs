@@ -6,6 +6,7 @@ public class TankHealth : Health
 
     protected override void Die()
     {
+        base.Die();
         _turelExplosion.Explose();
     }
 }

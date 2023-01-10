@@ -8,13 +8,6 @@ public class Team : MonoBehaviour
 
     private List<Bot> _bots = new();
 
-    private void Awake()
-    {
-        foreach (Transform child in transform)
-            if (child.TryGetComponent(out Bot bot))
-                _bots.Add(bot);
-    }
-
     public void AddBot(Bot bot)
     {
         if (_bots.Contains(bot))

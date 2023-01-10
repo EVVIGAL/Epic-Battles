@@ -9,6 +9,8 @@ public abstract class Health : MonoBehaviour, IHealth
 
     public bool IsAlive => Value > 0;
 
+    public event Action Died;
+
     private void Awake()
     {
         Value = MaxValue;
@@ -25,5 +27,8 @@ public abstract class Health : MonoBehaviour, IHealth
             Die();
     }
 
-    protected abstract void Die();
+    protected virtual void Die()
+    {
+        Died?.Invoke();
+    }
 }
