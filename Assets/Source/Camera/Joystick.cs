@@ -24,7 +24,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
             position.x /= _joystick.rectTransform.sizeDelta.x;
             position.y /= _joystick.rectTransform.sizeDelta.x;
         }
-        _inputPos = new(position.x * 2 - 1, position.y * 2 - 1);
+        _inputPos = new(position.x, position.y);
         _inputPos = (_inputPos.magnitude > 1.0f) ? _inputPos.normalized : _inputPos;
         _touch.rectTransform.anchoredPosition = new(_inputPos.x * (_joystick.rectTransform.sizeDelta.x / 2), _inputPos.y * (_joystick.rectTransform.sizeDelta.y / 2));
     }
