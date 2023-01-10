@@ -1507,7 +1507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 669612448}
   - component: {fileID: 669612450}
-  - component: {fileID: 669612449}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1538,21 +1537,6 @@ RectTransform:
   m_AnchoredPosition: {x: -1, y: 4.5}
   m_SizeDelta: {x: -174, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &669612449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 669612447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1c74188ccd604043ac2fe4641bffc9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audio:
-  - {fileID: 963194232}
-  _toggle: {fileID: 1061700540}
 --- !u!114 &669612450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2079,11 +2063,12 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
+  - component: {fileID: 963194232}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
   - component: {fileID: 963194231}
-  - component: {fileID: 963194232}
+  - component: {fileID: 963194233}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2150,7 +2135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: -30.23, y: 50, z: -4.77}
+  m_LocalPosition: {x: -30.23, y: 60, z: -4.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2169,10 +2154,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66938cba8589f294e8a2b77ca3ccf170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftBound: -30
-  _rightBound: 30
+  _leftBound: -60
+  _rightBound: 50
   _upBound: 60
-  _downBound: -20
+  _downBound: -40
   _speed: 100
   _zoomSpeed: 30
   _zoomDistance: 15
@@ -2304,6 +2289,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &963194233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c74188ccd604043ac2fe4641bffc9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audio:
+  - {fileID: 963194232}
+  _toggle: {fileID: 1061700540}
+  _slider: {fileID: 669612450}
 --- !u!1 &986527667
 GameObject:
   m_ObjectHideFlags: 0
