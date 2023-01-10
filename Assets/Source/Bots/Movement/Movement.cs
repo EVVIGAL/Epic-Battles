@@ -6,7 +6,7 @@ public abstract class Movement : MonoBehaviour, IMovement
     [field: SerializeField] public float AngularSpeed { get; set; }
 
     [SerializeField] private MonoBehaviour _groundMaterialSource;
-    private IGroundMaterial _groundMaterial => (IGroundMaterial)_groundMaterialSource;
+    private IGroundMaterialDetector _groundMaterial => (IGroundMaterialDetector)_groundMaterialSource;
 
     protected Vector3 Direction { get; set; }
 
@@ -29,9 +29,9 @@ public abstract class Movement : MonoBehaviour, IMovement
 
     private void OnValidate()
     {
-        if (_groundMaterialSource && !(_groundMaterialSource is IGroundMaterial))
+        if (_groundMaterialSource && !(_groundMaterialSource is IGroundMaterialDetector))
         {
-            Debug.LogError(_groundMaterialSource + " + is not implement " + nameof(IGroundMaterial));
+            Debug.LogError(_groundMaterialSource + " + is not implement " + nameof(IGroundMaterialDetector));
             _groundMaterialSource = null;
         }
     }

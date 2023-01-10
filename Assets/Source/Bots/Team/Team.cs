@@ -16,6 +16,14 @@ public class Team : MonoBehaviour
         _bots.Add(bot);
     }
 
+    public void RemoveBot(Bot bot)
+    {
+        if (_bots.Contains(bot) == false)
+            throw new InvalidOperationException();
+
+        _bots.Remove(bot);
+    }
+
     public Transform GetNearbyBot(Vector3 position)
     {
         Transform nearbyObject = null;

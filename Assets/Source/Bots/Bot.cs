@@ -7,6 +7,7 @@ public class Bot : MonoBehaviour, IHealth
 {
     private BehaviorTree _behaviorTree;
     private Health _health;
+    private Team _team;
 
     private const string EnemyTeam = "_enemyTeam";
 
@@ -16,17 +17,22 @@ public class Bot : MonoBehaviour, IHealth
     {
         _behaviorTree = GetComponent<BehaviorTree>();
         _health = GetComponent<Health>();
-        
-        Team team = transform.parent.GetComponent<Team>();
-        if (team == null)
+
+        _team = transform.parent.GetComponent<Team>();
+        if (_team == null)
             throw new InvalidOperationException("Team not found!");
 
-        team.AddBot(this);
-        _behaviorTree.SetVariableValue(EnemyTeam, team.EnemyTeam);
+        _team.AddBot(this);
+        _behaviorTree.SetVariableValue(EnemyTeam, _team.EnemyTeam);
     }
 
     public void TakeDamage(uint damage)
     {
         _health.TakeDamage(damage);
+    }
+
+    private void OnDestroy()
+    {
+        _team.RemoveBot(this);
     }
 }
