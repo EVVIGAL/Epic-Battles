@@ -1,3 +1,4 @@
+#pragma warning disable
 using UnityEngine.SceneManagement;
 using System.Collections;
 using Agava.YandexGames;
