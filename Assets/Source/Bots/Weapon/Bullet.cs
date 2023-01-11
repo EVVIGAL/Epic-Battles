@@ -17,14 +17,13 @@ public class Bullet<SelfTeam> : MonoBehaviour
             if (hitInfo.transform.TryGetComponent(out IHealth health))
             {
                 if (health.IsAlive)
-                {
                     health.TakeDamage(_damage);
-                    Destroy(gameObject);
-
-                    if (_hitFX != null)
-                        Instantiate(_hitFX, hitInfo.point, Quaternion.identity);
-                }
             }
+
+            Destroy(gameObject);
+
+            if (_hitFX != null)
+                Instantiate(_hitFX, hitInfo.point, Quaternion.identity);
 
             if (hitInfo.rigidbody != null)
                 hitInfo.rigidbody.AddForce(transform.forward * _pushForce, ForceMode.Impulse);

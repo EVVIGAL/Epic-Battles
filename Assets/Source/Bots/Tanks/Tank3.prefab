@@ -290,7 +290,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3993413178338913677}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a796e2dc6c26fb45b00c2ff8d5c3c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _force: 16
+  _force: 80
   _radius: 10
   _upwardsModifier: 2
 --- !u!1 &5235942446558110732
@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 7702618552060683978}
   - component: {fileID: 7702618552060683979}
   - component: {fileID: 7702618552060683980}
+  - component: {fileID: -825894143828300847}
   m_Layer: 0
   m_Name: Tank3
   m_TagString: Untagged
@@ -650,6 +651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxValue>k__BackingField: 300
+  _deathSource: {fileID: -825894143828300847}
   _turelExplosion: {fileID: 898799361407615501}
   _bodyCollider: {fileID: 128570729684792457}
 --- !u!114 &7702618552060683976
@@ -722,6 +724,23 @@ MonoBehaviour:
   - {fileID: 8283069262490356904}
   - {fileID: 8283069262762115334}
   _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
+--- !u!114 &-825894143828300847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038812237508213876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12be9e1de82771d4bacbc186d1b21bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorChangeSpeed: 1
+  _fallingSpeed: 2
+  _waitBeforeFall: 5
+  _destroyTime: 10
+  _deathColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0}
 --- !u!1 &8283069262490356905
 GameObject:
   m_ObjectHideFlags: 0

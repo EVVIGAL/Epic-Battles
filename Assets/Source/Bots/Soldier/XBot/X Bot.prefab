@@ -2879,6 +2879,7 @@ GameObject:
   - component: {fileID: 5866666020451836488}
   - component: {fileID: 5866666020451836489}
   - component: {fileID: 2186018240896986729}
+  - component: {fileID: 175231200380956462}
   m_Layer: 0
   m_Name: X Bot
   m_TagString: Untagged
@@ -3000,6 +3001,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxValue>k__BackingField: 100
+  _deathSource: {fileID: 175231200380956462}
   _ragdollSource: {fileID: 7956360502597822683}
   _weaponPhysicSource: {fileID: 6619855408285114362}
 --- !u!114 &7956360500685617713
@@ -3089,6 +3091,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultValue: 30
+--- !u!114 &175231200380956462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109990193268495797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62bed40813261014486dfffe890290dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _colorChangeSpeed: 1
+  _fallingSpeed: 2
+  _waitBeforeFall: 3
+  _destroyTime: 10
+  _deathColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
+  _ragdollSource: {fileID: 7956360502597822683}
 --- !u!1 &7770281775540011204
 GameObject:
   m_ObjectHideFlags: 0
