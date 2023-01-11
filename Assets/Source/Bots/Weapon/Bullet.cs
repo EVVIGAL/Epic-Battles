@@ -6,6 +6,7 @@ public class Bullet<SelfTeam> : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _pushForce;
     [SerializeField] private float _raycastDistance = 1f;
+    [SerializeField] private ParticleSystem _hitFX;
 
     private void Update()
     {
@@ -19,29 +20,14 @@ public class Bullet<SelfTeam> : MonoBehaviour
                 {
                     health.TakeDamage(_damage);
                     Destroy(gameObject);
+
+                    if (_hitFX != null)
+                        Instantiate(_hitFX, hitInfo.point, Quaternion.identity);
                 }
             }
 
             if (hitInfo.rigidbody != null)
                 hitInfo.rigidbody.AddForce(transform.forward * _pushForce, ForceMode.Impulse);
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //if (other.TryGetComponent(out SelfTeam self))
-        //    return;
-
-        //if (other.TryGetComponent(out IHealth health))
-        //{
-        //    if (health.IsAlive)
-        //    {
-        //        health.TakeDamage(_damage);
-        //        Destroy(gameObject);
-        //    }
-        //}
-
-        //if (other.attachedRigidbody != null)
-        //    other.attachedRigidbody.AddForce(transform.forward * _pushForce, ForceMode.Impulse);
     }
 }

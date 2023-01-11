@@ -1,5 +1,7 @@
-﻿public interface IWeapon
+﻿using UnityEngine;
+
+public interface IWeapon
 {
     bool CanShoot { get; }
-    void Shoot();
+    void Shoot(Transform target);
 }

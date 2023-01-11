@@ -9,7 +9,7 @@ public class TakeAim : Action
 
     public override TaskStatus OnUpdate()
     {
-        Vector3 direction = Target.Value.position + Vector3.up - Aim.position;
+        Vector3 direction = Target.Value.position + Target.Value.up - Aim.position;
         Aim.rotation = Quaternion.LookRotation(direction);
         return TaskStatus.Success;
     }

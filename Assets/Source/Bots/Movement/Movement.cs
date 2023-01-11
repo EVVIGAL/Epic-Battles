@@ -15,7 +15,7 @@ public abstract class Movement : MonoBehaviour, IMovement
     public void Move(Vector2 direction)
     {
         Direction = direction;
-        CurrentSpeed = MoveSpeed * _groundMaterial.Friction;
+        CurrentSpeed = MoveSpeed * (1f -_groundMaterial.Friction);
     }
 
     protected void Rotate()

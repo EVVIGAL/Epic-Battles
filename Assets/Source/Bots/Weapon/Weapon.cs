@@ -20,32 +20,37 @@ public abstract class Weapon : MonoBehaviour, IWeapon
         _ammoInMagazine = _magazineSize;
     }
 
-    public virtual void Shoot()
+    public virtual void Shoot(Transform target)
     {
         if (CanShoot == false)
             throw new InvalidOperationException();
 
-        OnShoot();
+        OnShoot(target);
         _isReloading = true;
         _ammoInMagazine--;
 
         if (IsEmpty)
         {
-            OnReload();
-            StartCoroutine(Wait(_reloadSpeed, () =>
-            {
-                _ammoInMagazine = _magazineSize;
-                _isReloading = false;
-            }));
+            Reload();
             return;
         }
 
         StartCoroutine(Wait(_rateOfFire, () => _isReloading = false));
     }
 
-    protected virtual void OnShoot() { }
+    protected virtual void OnShoot(Transform target) { }
 
     protected virtual void OnReload() { }
+
+    private void Reload()
+    {
+        OnReload();
+        StartCoroutine(Wait(_reloadSpeed, () =>
+        {
+            _ammoInMagazine = _magazineSize;
+            _isReloading = false;
+        }));
+    }
 
     private IEnumerator Wait(float time, Action onSuccessCallback)
     {

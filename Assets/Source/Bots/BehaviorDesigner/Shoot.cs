@@ -1,9 +1,11 @@
+using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
 public class Shoot : Action
 {
     public MonoBehaviour WeaponSource;
+    public SharedTransform Target;
 
     private IWeapon _weapon => (IWeapon)WeaponSource;
 
@@ -12,7 +14,7 @@ public class Shoot : Action
         if (_weapon.CanShoot == false)
             return TaskStatus.Running;
 
-        _weapon.Shoot();
+        _weapon.Shoot(Target.Value);
         return TaskStatus.Success;
     }
 }
