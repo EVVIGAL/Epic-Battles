@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d39fb202f1350e418faaebbef7bb4f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 15
-  <AngularSpeed>k__BackingField: 2
+  <MoveSpeed>k__BackingField: 10
+  <AngularSpeed>k__BackingField: 1
   _groundMaterialSource: {fileID: 3255063950737228176}
 --- !u!114 &3255063950737228179
 MonoBehaviour:
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbccb28c589df842b6c95bdb570bd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 20
+  _cost: 40
 --- !u!114 &3255063950737228176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a27d78e0fa80ce42a56545d74432293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultValue: 40
+  _defaultValue: 70
 --- !u!114 &3255063950737228168
 MonoBehaviour:
   m_ObjectHideFlags: 0
