@@ -5,6 +5,9 @@ public abstract class Health : MonoBehaviour, IHealth
 {
     [field: SerializeField] public uint MaxValue { get; private set; }
 
+    [SerializeField] private MonoBehaviour _deathSource;
+    private IDeath _death => (IDeath)_deathSource;
+
     public uint Value { get; private set; }
 
     public bool IsAlive => Value > 0;
@@ -29,6 +32,7 @@ public abstract class Health : MonoBehaviour, IHealth
 
     protected virtual void Die()
     {
+        _death.Die();
         Died?.Invoke();
     }
 }
