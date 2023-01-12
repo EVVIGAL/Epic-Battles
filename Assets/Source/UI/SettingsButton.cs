@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class SettingsButton : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private GameObject _startButton;
 
     private Button _button;
 
@@ -26,6 +27,7 @@ public class SettingsButton : MonoBehaviour
     {
         if (_settingsPanel.activeSelf)
         {
+            _startButton.SetActive(true);
             _settingsPanel.SetActive(false);
 
             if(!Start.IsPause)
@@ -33,6 +35,7 @@ public class SettingsButton : MonoBehaviour
         }
         else
         {
+            _startButton.SetActive(false);
             _settingsPanel.SetActive(true);
             Time.timeScale = 0;
         }

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2560
     height: 997
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 187
+  controlID: 35
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 185
+  controlID: 33
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 186
+  controlID: 34
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 146
+  controlID: 57
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -347,8 +347,8 @@ MonoBehaviour:
     y: 0
     width: 620
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -387,14 +387,14 @@ MonoBehaviour:
     - {fileID: -5198835388789636581, guid: 4a2720125c5571d4a94774bd9c8b9841, type: 2}
     - {fileID: -2780627077206180467, guid: 4a2720125c5571d4a94774bd9c8b9841, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1.520875
+    - e00: 1.2636571
       e01: 0
       e02: 0
-      e03: 20.59633
+      e03: 45.525955
       e10: 0
-      e11: 1.520875
+      e11: 1.2636571
       e12: 0
-      e13: 85.05561
+      e13: 90.627335
       e20: 0
       e21: 0
       e22: 1
@@ -817,7 +817,7 @@ MonoBehaviour:
       index: 12
       layout: 4
   m_WindowGUID: b1e43c341d295d44ab99e8ff1c92c428
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -826,9 +826,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 36.820168, y: -8.709616, z: 33.083336}
+    m_Target: {x: 59.34371, y: -43.24825, z: 84.18527}
     speed: 2
-    m_Value: {x: 36.820168, y: -8.709616, z: 33.083336}
+    m_Value: {x: 59.34371, y: -43.24825, z: 84.18527}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -875,13 +875,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.26295656, y: 0.16173749, z: -0.044775378, w: 0.95014036}
+    m_Target: {x: 0.26336026, y: -0.2648598, z: 0.07544717, w: 0.9245612}
     speed: 2
-    m_Value: {x: 0.2629465, y: 0.1617313, z: -0.044773664, w: 0.950104}
+    m_Value: {x: 0.26197118, y: -0.2649707, z: 0.07504922, w: 0.9249482}
   m_Size:
-    m_Target: 46.840656
+    m_Target: 103.12888
     speed: 2
-    m_Value: 46.840656
+    m_Value: 103.12888
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -965,25 +965,25 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: aa250000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ac64f8ffa456fcffead3fcfffad3fcff42d4fcff14dbfcfffaedfcffbc33feff586afeff628cffffc2d9ffff4af6ffff
+      m_ExpandedIDs: 52d1ffffbeedffffc0edffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Wheel BlueTank Variant
-        m_OriginalName: Wheel BlueTank Variant
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -207734
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 12}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1032,36 +1032,36 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Source/Bots/Team
+    - Assets/Source/Bots/Health
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Source/Bots/Team
+  - Assets/Source/Bots/Health
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Repositories\Epic-Battles
   m_LockTracker:
     m_IsLocked: 1
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fc6c0000
-    m_LastClickedID: 27900
-    m_ExpandedIDs: 00000000bc6c0000be6c0000c06c0000c26c0000c46c0000c66c0000c86c0000e46c0000ee6c0000f86c0000
+    m_SelectedIDs: 687b0000
+    m_LastClickedID: 31592
+    m_ExpandedIDs: 000000001a7b00001c7b00001e7b0000207b0000227b0000247b0000287b00002a7b00002c7b00004e7b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: StickmanPolice
-      m_OriginalName: StickmanPolice
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 80602
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 13}
     m_SearchString: 
@@ -1075,7 +1075,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000bc6c0000be6c0000c06c0000c26c0000c46c0000c66c0000c86c0000
+    m_ExpandedIDs: 000000001a7b00001c7b00001e7b0000207b0000227b0000247b0000267b0000287b00002a7b00002c7b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1106,15 +1106,15 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c623000086f10700d89500008c950000eac50b00
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Team
-      m_OriginalName: Team
+      m_Name: ContactDestroyer
+      m_OriginalName: ContactDestroyer
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 9642
+      m_UserData: 218298
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
       m_OriginalEventType: 0
@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
-    m_CachedPref: 352
+    m_CachedPref: -352
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1

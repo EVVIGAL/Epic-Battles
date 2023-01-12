@@ -1,10 +1,8 @@
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
 public class Volume : MonoBehaviour
 {
-    [SerializeField] private List<AudioSource> _audio;
     [SerializeField] private Toggle _toggle;
     [SerializeField] private Slider _slider;
 
@@ -31,17 +29,13 @@ public class Volume : MonoBehaviour
 
     private void SetVolume(float volume)
     {
-        foreach (AudioSource source in _audio)
-            source.volume = volume;
-
+        AudioListener.volume = volume;
         PlayerPrefs.SetFloat(_volumeTxt, volume);
     }
 
     private void Mute(bool isMute)
     {
-        foreach(AudioSource source in _audio)
-            source.mute = !isMute;
-
+        AudioListener.pause = !isMute;
         PlayerPrefs.SetInt(_muteTxt, isMute ? 1 : 0);
     }
 }

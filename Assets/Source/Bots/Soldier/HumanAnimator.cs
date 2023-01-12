@@ -14,6 +14,11 @@ public class HumanAnimator : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
     }
 
+    private void Start()
+    {
+        _animator.SetFloat(AnimatorCharacterController.Params.MovementOffset, Random.Range(0f, 1f));
+    }
+
     private void Update()
     {
         _animator.SetFloat(AnimatorCharacterController.Params.Speed, _characterController.velocity.magnitude, _dampTime, Time.deltaTime);

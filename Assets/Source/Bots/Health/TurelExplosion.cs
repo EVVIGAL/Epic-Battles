@@ -22,7 +22,9 @@ public class TurelExplosion : MonoBehaviour
     {
         _collider.enabled = true;
         _rigidbody.isKinematic = false;
-        _rigidbody.AddExplosionForce(_force, transform.position, _radius, _upwardsModifier, ForceMode.Impulse);
+        Vector2 randomOffset = UnityEngine.Random.insideUnitCircle.normalized;
+        Vector3 explosionPosition = transform.position + new Vector3(randomOffset.x, -1f, randomOffset.y) * _radius / 2f;
+        _rigidbody.AddExplosionForce(_force, explosionPosition, _radius, _upwardsModifier, ForceMode.Impulse);
         StartCoroutine(Wait(() => _collider.enabled = false));
     }
 
