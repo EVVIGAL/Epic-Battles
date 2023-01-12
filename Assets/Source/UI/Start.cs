@@ -5,6 +5,7 @@ public class Start : MonoBehaviour
 {
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _line;
+    [SerializeField] private GameObject _adButton;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Animator _unitButtonsAnimator;
 
@@ -38,6 +39,7 @@ public class Start : MonoBehaviour
     {
         Time.timeScale = 1;
         _isPause = false;
+        _adButton.SetActive(false);
         gameObject.SetActive(false);
         _slider.SetActive(true);
         _line.SetActive(false);

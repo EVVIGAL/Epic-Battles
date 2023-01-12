@@ -4,12 +4,15 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     [SerializeField] private int _cost;
+    [SerializeField] private string _name;
 
     public UnityAction IsDestroyed;
 
     private CharacterControllerMovement _character;
 
     public int Cost => _cost;
+
+    public string Name => _name;
 
     private void OnEnable()
     {
