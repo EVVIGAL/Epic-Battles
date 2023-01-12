@@ -20,7 +20,7 @@ public class TurelExplosion : MonoBehaviour
 
     public void Explose()
     {
-        //_rigidbody.transform.parent = null;
+        _collider.enabled = true;
         _rigidbody.isKinematic = false;
         _rigidbody.AddExplosionForce(_force, transform.position, _radius, _upwardsModifier, ForceMode.Impulse);
         StartCoroutine(Wait(() => _collider.enabled = false));

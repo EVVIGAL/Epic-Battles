@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public class Stealthiness : MonoBehaviour
+public class Security : MonoBehaviour
 {
-    public float Value { get; private set; }
+    public int Value { get; private set; }
 
-    public void Add(float value)
+    public void Add(int value)
     {
         if (value < 0)
             throw new InvalidOperationException();
@@ -15,6 +15,6 @@ public class Stealthiness : MonoBehaviour
 
     public void Remove()
     {
-        Value = 0f;
+        Value = 0;
     }
 }
