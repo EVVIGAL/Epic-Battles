@@ -49,6 +49,6 @@ public class Ad : MonoBehaviour
         if (!Start.IsPause)
             Time.timeScale = 1;
 
-        AudioListener.pause = PlayerPrefs.GetInt(_muteTxt) == 1 ? true : false;
+        AudioListener.pause = PlayerPrefs.GetInt(_muteTxt) == 1 ? false : true;
     }
 }

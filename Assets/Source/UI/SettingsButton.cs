@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class SettingsButton : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsPanel;
-    [SerializeField] private GameObject _startButton;
+    [SerializeField] private Button _startButton;
 
     private Button _button;
 
@@ -25,19 +25,17 @@ public class SettingsButton : MonoBehaviour
 
     private void OpenClose()
     {
-        bool isStarted = _startButton.activeSelf;
-
         if (_settingsPanel.activeSelf)
         {
-            _startButton.SetActive(isStarted);
+            _startButton.enabled = true;
             _settingsPanel.SetActive(false);
 
-            if(!Start.IsPause)
+            if (!Start.IsPause)
                 Time.timeScale = 1;
         }
         else
         {
-            _startButton.SetActive(false);
+            _startButton.enabled = false;
             _settingsPanel.SetActive(true);
             Time.timeScale = 0;
         }
