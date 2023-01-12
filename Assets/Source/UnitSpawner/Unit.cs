@@ -22,8 +22,8 @@ public class Unit : MonoBehaviour
         {
             if (!_character.enabled)
             {
-                IsDestroyed?.Invoke();
                 this.enabled = false;
+                IsDestroyed?.Invoke();
             }
         }
     }
