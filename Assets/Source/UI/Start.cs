@@ -11,6 +11,7 @@ public class Start : MonoBehaviour
     private static bool _isPause;
 
     private Button _startButton;
+    private UnitsObserver _observer;
     private string _animName = "Hide";
 
     public static bool IsPause => _isPause;
@@ -18,6 +19,7 @@ public class Start : MonoBehaviour
     private void Awake()
     {
         _startButton = GetComponent<Button>();
+        _observer = GetComponent<UnitsObserver>();
         Time.timeScale = 0;
         _isPause = true;
     }
@@ -42,5 +44,6 @@ public class Start : MonoBehaviour
         _spawner.enabled = false;
         _spawner.GetComponent<Remover>().enabled = false;
         _unitButtonsAnimator.Play(_animName);
+        _observer.Init();
     }
 }
