@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2584074160747597762}
   - component: {fileID: 2584074160747597763}
   - component: {fileID: 2584074160747597766}
+  - component: {fileID: -8594706419836821306}
   m_Layer: 2
   m_Name: Smoke20x20
   m_TagString: Untagged
@@ -74,6 +75,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _liveTime: 20
+--- !u!114 &-8594706419836821306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584074160747597760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 825e0c75ec4c7464b8d94b27daa0cf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2584074161550872942
 PrefabInstance:
   m_ObjectHideFlags: 0

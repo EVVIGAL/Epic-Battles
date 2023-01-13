@@ -26,7 +26,6 @@ public class Spawner : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                Debug.Log("asd");
                 if (_unit != null && _money.Amount >= _unit.Cost)
                 {
                     Vector3 position = GetPosition();

@@ -33,6 +33,7 @@ public class SkillCaster : MonoBehaviour
             if (!EventSystem.current.IsPointerOverGameObject())
             {
                 SpawnSkill(GetPosition());
+                //enabled = false;
             }
         }
     }
@@ -47,7 +48,11 @@ public class SkillCaster : MonoBehaviour
         else
             position = Vector3.zero;
 
-        position.y = _height;
+        if(_currentSkill == _skills[0])
+            position.y = _height;
+        else
+            position.y = 5;
+
         return position;
     }
 
@@ -56,7 +61,7 @@ public class SkillCaster : MonoBehaviour
         Instantiate(_currentSkill, position, Quaternion.identity);
     }
 
-    private void SetSkill(int index)
+    public void SetSkill(int index)
     {
         _currentSkill= _skills[index];
     }
