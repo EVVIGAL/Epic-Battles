@@ -30,15 +30,7 @@ public class ProgressBar : MonoBehaviour
 
     private void OnDisable()
     {
-        foreach (Unit unit in _allies)
-        {
-            unit.IsDestroyed -= SetSliderValue;
-        }
 
-        foreach (Unit unit in _enemies)
-        {
-            unit.IsDestroyed -= SetSliderValue;
-        }
     }
 
     public void Refresh()
@@ -60,7 +52,12 @@ public class ProgressBar : MonoBehaviour
 
         foreach (Unit unit in team)
         {
-            if (unit.enabled)
+            if(unit == null)
+                continue;
+
+            uint unitHealth = unit.gameObject.GetComponent<Health>().Value;
+
+            if (unitHealth > 0)
                 power += unit.Cost;
         }
 
@@ -73,8 +70,8 @@ public class ProgressBar : MonoBehaviour
         {
             if (child.TryGetComponent(out Unit unit))
             {
-                unit.IsDestroyed += SetSliderValue;
                 list.Add(unit);
+                unit.gameObject.GetComponent<Health>().Died += SetSliderValue;
             }
         }
     }

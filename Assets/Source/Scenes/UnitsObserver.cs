@@ -6,16 +6,16 @@ public class UnitsObserver : MonoBehaviour
     [SerializeField] private EndBattle _end;
     [SerializeField] private GameObject _red;
     [SerializeField] private GameObject _blue;
-    [SerializeField] private List<Unit> _redTeam;
-    [SerializeField] private List<Unit> _blueTeam;
+    [SerializeField] private List<Health> _redTeam;
+    [SerializeField] private List<Health> _blueTeam;
 
     private void OnDisable()
     {
-        foreach (Unit unit in _redTeam)
-            unit.IsDestroyed -= CheckTeam;
+        foreach (Health unit in _redTeam)
+            unit.Died -= CheckTeam;
 
-        foreach (Unit unit in _blueTeam)
-            unit.IsDestroyed -= CheckTeam;
+        foreach (Health unit in _blueTeam)
+            unit.Died -= CheckTeam;
     }
 
     public void Init()
@@ -24,33 +24,40 @@ public class UnitsObserver : MonoBehaviour
         InitTeam(_blue, _blueTeam);
     }
 
-    private void InitTeam(GameObject team, List<Unit> list)
+    private void InitTeam(GameObject team, List<Health> list)
     {
         for (int i = 0; i < team.transform.childCount; i++)
         {
-            if (team.transform.GetChild(i).TryGetComponent(out Unit unit))
+            if (team.transform.GetChild(i).TryGetComponent(out Health unit))
             {
                 list.Add(unit);
-                unit.IsDestroyed += CheckTeam;
+                unit.Died += CheckTeam;
             }
         }
     }
 
     private void CheckTeam()
-    {       
+    {
+        
         bool redDefeated = true;
         bool blueDefeated = true;
 
-        foreach (Unit unit in _redTeam)
+        foreach (Health unit in _redTeam)
         {
-            if (unit.enabled)
+            if (unit.Value > 0)
+            {
                 redDefeated = false;
+                break;
+            }
         }
 
-        foreach (Unit unit in _blueTeam)
+        foreach (Health unit in _blueTeam)
         {
-            if (unit.enabled)
+            if (unit.Value > 0)
+            {
                 blueDefeated = false;
+                break;
+            }
         }
 
         if (redDefeated)
