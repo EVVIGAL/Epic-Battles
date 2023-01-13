@@ -37,7 +37,7 @@ public class UnitsObserver : MonoBehaviour
     }
 
     private void CheckTeam()
-    {
+    {       
         bool redDefeated = true;
         bool blueDefeated = true;
 
@@ -60,7 +60,7 @@ public class UnitsObserver : MonoBehaviour
         }
 
         if (blueDefeated)
-        {
+        {           
             _end.gameObject.SetActive(true);
             _end.SetPanelInfo(!blueDefeated);
         }

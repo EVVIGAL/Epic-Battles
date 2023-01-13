@@ -28,6 +28,19 @@ public class ProgressBar : MonoBehaviour
         _animator.Play(_animName);
     }
 
+    private void OnDisable()
+    {
+        foreach (Unit unit in _allies)
+        {
+            unit.IsDestroyed -= SetSliderValue;
+        }
+
+        foreach (Unit unit in _enemies)
+        {
+            unit.IsDestroyed -= SetSliderValue;
+        }
+    }
+
     public void Refresh()
     {
         InitTeam(_allies, _blueTeam);
@@ -46,17 +59,23 @@ public class ProgressBar : MonoBehaviour
         float power = 0;
 
         foreach (Unit unit in team)
-            power += unit.Cost;
+        {
+            if (unit.enabled)
+                power += unit.Cost;
+        }
 
         return power;
     }
 
     private void InitTeam(List<Unit> list, GameObject team)
     {
-        foreach(Transform child in team.transform)
+        foreach (Transform child in team.transform)
         {
             if (child.TryGetComponent(out Unit unit))
+            {
+                unit.IsDestroyed += SetSliderValue;
                 list.Add(unit);
+            }
         }
     }
 }

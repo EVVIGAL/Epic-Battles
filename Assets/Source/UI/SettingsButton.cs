@@ -25,9 +25,11 @@ public class SettingsButton : MonoBehaviour
 
     private void OpenClose()
     {
+        bool isStarted = _startButton.activeSelf;
+
         if (_settingsPanel.activeSelf)
         {
-            _startButton.SetActive(true);
+            _startButton.SetActive(isStarted);
             _settingsPanel.SetActive(false);
 
             if(!Start.IsPause)

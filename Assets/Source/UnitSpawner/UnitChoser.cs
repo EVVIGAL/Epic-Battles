@@ -19,7 +19,7 @@ public class UnitChoser : MonoBehaviour
     private void OnEnable()
     {
         _button.onClick.AddListener(SetUnit);
-        _text.text = $"{_unit.Cost}";
+        _text.text = $"{_unit.Name} {_unit.Cost}";
     }
 
     private void OnDisable()
