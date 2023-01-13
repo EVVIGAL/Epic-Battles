@@ -1,37 +1,20 @@
 using UnityEngine;
 
-public class Bullet<SelfTeam> : MonoBehaviour
+public class Bullet : Shell
 {
-    [SerializeField] private uint _damage;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _pushForce;
-    [SerializeField] private float _raycastDistance = 1f;
-    [SerializeField] private ParticleSystem _hitFX;
-
-    private void Update()
+    protected override void OnHit(RaycastHit hitInfo)
     {
-        transform.position += transform.forward * _speed * Time.deltaTime;
+        base.OnHit(hitInfo);
 
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hitInfo, _raycastDistance))
+        if (hitInfo.transform.TryGetComponent(out IHealth health))
         {
-            if (hitInfo.transform.TryGetComponent(out IHealth health))
-            {
-                int securityValue = 0;
-                if (hitInfo.transform.TryGetComponent(out Security security))
-                    securityValue = security.Value;
-                int hitChance = Random.Range(0, 100);
+            int securityValue = 0;
+            if (hitInfo.transform.TryGetComponent(out Security security))
+                securityValue = security.Value;
+            int hitChance = Random.Range(0, 100);
 
-                if (health.IsAlive && hitChance >= securityValue)
-                    health.TakeDamage(_damage);
-            }
-
-            Destroy(gameObject);
-
-            if (_hitFX != null)
-                Instantiate(_hitFX, hitInfo.point, Quaternion.identity);
-
-            if (hitInfo.rigidbody != null)
-                hitInfo.rigidbody.AddForce(transform.forward * _pushForce, ForceMode.Impulse);
+            if (health.IsAlive && hitChance >= securityValue)
+                health.TakeDamage(Damage);
         }
     }
 }

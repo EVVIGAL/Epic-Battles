@@ -1,3 +1,3 @@
 using UnityEngine;
 
-public class RedTeamBullet : Bullet<RedTeam> { }
+public class RedTeamBullet : Bullet { }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class DefaultGun : Weapon
 {
-    [SerializeField] private Bullet<RedTeam> _bulletTemplate;
+    [SerializeField] private Bullet _bulletTemplate;
     [SerializeField] private Transform _shootPoint;
     [SerializeField] private ParticleSystem _shootFX;
 
