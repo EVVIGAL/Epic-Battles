@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
+                Debug.Log("asd");
                 if (_unit != null && _money.Amount >= _unit.Cost)
                 {
                     Vector3 position = GetPosition();
@@ -59,11 +60,13 @@ public class Spawner : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if(hit.collider.name == _boundNameStr)
+            if (hit.collider.name == _boundNameStr)
                 position = hit.point;
         }
         else
+        {
             position = Vector3.zero;
+        }
 
         return position;
     }
@@ -71,10 +74,6 @@ public class Spawner : MonoBehaviour
     private bool CheckSpawnPoint(Vector3 position)
     {
         _colliders = Physics.OverlapBox(position, _tankColliderSize, Quaternion.identity, _groundLayer);
-
-        if (_colliders.Length > 0)
-            return false;
-        else
-            return true;
+        return !(_colliders.Length > 0);
     }
 }
