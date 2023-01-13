@@ -8,6 +8,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     [SerializeField] private Image _touch;
 
     private Vector2 _inputPos;
+    private int _speedIncrease = 2;
 
     private void Awake()
     {
@@ -43,11 +44,12 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public Vector3 GetDirection()
     {
         Vector3 direction = Vector3.zero;
+        
 
         if (_inputPos.x != 0) direction.x = _inputPos.x;
 
         if (_inputPos.y != 0) direction.z = _inputPos.y;
 
-        return direction;
+        return direction * _speedIncrease;
     }
 }
