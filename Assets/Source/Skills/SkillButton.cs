@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
 public class SkillButton : MonoBehaviour
 {
     [SerializeField] private SkillCaster _caster;
+    [SerializeField] private Unit _neededUnit;
+    [SerializeField] private UnitsObserver _observer;
     [SerializeField] private int _skillIndex;
 
     private Button _button;
@@ -27,6 +27,7 @@ public class SkillButton : MonoBehaviour
 
     private void ActivateSkill()
     {
-        _caster.enabled = true;
+        if (_observer.CheckForUnit(_neededUnit))
+            _caster.Activate(_skillIndex);
     }
 }

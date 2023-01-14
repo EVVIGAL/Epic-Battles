@@ -24,6 +24,22 @@ public class UnitsObserver : MonoBehaviour
         InitTeam(_blue, _blueTeam);
     }
 
+    public bool CheckForUnit(Unit neededUnit)
+    {
+        if (_blueTeam.Count <= 0)
+            return false;
+
+        foreach (Health health in _blueTeam)
+        {
+            Unit unit = health.GetComponent<Unit>();
+
+            if (unit.Name == neededUnit.Name)
+                return true;
+        }
+
+        return false;
+    }
+
     private void InitTeam(GameObject team, List<Health> list)
     {
         for (int i = 0; i < team.transform.childCount; i++)

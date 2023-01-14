@@ -8,11 +8,11 @@ public class Start : MonoBehaviour
     [SerializeField] private GameObject _adButton;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Animator _unitButtonsAnimator;
+    [SerializeField] private UnitsObserver _observer;
 
     private static bool _isPause;
 
     private Button _startButton;
-    private UnitsObserver _observer;
     private string _animName = "Hide";
 
     public static bool IsPause => _isPause;
@@ -20,7 +20,6 @@ public class Start : MonoBehaviour
     private void Awake()
     {
         _startButton = GetComponent<Button>();
-        _observer = GetComponent<UnitsObserver>();
         Time.timeScale = 0;
         _isPause = true;
     }

@@ -1,29 +1,23 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SkillCaster : MonoBehaviour
 {
     [SerializeField] private Skill[] _skills;
     [SerializeField] private Camera _camera;
-    [SerializeField] private Button _artButton;
-    [SerializeField] private Button _smokeButton;
-    [SerializeField] private int _height;
+    [SerializeField] private int _artHeight;
+    [SerializeField] private int _smokeHeight;
 
     private Skill _currentSkill;
+    private bool _isReady;
     private int _artIndex = 0;
     private int _smokeIndex = 1;
 
+    public bool IsReady => _isReady;
+
     private void Awake()
     {
-        _artButton.onClick.AddListener(() => SetSkill(_artIndex));
-        _smokeButton.onClick.AddListener(() => SetSkill(_smokeIndex));
-    }
-
-    private void OnDisable()
-    {
-        _artButton.onClick.RemoveAllListeners();
-        _smokeButton.onClick.RemoveAllListeners();
+        _isReady = false;
     }
 
     private void Update()
@@ -32,10 +26,18 @@ public class SkillCaster : MonoBehaviour
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                SpawnSkill(GetPosition());
-                //enabled = false;
+                if (_isReady)
+                {
+                    SpawnSkill(GetPosition());
+                    _isReady = false;
+                }
             }
         }
+    }
+    public void Activate(int index)
+    {
+        _isReady = true;
+        _currentSkill = _skills[index];
     }
 
     private Vector3 GetPosition()
@@ -48,10 +50,11 @@ public class SkillCaster : MonoBehaviour
         else
             position = Vector3.zero;
 
-        if(_currentSkill == _skills[0])
-            position.y = _height;
-        else
-            position.y = 5;
+        if (_currentSkill == _skills[_artIndex])
+            position.y = _artHeight;
+
+        if (_currentSkill == _skills[_smokeIndex])
+            position.y = _smokeHeight;
 
         return position;
     }
@@ -59,10 +62,5 @@ public class SkillCaster : MonoBehaviour
     private void SpawnSkill(Vector3 position)
     {
         Instantiate(_currentSkill, position, Quaternion.identity);
-    }
-
-    public void SetSkill(int index)
-    {
-        _currentSkill= _skills[index];
     }
 }
