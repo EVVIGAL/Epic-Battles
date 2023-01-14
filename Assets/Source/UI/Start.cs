@@ -8,6 +8,7 @@ public class Start : MonoBehaviour
     [SerializeField] private GameObject _adButton;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private UnitsObserver _observer;
+    [SerializeField] private SkillsController _skillController;
 
     private static bool _isPause;
 
@@ -43,5 +44,6 @@ public class Start : MonoBehaviour
         _spawner.enabled = false;
         _spawner.GetComponent<Remover>().enabled = false;
         _observer.Init();
+        _skillController.CheckUnits();
     }
 }

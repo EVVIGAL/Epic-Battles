@@ -1,17 +1,18 @@
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SkillButton : MonoBehaviour
 {
     [SerializeField] private GameObject _skillTxt;
     [SerializeField] private SkillCaster _caster;
-    [SerializeField] private Unit _neededUnit;
     [SerializeField] private UnitsObserver _observer;
     [SerializeField] private int _skillIndex;
-    [SerializeField] private int _amount;
 
     private Button _button;
     private Image _image;
+
+    public event UnityAction OnActivateSkill;
 
     private void Awake()
     {
@@ -29,19 +30,22 @@ public class SkillButton : MonoBehaviour
         _button.onClick.RemoveAllListeners();
     }
 
-    private void ActivateSkill()
+    public void ActivateSkill()
     {
-        if (_amount <= 0)
-            return;
+        _caster.Activate(_skillIndex);
+        _skillTxt.SetActive(true);
+        OnActivateSkill?.Invoke();
+    }
 
-        if (_observer.CheckForUnit(_neededUnit))
-        {
-            _amount--;
-            _caster.Activate(_skillIndex);
-            _skillTxt.SetActive(true);
+    public void Deactivate()
+    {
+        _button.interactable = false;
+        _image.color = Color.gray;
+    }
 
-            if(_amount <= 0)
-                _image.color = Color.gray;
-        }
+    public void Activate()
+    {
+        _button.interactable = true;
+        _image.color = Color.white;
     }
 }

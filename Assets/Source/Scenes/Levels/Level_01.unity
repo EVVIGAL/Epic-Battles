@@ -263,6 +263,7 @@ MonoBehaviour:
   _adButton: {fileID: 341839804}
   _spawner: {fileID: 963194230}
   _observer: {fileID: 624077024}
+  _skillController: {fileID: 624077025}
 --- !u!1 &60242990
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,6 +2829,7 @@ GameObject:
   - component: {fileID: 624077023}
   - component: {fileID: 624077022}
   - component: {fileID: 624077024}
+  - component: {fileID: 624077025}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2886,6 +2888,24 @@ MonoBehaviour:
   _blue: {fileID: 1231419130}
   _redTeam: []
   _blueTeam: []
+--- !u!114 &624077025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624077021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a14ba81cb2c4564a9c9e160b6de3f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _artButton: {fileID: 796289335}
+  _smokeButton: {fileID: 885589826}
+  _artUnit: {fileID: 7476628944813397049, guid: 84cb85a6d6424fe4c90a2016db70f12d, type: 3}
+  _smokeUnit: {fileID: 7702618552060683977, guid: 91e3e76cdeb8f2a4aa0910df33465d22, type: 3}
+  _artCount: 1
+  _smokeCount: 2
 --- !u!1 &669612447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3449,10 +3469,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skillTxt: {fileID: 1480181228}
   _caster: {fileID: 624077022}
-  _neededUnit: {fileID: 7476628944813397049, guid: 84cb85a6d6424fe4c90a2016db70f12d, type: 3}
   _observer: {fileID: 624077024}
   _skillIndex: 0
-  _amount: 1
 --- !u!222 &796289336
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3537,10 +3555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _skillTxt: {fileID: 1480181228}
   _caster: {fileID: 624077022}
-  _neededUnit: {fileID: 7702618552060683977, guid: 91e3e76cdeb8f2a4aa0910df33465d22, type: 3}
   _observer: {fileID: 624077024}
   _skillIndex: 1
-  _amount: 2
 --- !u!114 &885589827
 MonoBehaviour:
   m_ObjectHideFlags: 0

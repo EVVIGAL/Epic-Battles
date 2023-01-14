@@ -9,6 +9,13 @@ public class UnitsObserver : MonoBehaviour
     [SerializeField] private List<Health> _redTeam;
     [SerializeField] private List<Health> _blueTeam;
 
+    private SkillsController _skillController;
+
+    private void Awake()
+    {
+        _skillController = GetComponent<SkillsController>();
+    }
+
     private void OnDisable()
     {
         foreach (Health unit in _redTeam)
@@ -33,7 +40,7 @@ public class UnitsObserver : MonoBehaviour
         {
             Unit unit = health.GetComponent<Unit>();
 
-            if (unit.Name == neededUnit.Name)
+            if (unit.Name == neededUnit.Name && health.Value > 0)
                 return true;
         }
 
@@ -54,7 +61,7 @@ public class UnitsObserver : MonoBehaviour
 
     private void CheckTeam()
     {
-        
+        _skillController.CheckUnits();
         bool redDefeated = true;
         bool blueDefeated = true;
 
