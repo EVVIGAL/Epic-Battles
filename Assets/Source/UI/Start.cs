@@ -7,13 +7,11 @@ public class Start : MonoBehaviour
     [SerializeField] private GameObject _line;
     [SerializeField] private GameObject _adButton;
     [SerializeField] private Spawner _spawner;
-    [SerializeField] private Animator _unitButtonsAnimator;
     [SerializeField] private UnitsObserver _observer;
 
     private static bool _isPause;
 
     private Button _startButton;
-    private string _animName = "Hide";
 
     public static bool IsPause => _isPause;
 
@@ -44,7 +42,6 @@ public class Start : MonoBehaviour
         _line.SetActive(false);
         _spawner.enabled = false;
         _spawner.GetComponent<Remover>().enabled = false;
-        _unitButtonsAnimator.Play(_animName);
         _observer.Init();
     }
 }
