@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SkillCaster : MonoBehaviour
 {
+    [SerializeField] private GameObject _skillTxt;
     [SerializeField] private Skill[] _skills;
     [SerializeField] private Camera _camera;
     [SerializeField] private int _artHeight;
@@ -12,6 +13,8 @@ public class SkillCaster : MonoBehaviour
     private bool _isReady;
     private int _artIndex = 0;
     private int _smokeIndex = 1;
+    private float _waitTime = 0.5f;
+    private string _hideMethodName = "HideText";
 
     public bool IsReady => _isReady;
 
@@ -29,6 +32,7 @@ public class SkillCaster : MonoBehaviour
                 if (_isReady)
                 {
                     SpawnSkill(GetPosition());
+                    Invoke(_hideMethodName, _waitTime);
                     _isReady = false;
                 }
             }
@@ -62,5 +66,10 @@ public class SkillCaster : MonoBehaviour
     private void SpawnSkill(Vector3 position)
     {
         Instantiate(_currentSkill, position, Quaternion.identity);
+    }
+
+    private void HideText()
+    {
+        _skillTxt.SetActive(false);
     }
 }
