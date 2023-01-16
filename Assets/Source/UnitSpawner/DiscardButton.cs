@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class DiscardButton : MonoBehaviour
 {
     [SerializeField] private GameObject _team;
+    [SerializeField] private Money _money;
 
     private Button _button;
 
@@ -27,6 +28,9 @@ public class DiscardButton : MonoBehaviour
         Unit[] allUnits = _team.GetComponentsInChildren<Unit>();
 
         foreach (Unit unit in allUnits)
+        {
+            _money.AddMoney(unit.Cost);
             Destroy(unit.gameObject);
+        }
     }
 }
