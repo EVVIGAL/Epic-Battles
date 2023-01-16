@@ -37,15 +37,19 @@ public class SkillButton : MonoBehaviour
         OnActivateSkill?.Invoke();
     }
 
-    public void Deactivate()
+    public void Deactivate(int skillCount)
     {
         _button.interactable = false;
         _image.color = Color.gray;
+
+        if(skillCount > 0)
+            gameObject.SetActive(false);
     }
 
     public void Activate()
     {
         _button.interactable = true;
         _image.color = Color.white;
+        gameObject.SetActive(true);
     }
 }
