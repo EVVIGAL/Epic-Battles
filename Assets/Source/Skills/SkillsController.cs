@@ -34,12 +34,12 @@ public class SkillsController : MonoBehaviour
     public void CheckUnits()
     {
         if(!_observer.CheckForUnit(_artUnit) || _artCount <= 0)
-            _artButton.Deactivate();
+            _artButton.Deactivate(_artCount);
         else
             _artButton.Activate();
 
         if (!_observer.CheckForUnit(_smokeUnit) || _smokeCount <= 0)
-            _smokeButton.Deactivate();
+            _smokeButton.Deactivate(_smokeCount);
         else
             _smokeButton.Activate();
     }
@@ -49,7 +49,7 @@ public class SkillsController : MonoBehaviour
         _artCount--;
 
         if (_artCount <= 0)
-            _artButton.Deactivate();
+            _artButton.Deactivate(_artCount);
     }
 
     private void DecreaseSmoke()
@@ -57,6 +57,6 @@ public class SkillsController : MonoBehaviour
         _smokeCount--;
 
         if (_smokeCount <= 0)
-            _smokeButton.Deactivate();
+            _smokeButton.Deactivate(_smokeCount);
     }
 }

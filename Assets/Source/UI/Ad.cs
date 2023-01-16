@@ -7,6 +7,7 @@ public class Ad : MonoBehaviour
     private Button _button;
     private Money _money;
     private int _reward = 50;
+    private int _possibleRewardCount = 2;
     private string _muteTxt = "Mute";
 
     private void Awake()
@@ -37,6 +38,10 @@ public class Ad : MonoBehaviour
     private void GiveReward()
     {
         _money.AddMoney(_reward);
+        _possibleRewardCount--;
+
+        if(_possibleRewardCount <= 0)
+            gameObject.SetActive(false);
     }
 
     private void Mute()

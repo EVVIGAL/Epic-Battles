@@ -37,14 +37,8 @@ public class MainMenu : MonoBehaviour
     private void OnSettingsClick()
     {
         if (_settingsPanel.activeSelf)
-        {
             _settingsPanel.SetActive(false);
-            _playPanel.SetActive(true);
-        }
         else
-        {
             _settingsPanel.SetActive(true);
-            _playPanel.SetActive(false);
-        }
     }
 }
