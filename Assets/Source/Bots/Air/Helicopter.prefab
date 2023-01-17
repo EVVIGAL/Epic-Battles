@@ -224,7 +224,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5707356897885246571}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -256,8 +256,8 @@ GameObject:
   - component: {fileID: 5997510241710118550}
   - component: {fileID: 4522185099688337274}
   - component: {fileID: 6521203414510297643}
-  - component: {fileID: 4762982387482950795}
-  - component: {fileID: 7858158019753469030}
+  - component: {fileID: 2688933130560224669}
+  - component: {fileID: 3088519995693861750}
   m_Layer: 0
   m_Name: Rotor
   m_TagString: Untagged
@@ -343,7 +343,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.826279, y: 1.5, z: 19.819424}
   m_Center: {x: -0.0013632774, y: -0.3, z: 0.004480839}
---- !u!54 &4762982387482950795
+--- !u!54 &2688933130560224669
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -351,7 +351,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6361115452425404082}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -359,7 +359,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7858158019753469030
+--- !u!114 &3088519995693861750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,7 +463,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6220198795255249462}
-  - component: {fileID: 2558718822452004781}
   - component: {fileID: 1380389671243731254}
   - component: {fileID: 1380389671243731258}
   - component: {fileID: 1380389672127146770}
@@ -478,6 +477,7 @@ GameObject:
   - component: {fileID: 1380389671243731256}
   - component: {fileID: 1380389671243731257}
   - component: {fileID: 1380389672127146769}
+  - component: {fileID: 304300845428484361}
   m_Layer: 0
   m_Name: Helicopter
   m_TagString: Untagged
@@ -502,22 +502,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &2558718822452004781
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6920286610455431205}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: -4506558747437489242, guid: 8394012a40e20d14e9158d2b74e12ee7, type: 3}
-  m_Animations:
-  - {fileID: -4506558747437489242, guid: 8394012a40e20d14e9158d2b74e12ee7, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!54 &1380389671243731254
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -526,7 +510,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6920286610455431205}
   serializedVersion: 2
-  m_Mass: 500
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -603,8 +587,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbccb28c589df842b6c95bdb570bd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 100
+  _sprite: {fileID: 0}
   _name: Helicopter
+  _skill: 
+  _cost: 100
 --- !u!114 &1380389671243731250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,7 +606,7 @@ MonoBehaviour:
   <TypeOfTarget>k__BackingField: 1
   <AttackTarget>k__BackingField: 2
   <TypeOfArmy>k__BackingField: 1
-  <PriorityAttackArmy>k__BackingField: 1
+  <PriorityAttackArmy>k__BackingField: 0
 --- !u!114 &1380389671243731251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,12 +672,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _colorChangeSpeed: 1
   _fallingSpeed: 5
-  _waitBeforeFall: 3
+  _waitBeforeFall: 5
   _destroyTime: 10
   _deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _objectPhysics:
   - {fileID: 7811773868482249103}
-  - {fileID: 7858158019753469030}
+  - {fileID: 3088519995693861750}
 --- !u!114 &1380389671243731253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,7 +694,8 @@ MonoBehaviour:
   _deathSource: {fileID: 1380389671243731252}
   _objectPhysics:
   - {fileID: 7811773868482249103}
-  - {fileID: 7858158019753469030}
+  - {fileID: 3088519995693861750}
+  _torqueForce: 1000
 --- !u!114 &1380389671243731255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,7 +713,7 @@ MonoBehaviour:
   _magazineSize: 1
   _bulletTemplate: {fileID: 5267548810438248575, guid: 9f25ae4318c7f6d4e89bc2942d19d726, type: 3}
   _shootPoint: {fileID: 1380389671020146190}
-  _shootFX: {fileID: 0}
+  _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
 --- !u!114 &1380389671243731256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,3 +753,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9823ca5920f545d418d35de60f1e1c2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &304300845428484361
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920286610455431205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c242f3dbcac545248b872a853f5574a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
