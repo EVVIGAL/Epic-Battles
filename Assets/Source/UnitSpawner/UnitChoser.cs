@@ -1,3 +1,4 @@
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
@@ -6,9 +7,13 @@ public class UnitChoser : MonoBehaviour
 {
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Unit _unit;
+    [SerializeField] private Image _image;
+    [SerializeField] private Image[] _allButtons;
 
-    private Button _button;
     private TextMeshProUGUI _text;
+    private Button _button;
+
+    public event UnityAction<Unit> OnUnitSet;
 
     private void Awake()
     {
@@ -20,6 +25,7 @@ public class UnitChoser : MonoBehaviour
     {
         _button.onClick.AddListener(SetUnit);
         _text.text = $"{_unit.Name}\n{_unit.Cost}";
+        _image.overrideSprite = _unit.Sprite;
     }
 
     private void OnDisable()
@@ -30,5 +36,7 @@ public class UnitChoser : MonoBehaviour
     private void SetUnit()
     {
         _spawner.SetUnit(_unit);
+        OnUnitSet?.Invoke(_unit);
+        GetComponent<Image>().color = Color.blue;
     }
 }

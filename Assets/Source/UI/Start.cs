@@ -6,6 +6,7 @@ public class Start : MonoBehaviour
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _line;
     [SerializeField] private GameObject _adButton;
+    [SerializeField] private GameObject _infoPanel;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private UnitsObserver _observer;
     [SerializeField] private SkillsController _skillController;
@@ -41,6 +42,7 @@ public class Start : MonoBehaviour
         gameObject.SetActive(false);
         _slider.SetActive(true);
         _line.SetActive(false);
+        _infoPanel.SetActive(false);
         _spawner.enabled = false;
         _spawner.GetComponent<Remover>().enabled = false;
         _observer.Init();
