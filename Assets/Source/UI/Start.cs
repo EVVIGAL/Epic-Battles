@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Start : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class Start : MonoBehaviour
     [SerializeField] private Spawner _spawner;
     [SerializeField] private UnitsObserver _observer;
     [SerializeField] private SkillsController _skillController;
+    [SerializeField] private TextMeshProUGUI _text;
 
+    private string _noUnitsText = "There are no your units on the battlfield!";
     private static bool _isPause;
-
     private Button _startButton;
 
     public static bool IsPause => _isPause;
@@ -35,14 +37,23 @@ public class Start : MonoBehaviour
 
     public void StartBattle()
     {
-        Time.timeScale = 1;
-        _isPause = false;
-        _slider.SetActive(true);
-        _line.SetActive(false);
-        _infoPanel.SetActive(false);
-        _spawner.enabled = false;
-        _spawner.GetComponent<Remover>().enabled = false;
-        _observer.Init();
-        _skillController.CheckUnits();
+        if (_observer.TryStart())
+        {
+            Time.timeScale = 1;
+            _isPause = false;
+            _slider.SetActive(true);
+            _line.SetActive(false);
+            _infoPanel.SetActive(false);
+            _spawner.enabled = false;
+            _spawner.GetComponent<Remover>().enabled = false;
+            _observer.Init();
+            _skillController.CheckUnits();
+        }
+        else
+        {
+            _text.text = _noUnitsText;
+            _text.gameObject.SetActive(true);
+            _text.GetComponent<InfoText>().StartCoroutine("HideAfterWait");
+        }
     }
 }

@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
                 if (_unit != null && _money.Amount >= _unit.Cost)
                 {
                     Vector3 position = GetPosition();
-
+                    
                     if (position == Vector3.zero)
                         return;
 
@@ -43,7 +43,11 @@ public class Spawner : MonoBehaviour
     public void SetUnit(Unit unit)
     {
         _unit = unit;
-        _tankColliderSize = _unit.GetComponent<Collider>().bounds.extents;
+        //_tankColliderSize = GetComponent<Collider>().bounds.size;
+        if (_unit.Name != "Soldier")
+            _tankColliderSize = new(3f, 3f, 3f);
+        else if(_unit.Name == "Soldier")
+            _tankColliderSize = new(1f, 1f, 1f);
     }
 
     private void SpawnUnit(Vector3 position)
