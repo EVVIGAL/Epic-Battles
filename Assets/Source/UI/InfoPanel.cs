@@ -15,8 +15,9 @@ public class InfoPanel : MonoBehaviour
 
     public void Activate(Unit unit)
     {
+        string health = unit.GetComponent<Health>().MaxValue.ToString();
         gameObject.SetActive(true);
-        _text.text = unit.Name + "\n" + unit.Cost + "\n" + unit.Skill;
+        _text.text = unit.Name + "\n" + "Health: " + health + "\n" + "Available skill: " + unit.Skill;
         _image.overrideSprite = unit.Sprite;
     }
 }

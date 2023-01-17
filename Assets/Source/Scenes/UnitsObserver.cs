@@ -25,6 +25,11 @@ public class UnitsObserver : MonoBehaviour
             unit.Died -= CheckTeam;
     }
 
+    public bool TryStart()
+    {
+        return _blue.transform.childCount > 0;
+    }
+
     public void Init()
     {
         InitTeam(_red, _redTeam);
