@@ -14,6 +14,9 @@ public class Spawner : MonoBehaviour
     private Unit _unit;
     private int _groundLayer = 3;
     private string _boundNameStr = "Bounds";
+    private string _soldierTxt = "Soldier";
+    private Vector3 _tankSize = new(3f, 3f, 3f);
+    private Vector3 _soldierSize = new(1f, 1f, 1f);
 
     private void Awake()
     {
@@ -43,11 +46,11 @@ public class Spawner : MonoBehaviour
     public void SetUnit(Unit unit)
     {
         _unit = unit;
-        //_tankColliderSize = GetComponent<Collider>().bounds.size;
-        if (_unit.Name != "Soldier")
-            _tankColliderSize = new(3f, 3f, 3f);
-        else if(_unit.Name == "Soldier")
-            _tankColliderSize = new(1f, 1f, 1f);
+
+        if (_unit.Name != _soldierTxt)
+            _tankColliderSize = _tankSize;
+        else if (_unit.Name == _soldierTxt)
+            _tankColliderSize = _soldierSize;
     }
 
     private void SpawnUnit(Vector3 position)
