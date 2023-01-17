@@ -14,7 +14,7 @@ public class SkillCaster : MonoBehaviour
     private int _artIndex = 0;
     private int _smokeIndex = 1;
     private float _waitTime = 0.5f;
-    private string _hideMethodName = "HideText";
+    private string _hideMethodName = "HideText";  
 
     public bool IsReady => _isReady;
 

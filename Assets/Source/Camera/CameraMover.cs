@@ -1,6 +1,4 @@
-using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CameraMover : MonoBehaviour
 {
@@ -14,39 +12,39 @@ public class CameraMover : MonoBehaviour
     [Header("Zoom")]
     [SerializeField] private float _zoomSpeed;
     [SerializeField] private float _zoomDistance;
-    [Header("Buttons")]
-    [SerializeField] private Button _zoomInButton;
-    [SerializeField] private Button _zoomOutButton;
+    [Header("Position")]
+    [SerializeField] private Quaternion _startRotation;
+    [SerializeField] private Vector3 _startPosition;
 
     private Transform _transform;
-    private Coroutine _zoom;
+    private Camera _camera;
     private Zoom _zoomBounds;
+
+    private float _minZoom = 15f;
+    private float _maxZoom = 70f;
+
+    public float MinZoom => _minZoom;
+
+    public float MaxZoom => _maxZoom;
 
     private void Awake()
     {
         _transform = GetComponent<Transform>();       
+        _camera = GetComponent<Camera>();
+        _camera.fieldOfView = _maxZoom;
+        _camera.transform.position = _startPosition;
+        _camera.transform.rotation = _startRotation;
         _zoomBounds = new(_leftBound, _rightBound, _upBound, _downBound);
-    }
-    private void OnEnable()
-    {
-        _zoomInButton.onClick.AddListener(ZoomIn);
-        _zoomOutButton.onClick.AddListener(ZoomOut);
-    }
-
-    private void OnDisable()
-    {
-        _zoomInButton.onClick.RemoveAllListeners();
-        _zoomOutButton.onClick.RemoveAllListeners();
     }
 
     private void Update()
     {
         Move(GetDirection());
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
             ZoomIn();
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
             ZoomOut();
     }
 
@@ -59,78 +57,28 @@ public class CameraMover : MonoBehaviour
     {
         Vector3 direction = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
             direction.x = -1;
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
             direction.x = 1;
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             direction.z = 1;
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             direction.z = -1;
 
         return direction;
     }
 
-    private void ZoomIn()
-    {
-        if (_zoomBounds.ZoomCount < _zoomBounds.MaxZoom)
-        {
-            _zoomBounds.ZoomIn();
-
-            if (_zoom != null)
-            {
-                StopCoroutine(_zoom);
-                _zoom = StartCoroutine(Zoom(-_zoomDistance));
-            }
-            else
-            {
-                _zoom = StartCoroutine(Zoom(-_zoomDistance));
-            }
-        }
+    public void ZoomIn()
+    {      
+        _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, _minZoom, Time.unscaledDeltaTime * _zoomSpeed);
     }
 
-    private void ZoomOut()
+    public void ZoomOut()
     {
-        if (_zoomBounds.ZoomCount > _zoomBounds.MinZoom)
-        {
-            _zoomBounds.ZoomOut();
-
-            if (_zoom != null)
-            {
-                StopCoroutine(_zoom);
-                _zoom = StartCoroutine(Zoom(_zoomDistance));
-            }
-            else
-            {
-                _zoom = StartCoroutine(Zoom(_zoomDistance));
-            }
-        }
-    }
-
-    private IEnumerator Zoom(float zoomDistance)
-    {
-        bool zoomed = false;
-        float offset = 0.09f;
-        float slowSpeed = 1;
-        float normalSpeed = _speed;
-        float targetY = _transform.position.y + zoomDistance;
-
-        while (zoomed == false)
-        {
-            if(_transform.position.x <= _zoomBounds.Left || _transform.position.x >= _zoomBounds.Right || _transform.position.z >= _zoomBounds.Top)
-                _speed = slowSpeed;
-
-            Vector3 zoomTarget = new(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), targetY, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top));
-            _transform.position = Vector3.Lerp(_transform.position, zoomTarget, Time.unscaledDeltaTime * _zoomSpeed);
-            yield return null;
-
-            if(_transform.position.y >= targetY - offset && _transform.position.y <= targetY + offset)
-                zoomed = true;
-        }
-
-        _speed = normalSpeed;
+        _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, _maxZoom, Time.unscaledDeltaTime * _zoomSpeed);
     }
 }

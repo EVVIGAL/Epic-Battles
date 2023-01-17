@@ -3105,8 +3105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbccb28c589df842b6c95bdb570bd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cost: 5
+  _sprite: {fileID: 21300000, guid: e32cbc89d97be4c42a905ef514193e33, type: 3}
   _name: Soldier
+  _skill: Artillery
+  _cost: 5
 --- !u!114 &7476628944813397048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3227,8 +3229,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4735dd3acf44d44c93d550353b8f758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Troop>k__BackingField: 0
-  <AttackTroop>k__BackingField: 0
+  <TypeOfTarget>k__BackingField: 0
+  <AttackTarget>k__BackingField: 0
+  <TypeOfArmy>k__BackingField: 0
+  <PriorityAttackArmy>k__BackingField: 0
 --- !u!114 &7476628944813397042
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,16 +1,18 @@
 using UnityEngine.UI;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class SkillButton : MonoBehaviour
 {
-    [SerializeField] private GameObject _skillTxt;
+    [SerializeField] private TextMeshProUGUI _skillTxt;
     [SerializeField] private SkillCaster _caster;
     [SerializeField] private UnitsObserver _observer;
     [SerializeField] private int _skillIndex;
 
     private Button _button;
     private Image _image;
+    private string _skillText = "Point on battle field to use skill!";
 
     public event UnityAction OnActivateSkill;
 
@@ -33,7 +35,8 @@ public class SkillButton : MonoBehaviour
     public void ActivateSkill()
     {
         _caster.Activate(_skillIndex);
-        _skillTxt.SetActive(true);
+        _skillTxt.text = _skillText;
+        _skillTxt.gameObject.SetActive(true);
         OnActivateSkill?.Invoke();
     }
 

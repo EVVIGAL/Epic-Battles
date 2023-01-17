@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d90f0a80f10a34d8b6c731816f9c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rateOfFire: 1
+  _rateOfFire: 0.5
   _reloadSpeed: 1
   _magazineSize: 1
   _bulletTemplate: {fileID: -7740368880068117903, guid: 9a2019b4dbfdc5e4184394dfd04024e4, type: 3}
@@ -627,8 +627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colorChangeSpeed: 1
-  _fallingSpeed: 2
-  _waitBeforeFall: 5
+  _fallingSpeed: 3
+  _waitBeforeFall: 3
   _destroyTime: 10
   _deathColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0}
 --- !u!1 &6846498749650067080
