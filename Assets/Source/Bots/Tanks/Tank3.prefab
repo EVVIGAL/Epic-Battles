@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53db212c6d34fd146bf54af02514d443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxValue>k__BackingField: 300
+  <MaxValue>k__BackingField: 120
   _deathSource: {fileID: -825894143828300847}
   _turelExplosion: {fileID: 898799361407615501}
 --- !u!114 &7702618552060683976
@@ -678,9 +678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53b0f6c4ffc9dc64e97d2d65afabf13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rateOfFire: 0.25
-  _reloadSpeed: 3
-  _magazineSize: 10
+  _rateOfFire: 0.17
+  _reloadSpeed: 2
+  _magazineSize: 5
   _bulletTemplate: {fileID: 5267548810438248575, guid: 9f25ae4318c7f6d4e89bc2942d19d726, type: 3}
   _shootPoint:
   - {fileID: 8283069262490356904}
@@ -699,8 +699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colorChangeSpeed: 1
-  _fallingSpeed: 2
-  _waitBeforeFall: 5
+  _fallingSpeed: 3
+  _waitBeforeFall: 3
   _destroyTime: 10
   _deathColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0}
 --- !u!65 &7281906415563909600

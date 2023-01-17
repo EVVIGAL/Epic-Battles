@@ -43,8 +43,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public Vector3 GetDirection()
     {
-        Vector3 direction = Vector3.zero;
-        
+        Vector3 direction = Vector3.zero;       
 
         if (_inputPos.x != 0) direction.x = _inputPos.x;
 
