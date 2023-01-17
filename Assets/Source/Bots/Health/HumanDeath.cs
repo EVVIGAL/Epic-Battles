@@ -7,6 +7,7 @@ public class HumanDeath : Death
 
     protected override void OnFell()
     {
+        base.OnFell();
         _ragdoll.Disable();
     }
 }

@@ -1,38 +1,47 @@
-using BehaviorDesigner.Runtime;
 using System;
 using UnityEngine;
 
-[RequireComponent (typeof(BehaviorTree), typeof(Health))]
-public class Bot : MonoBehaviour, IHealth
+[RequireComponent (typeof(Health))]
+public class Bot : MonoBehaviour
 {
-    private BehaviorTree _behaviorTree;
-    private Health _health;
-    private Team _team;
+    [field: SerializeField] public TypeOfTarget TypeOfTarget { get; private set; }
+    [field: SerializeField] public TypeOfTarget AttackTarget { get; private set; }
 
-    private const string EnemyTeam = "_enemyTeam";
+    [field: SerializeField] public TypeOfArmy TypeOfArmy { get; private set; }
+    [field: SerializeField] public TypeOfArmy PriorityAttackArmy { get; private set; }
+
+    private Health _health;
 
     public bool IsAlive => _health.IsAlive;
 
+    public Team Team { get; private set; }
+
     private void Awake()
     {
-        _behaviorTree = GetComponent<BehaviorTree>();
         _health = GetComponent<Health>();
 
-        _team = transform.parent.GetComponent<Team>();
-        if (_team == null)
+        Team = transform.parent.GetComponent<Team>();
+        if (Team == null)
             throw new InvalidOperationException("Team not found!");
 
-        _team.AddBot(this);
-        _behaviorTree.SetVariableValue(EnemyTeam, _team.EnemyTeam);
-    }
-
-    public void TakeDamage(uint damage)
-    {
-        _health.TakeDamage(damage);
+        Team.AddBot(this);
     }
 
     private void OnDestroy()
     {
-        _team.RemoveBot(this);
+        Team.RemoveBot(this);
     }
+}
+
+public enum TypeOfTarget
+{
+    Ground,
+    Air,
+    All
+}
+
+public enum TypeOfArmy
+{
+    Infantry,
+    Vehicle
 }

@@ -43,4 +43,46 @@ public class Team : MonoBehaviour
 
         return nearbyObject;
     }
+
+    public Transform GetNearbyBot(Bot bot)
+    {
+        Transform nearbyObject = null;
+        float nearbyObjectDistance = float.PositiveInfinity;
+        bool isPriorityObject = false;
+        for (int i = 0; i < _bots.Count; i++)
+        {
+            if (_bots[i].IsAlive == false)
+                continue;
+
+            if (bot.AttackTarget != TypeOfTarget.All && bot.AttackTarget != _bots[i].TypeOfTarget)
+                continue;
+
+            float distance = (bot.transform.position - _bots[i].transform.position).sqrMagnitude;
+
+            if (distance < nearbyObjectDistance)
+            {
+                if (bot.PriorityAttackArmy == _bots[i].TypeOfArmy)
+                {
+                    nearbyObject = _bots[i].transform;
+                    nearbyObjectDistance = distance;
+                    isPriorityObject = true;
+                }
+                else if(nearbyObject == null)
+                {
+                    nearbyObject = _bots[i].transform;
+                    nearbyObjectDistance = distance;
+                }
+            }
+            else
+            {
+                if (bot.PriorityAttackArmy == _bots[i].TypeOfArmy && isPriorityObject == false)
+                {
+                    nearbyObject = _bots[i].transform;
+                    nearbyObjectDistance = distance;
+                }
+            }
+        }
+
+        return nearbyObject;
+    }
 }
