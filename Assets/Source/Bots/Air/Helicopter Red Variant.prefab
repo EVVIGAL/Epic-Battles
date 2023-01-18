@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c814e63947d1602419cb7c04a8db1719, type: 2}
     - target: {fileID: 2010844687764541983, guid: 89b3309c57f29ac489995b160255e820, type: 3}
       propertyPath: m_Name
-      value: Helicopter
+      value: Helicopter Red Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3295699578371252236, guid: 89b3309c57f29ac489995b160255e820, type: 3}
       propertyPath: m_RootOrder
@@ -58,6 +58,10 @@ PrefabInstance:
     - target: {fileID: 3295699578371252236, guid: 89b3309c57f29ac489995b160255e820, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549749865541045002, guid: 89b3309c57f29ac489995b160255e820, type: 3}
+      propertyPath: _defaultValue
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b3309c57f29ac489995b160255e820, type: 3}
