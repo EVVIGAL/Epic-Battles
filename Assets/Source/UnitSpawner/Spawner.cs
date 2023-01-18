@@ -60,7 +60,7 @@ public class Spawner : MonoBehaviour
 
     private void SpawnUnit(Vector3 position)
     {
-        if (_unit.Name != _soldierTxt)
+        if (_unit.Name == _helicopterTxt)
             position.y = _helicopterHeight;
 
         Instantiate(_unit, position, _rotation, _alliedTeam.transform);
