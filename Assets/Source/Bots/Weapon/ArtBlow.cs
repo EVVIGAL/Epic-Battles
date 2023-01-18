@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ArtBlow : MonoBehaviour
 {
+    [field: SerializeField] public uint Damage { get; private set; }
     [SerializeField] private Bomb _bulletTemplate;
     [SerializeField] private float _radius;
     [SerializeField] private float _shootCount;
@@ -15,7 +16,8 @@ public class ArtBlow : MonoBehaviour
         {
             Vector2 positionOffset = Random.insideUnitCircle;
             positionOffset *= _radius;
-            Instantiate(_bulletTemplate, transform.position + new Vector3(positionOffset.x, 0f, positionOffset.y), Quaternion.LookRotation(Vector3.down));
+            Bomb newBomb = Instantiate(_bulletTemplate, transform.position + new Vector3(positionOffset.x, 0f, positionOffset.y), Quaternion.LookRotation(Vector3.down));
+            newBomb.Init(Damage);
 
             _currentShootCount++;
             yield return new WaitForSeconds(_rateOfFire);
