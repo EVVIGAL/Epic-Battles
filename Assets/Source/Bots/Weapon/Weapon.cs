@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour, IWeapon
 {
+    [field: SerializeField] public uint Damage { get; private set; }
     [SerializeField] private float _rateOfFire;
     [SerializeField] private float _reloadSpeed;
     [SerializeField] private uint _magazineSize;

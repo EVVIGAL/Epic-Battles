@@ -10,7 +10,8 @@ public class DefaultGun : Weapon
     {
         Vector3 direction = (target.position + target.up - _shootPoint.position).normalized;
         Quaternion rotation = Quaternion.LookRotation(direction);
-        Instantiate(_bulletTemplate, _shootPoint.position, rotation);
+        Bullet newBullet = Instantiate(_bulletTemplate, _shootPoint.position, rotation);
+        newBullet.Init(Damage);
 
         if (_shootFX != null)
             Instantiate(_shootFX, _shootPoint.position, rotation);

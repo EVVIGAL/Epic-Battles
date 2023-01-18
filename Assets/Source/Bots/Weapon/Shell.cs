@@ -2,11 +2,17 @@ using UnityEngine;
 
 public class Shell : MonoBehaviour
 {
-    [field: SerializeField] public uint Damage { get; private set; }
     [SerializeField] private float _speed;
     [SerializeField] private float _pushForce;
     [SerializeField] private float _raycastDistance = 1f;
     [SerializeField] private ParticleSystem _hitFX;
+
+    public uint Damage { get; private set; }
+
+    public void Init(uint damage)
+    {
+        Damage = damage;
+    }
 
     private void Update()
     {
