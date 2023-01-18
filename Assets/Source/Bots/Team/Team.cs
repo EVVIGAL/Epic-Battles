@@ -61,7 +61,7 @@ public class Team : MonoBehaviour
 
             if (distance < nearbyObjectDistance)
             {
-                if (bot.PriorityAttackArmy == _bots[i].TypeOfArmy)
+                if (bot.PriorityAttackArmy == TypeOfArmy.All || bot.PriorityAttackArmy == _bots[i].TypeOfArmy)
                 {
                     nearbyObject = _bots[i].transform;
                     nearbyObjectDistance = distance;

@@ -42,6 +42,7 @@ public enum TypeOfTarget
 
 public enum TypeOfArmy
 {
-    Infantry,
-    Vehicle
+    Soldier,
+    Vehicle,
+    All
 }
