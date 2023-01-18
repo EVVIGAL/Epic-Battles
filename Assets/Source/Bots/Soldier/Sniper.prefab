@@ -412,8 +412,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colorChangeSpeed: 1
-  _fallingSpeed: 2
-  _waitBeforeFall: 5
+  _fallingSpeed: 3
+  _waitBeforeFall: 3
   _destroyTime: 10
   _deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   _ragdollSource: {fileID: 1983284686682791274}
@@ -441,10 +441,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fbccb28c589df842b6c95bdb570bd8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 21300000, guid: e32cbc89d97be4c42a905ef514193e33, type: 3}
+  _sprite: {fileID: 21300000, guid: 8a4eadc387981b0489043ba58858938f, type: 3}
   _name: Sniper
-  _skill: Artillery
-  _cost: 5
+  _skill: Effective against infantry
+  _cost: 20
 --- !u!114 &5983583485096501388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a27d78e0fa80ce42a56545d74432293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultValue: 60
+  _defaultValue: 100
 --- !u!114 &3410447207200840321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d323119df89604aa8d16cf4410901b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxValue>k__BackingField: 100
+  <MaxValue>k__BackingField: 60
   _deathSource: {fileID: 2109309601631231881}
   _ragdollSource: {fileID: 1983284686682791274}
   _weaponPhysicSource: {fileID: 8227756822243693158}
@@ -593,9 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d90f0a80f10a34d8b6c731816f9c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 50
-  _rateOfFire: 2
-  _reloadSpeed: 2
+  <Damage>k__BackingField: 65
+  _rateOfFire: 1
+  _reloadSpeed: 4
   _magazineSize: 1
   _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
   _shootPoint: {fileID: 2838687876174371308}
