@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2765732862668505078}
   - component: {fileID: -3932502187743780729}
   m_Layer: 6
-  m_Name: SoldierBullet
+  m_Name: RifleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,8 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85059f2fa7bd0374a87c8095ae35055a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 3
-  _speed: 120
+  _speed: 100
   _pushForce: 50
   _raycastDistance: 1
   _hitFX: {fileID: 0}
