@@ -9,14 +9,17 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Quaternion _rotation;
 
     private Vector3 _tankColliderSize;
+    private Vector3 _helicopterSize = new(10f, 50f, 10f);
+    private Vector3 _tankSize = new(3f, 3f, 3f);
+    private Vector3 _soldierSize = new(1f, 1f, 1f);
     private Collider[] _colliders;
     private Camera _camera;
     private Unit _unit;
     private int _groundLayer = 3;
+    private float _helicopterHeight = 10f;
     private string _boundNameStr = "Bounds";
     private string _soldierTxt = "Soldier";
-    private Vector3 _tankSize = new(3f, 3f, 3f);
-    private Vector3 _soldierSize = new(1f, 1f, 1f);
+    private string _helicopterTxt = "Helicopter";
 
     private void Awake()
     {
@@ -47,14 +50,19 @@ public class Spawner : MonoBehaviour
     {
         _unit = unit;
 
-        if (_unit.Name != _soldierTxt)
-            _tankColliderSize = _tankSize;
-        else if (_unit.Name == _soldierTxt)
+        if (_unit.Name == _soldierTxt)
             _tankColliderSize = _soldierSize;
+        else if (_unit.Name == _helicopterTxt)
+            _tankColliderSize = _helicopterSize;
+        else
+            _tankColliderSize = _tankSize;
     }
 
     private void SpawnUnit(Vector3 position)
     {
+        if (_unit.Name != _soldierTxt)
+            position.y = _helicopterHeight;
+
         Instantiate(_unit, position, _rotation, _alliedTeam.transform);
         _money.SpendMoney(_unit.Cost);
     }

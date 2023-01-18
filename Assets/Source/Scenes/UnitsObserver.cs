@@ -43,8 +43,14 @@ public class UnitsObserver : MonoBehaviour
 
         foreach (Health health in _blueTeam)
         {
-            Unit unit = health.GetComponent<Unit>();
+            Unit unit = null;
 
+            if (health.Value > 0)
+                unit = health.GetComponent<Unit>();
+
+            if (unit == null)
+                return false;
+          
             if (unit.Name == neededUnit.Name && health.Value > 0)
                 return true;
         }
