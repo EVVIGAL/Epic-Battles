@@ -3162,7 +3162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d323119df89604aa8d16cf4410901b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxValue>k__BackingField: 100
+  <MaxValue>k__BackingField: 60
   _deathSource: {fileID: 7476628944813397051}
   _ragdollSource: {fileID: 7476628946487499888}
   _weaponPhysicSource: {fileID: 5150736038001448166}
@@ -3230,7 +3230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TypeOfTarget>k__BackingField: 0
-  <AttackTarget>k__BackingField: 0
+  <AttackTarget>k__BackingField: 2
   <TypeOfArmy>k__BackingField: 0
   <PriorityAttackArmy>k__BackingField: 0
 --- !u!114 &7476628944813397042
@@ -3258,9 +3258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 3
-  _rateOfFire: 1
-  _reloadSpeed: 1
-  _magazineSize: 1
+  _rateOfFire: 0.2
+  _reloadSpeed: 2
+  _magazineSize: 30
   _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
   _shootPoint: {fileID: 6888201705605977057}
   _shootFX: {fileID: 0}

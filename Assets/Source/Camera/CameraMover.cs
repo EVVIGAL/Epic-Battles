@@ -22,6 +22,7 @@ public class CameraMover : MonoBehaviour
 
     private float _minZoom = 15f;
     private float _maxZoom = 70f;
+    private float _wheelSpeedMultiplier = 3f;
 
     public float MinZoom => _minZoom;
 
@@ -46,6 +47,12 @@ public class CameraMover : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q))
             ZoomOut();
+
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+            ZoomIn(_wheelSpeedMultiplier);
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+            ZoomOut(_wheelSpeedMultiplier);
     }
 
     public void Move(Vector3 direction)
@@ -72,13 +79,13 @@ public class CameraMover : MonoBehaviour
         return direction;
     }
 
-    public void ZoomIn()
+    public void ZoomIn(float multiplier = 1f)
     {      
-        _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, _minZoom, Time.unscaledDeltaTime * _zoomSpeed);
+        _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, _minZoom, Time.unscaledDeltaTime * _zoomSpeed * multiplier);
     }
 
-    public void ZoomOut()
+    public void ZoomOut(float multiplier = 1f)
     {
-        _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, _maxZoom, Time.unscaledDeltaTime * _zoomSpeed);
+        _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, _maxZoom, Time.unscaledDeltaTime * _zoomSpeed * multiplier);
     }
 }

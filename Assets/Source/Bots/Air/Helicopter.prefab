@@ -121,7 +121,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 6920286610455431205}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   m_Radius: 2
   m_Height: 16.78
   m_Direction: 2
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a27d78e0fa80ce42a56545d74432293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultValue: 30
+  _defaultValue: 15
 --- !u!114 &1380389671243731249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 910a43e804c2b8945a3140e03d16d137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxValue>k__BackingField: 400
+  <MaxValue>k__BackingField: 200
   _deathSource: {fileID: 1380389671243731252}
   _objectPhysics:
   - {fileID: 7811773868482249103}
@@ -284,10 +284,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d90f0a80f10a34d8b6c731816f9c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 50
-  _rateOfFire: 1
+  <Damage>k__BackingField: 10
+  _rateOfFire: 0.3
   _reloadSpeed: 1
-  _magazineSize: 1
+  _magazineSize: 6
   _bulletTemplate: {fileID: 5267548810438248575, guid: 9f25ae4318c7f6d4e89bc2942d19d726, type: 3}
   _shootPoint: {fileID: 1380389671020146190}
   _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
