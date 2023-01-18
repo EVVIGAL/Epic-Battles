@@ -12,7 +12,8 @@ public class MultiBarreledGun : Weapon
     {
         Vector3 direction = (target.position + target.up - _shootPoint[_currentBarrelIndex].position).normalized;
         Quaternion rotation = Quaternion.LookRotation(direction);
-        Instantiate(_bulletTemplate, _shootPoint[_currentBarrelIndex].position, rotation);
+        Bullet newBullet = Instantiate(_bulletTemplate, _shootPoint[_currentBarrelIndex].position, rotation);
+        newBullet.Init(Damage);
 
         if (_shootFX != null)
             Instantiate(_shootFX, _shootPoint[_currentBarrelIndex].position, rotation);
