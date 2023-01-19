@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a27d78e0fa80ce42a56545d74432293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultValue: 35
+  _defaultValue: 30
 --- !u!114 &1380389671243731249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,8 +165,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sprite: {fileID: 0}
   _name: Helicopter
-  _skill: Effective against infantry
-  _cost: 40
+  _skill: 
+  _cost: 100
 --- !u!114 &1380389671243731250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ MonoBehaviour:
   <TypeOfTarget>k__BackingField: 1
   <AttackTarget>k__BackingField: 2
   <TypeOfArmy>k__BackingField: 1
-  <PriorityAttackArmy>k__BackingField: 0
+  <PriorityAttackArmy>k__BackingField: 2
 --- !u!114 &1380389671243731251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb8fb0d029a0014d81714683f5cb650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 15
+  <MoveSpeed>k__BackingField: 10
   <AngularSpeed>k__BackingField: 2
   _groundMaterialSource: {fileID: 1380389671243731256}
 --- !u!114 &1380389672127146769

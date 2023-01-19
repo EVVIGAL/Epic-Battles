@@ -296,7 +296,7 @@ MonoBehaviour:
         Complete","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-70,110)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Self","Children":[{"Type":"SetNearbyBot","NodeData":{"Offset":"(-92,106)"},"ID":7,"Name":"Set
         Nearby Bot","Instant":true,"SharedBotBot":{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":1},"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(90,105.416634)"},"ID":8,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"CheckDistance","NodeData":{"Offset":"(-130,120)"},"ID":9,"Name":"Check
         Distance","Instant":true,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SharedAttackDistanceDistance":{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":2}},{"Type":"TurnTurret","NodeData":{"Offset":"(0,120)"},"ID":10,"Name":"Turn
-        Turret","Instant":true,"TransformTurret":3,"TransformGun":4,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SingleAngularSpeed":50},{"Type":"Shoot","NodeData":{"Offset":"(120,120)"},"ID":11,"Name":"Shoot","Instant":true,"MonoBehaviourWeaponSource":5,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}}]}]},{"Type":"Patrol","NodeData":{"Offset":"(90,110)"},"ID":12,"Name":"Patrol","Instant":true,"Single_stopingDistance":5,"Transform_path":6,"MonoBehaviourMovementSource":7}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":8},{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":9}]}'
+        Turret","Instant":true,"TransformTurret":3,"TransformGun":4,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SingleAngularSpeed":50},{"Type":"Shoot","NodeData":{"Offset":"(120,120)"},"ID":11,"Name":"Shoot","Instant":true,"MonoBehaviourWeaponSource":5,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}}]}]},{"Type":"Patrol","NodeData":{"Offset":"(90,110)"},"ID":12,"Name":"Patrol","Instant":true,"SharedTransformPath":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_patrolPath","IsShared":true,"TransformmValue":6},"Single_stopingDistance":5,"MonoBehaviourMovementSource":7}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":8},{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":9},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_patrolPath","IsShared":true,"TransformmValue":10}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -313,6 +313,7 @@ MonoBehaviour:
         - {fileID: 3383380530604027421}
         - {fileID: 3383380530604027395}
         - {fileID: 3383380530604027422}
+        - {fileID: 0}
         byteData: 
         byteDataArray: 
       Version: 1.7.2
@@ -332,7 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 10
   <AngularSpeed>k__BackingField: 0.5
-  _groundMaterialSource: {fileID: 0}
+  _groundMaterialSource: {fileID: 3383380530604027392}
 --- !u!114 &3383380530604027420
 MonoBehaviour:
   m_ObjectHideFlags: 0

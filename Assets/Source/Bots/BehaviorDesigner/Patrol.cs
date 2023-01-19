@@ -1,10 +1,11 @@
+using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
 public class Patrol : Action
 {
+    [SerializeField] public SharedTransform Path;
     [SerializeField] private float _stopingDistance = 1f;
-    [SerializeField] private Transform _path;
 
     public MonoBehaviour MovementSource;
     private IMovement _movement => (IMovement)MovementSource;
@@ -15,7 +16,7 @@ public class Patrol : Action
     public override void OnAwake()
     {
         base.OnAwake();
-        _points = _path.GetComponentsInChildren<Transform>();
+        _points = Path.Value.GetComponentsInChildren<Transform>();
     }
 
     public override TaskStatus OnUpdate()
