@@ -284,10 +284,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d90f0a80f10a34d8b6c731816f9c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 10
+  <Damage>k__BackingField: 30
   _rateOfFire: 0.3
   _reloadSpeed: 1
-  _magazineSize: 6
+  _magazineSize: 4
   _bulletTemplate: {fileID: 5267548810438248575, guid: 9f25ae4318c7f6d4e89bc2942d19d726, type: 3}
   _shootPoint: {fileID: 1380389671020146190}
   _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb8fb0d029a0014d81714683f5cb650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MoveSpeed>k__BackingField: 10
+  <MoveSpeed>k__BackingField: 30
   <AngularSpeed>k__BackingField: 2
   _groundMaterialSource: {fileID: 1380389671243731256}
 --- !u!114 &1380389672127146769

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7032304722299243491}
   - component: {fileID: 7032304722299243490}
   - component: {fileID: 7032304722299243493}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Swamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7032304722299243492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 125.1, y: -0.4, z: 48.6}
-  m_LocalScale: {x: 30, y: 1, z: 90}
+  m_LocalScale: {x: 47.915, y: 1, z: 57.370026}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Size: {x: 1, y: 2.501451, z: 1}
+  m_Center: {x: 0, y: 1.7507255, z: 0}
 --- !u!114 &7032304722299243493
 MonoBehaviour:
   m_ObjectHideFlags: 0
