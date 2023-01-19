@@ -17,7 +17,12 @@ public class NextLevel : MonoBehaviour
 
     private void OnEnable()
     {
-        _button.onClick.AddListener(ShowInterstitial);
+        _button.onClick.AddListener(NextScene);
+
+        if (YandexGamesSdk.IsInitialized)
+        {
+            InterstitialAd.Show(Mute, onCloseCallback: (bool _) => Unpause(), onErrorCallback: (string _) => Unpause(), Unpause);
+        }
     }
 
     private void OnDisable()
@@ -25,17 +30,9 @@ public class NextLevel : MonoBehaviour
         _button.onClick.RemoveAllListeners();
     }
 
-    private void ShowInterstitial()
-    {
-        if(YandexGamesSdk.IsInitialized)
-            InterstitialAd.Show(Mute, onCloseCallback: (bool _) => Unpause(), onErrorCallback: (string _) => Unpause(), Unpause);
-        else
-            NextScene();
-    }
-
     private void NextScene()
     {
-        SceneManager.LoadScene(++_currentSceneIndex);
+        SceneManager.LoadScene(_currentSceneIndex + 1);
     }
 
     private void Mute()
@@ -49,6 +46,5 @@ public class NextLevel : MonoBehaviour
             Time.timeScale = 1;
 
         AudioListener.pause = PlayerPrefs.GetInt(_muteTxt) == 1 ? true : false;
-        NextScene();
     }
 }

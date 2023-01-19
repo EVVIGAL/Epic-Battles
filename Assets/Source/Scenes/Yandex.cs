@@ -35,7 +35,6 @@ public class Yandex : MonoBehaviour
 
         yield return YandexGamesSdk.Initialize();
         _language = YandexGamesSdk.Environment.i18n.lang;
-        Debug.Log(_language);
 
         if (YandexGamesSdk.IsInitialized)
             SceneManager.LoadScene(_startSceneIndex);
