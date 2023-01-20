@@ -23,4 +23,14 @@ public class HumanAnimator : MonoBehaviour
     {
         _animator.SetFloat(AnimatorCharacterController.Params.Speed, _characterController.velocity.magnitude, _dampTime, Time.deltaTime);
     }
+
+    public void Shoot()
+    {
+        _animator.SetTrigger(AnimatorCharacterController.Params.Shoot);
+    }
+
+    public void Reload()
+    {
+        _animator.SetTrigger(AnimatorCharacterController.Params.Reload);
+    }
 }
