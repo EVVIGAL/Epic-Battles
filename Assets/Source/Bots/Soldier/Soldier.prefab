@@ -3001,8 +3001,8 @@ GameObject:
   - component: {fileID: 7476628944813397052}
   - component: {fileID: 7476628944813397043}
   - component: {fileID: 7476628944813397042}
-  - component: {fileID: 7476628944813397041}
   - component: {fileID: 4812129664339160598}
+  - component: {fileID: -4967529851598276479}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -3211,7 +3211,7 @@ MonoBehaviour:
         - {fileID: 7476628944813397043}
         - {fileID: 7476628944813397048}
         - {fileID: 7711072648931270967}
-        - {fileID: 7476628944813397041}
+        - {fileID: -4967529851598276479}
         - {fileID: 7476628944813397055}
         - {fileID: 7476628944813397048}
         - {fileID: 7476628944813397043}
@@ -3249,25 +3249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9e8711d3fecf040a6645309ec5769c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7476628944813397041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7711072648931270967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d90f0a80f10a34d8b6c731816f9c85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 4
-  _rateOfFire: 0.2
-  _reloadSpeed: 2
-  _magazineSize: 15
-  _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
-  _shootPoint: {fileID: 6888201705605977057}
-  _shootFX: {fileID: 0}
 --- !u!114 &4812129664339160598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3280,6 +3261,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036599412c2da774398ef0811aaf6c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4967529851598276479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711072648931270967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf687c6c1c7fd842a7e715454eb1c48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Damage>k__BackingField: 4
+  _rateOfFire: 0.2
+  _reloadSpeed: 2
+  _magazineSize: 15
+  _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
+  _shootPoint: {fileID: 6888201705605977057}
+  _shootFX: {fileID: 0}
 --- !u!1 &7797128566733667608
 GameObject:
   m_ObjectHideFlags: 0
