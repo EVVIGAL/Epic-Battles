@@ -444,7 +444,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -6690550229950003982, guid: 5877133cb29369840b6321edff82e50a, type: 3}
-  - {fileID: -2505642851634945670, guid: 5877133cb29369840b6321edff82e50a, type: 3}
+  - {fileID: 2100000, guid: 5b54c289f536fd44ea72cfc01fdaf632, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -487,6 +487,7 @@ GameObject:
   - component: {fileID: -825894143828300847}
   - component: {fileID: 7281906415563909600}
   - component: {fileID: 3171235089882180721}
+  - component: {fileID: 6575803304254360513}
   m_Layer: 0
   m_Name: Tank3
   m_TagString: Untagged
@@ -736,6 +737,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cffb510636fd5642930ec19fed87f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6575803304254360513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038812237508213876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036599412c2da774398ef0811aaf6c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8283069262490356905

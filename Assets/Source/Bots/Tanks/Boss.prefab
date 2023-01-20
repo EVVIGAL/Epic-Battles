@@ -148,7 +148,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -6690550229950003982, guid: c629d521028566a49a1b75a6d3d31974, type: 3}
-  - {fileID: 2100000, guid: c814e63947d1602419cb7c04a8db1719, type: 2}
+  - {fileID: 2100000, guid: 5b54c289f536fd44ea72cfc01fdaf632, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 3383380530604027394}
   - component: {fileID: 3383380530604027397}
   - component: {fileID: 3383380530604027396}
+  - component: {fileID: 314604533700238670}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -469,6 +470,18 @@ MonoBehaviour:
   _waitBeforeFall: 3
   _destroyTime: 10
   _deathColor: {r: 0.26415092, g: 0.26415092, b: 0.26415092, a: 0}
+--- !u!114 &314604533700238670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383380530604027399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036599412c2da774398ef0811aaf6c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3383380530657066089
 GameObject:
   m_ObjectHideFlags: 0

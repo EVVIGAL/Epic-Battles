@@ -5,6 +5,7 @@ using UnityEngine;
 public class Team : MonoBehaviour
 {
     [field: SerializeField] public Team EnemyTeam { get; private set; }
+    [field: SerializeField] public Material Material { get; private set; }
 
     private List<Bot> _bots = new();
 
@@ -81,8 +82,6 @@ public class Team : MonoBehaviour
                     nearbyObjectDistance = distance;
                 }
             }
-
-
         }
 
         return nearbyObject;

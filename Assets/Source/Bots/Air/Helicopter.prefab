@@ -55,6 +55,7 @@ GameObject:
   - component: {fileID: 1380389671243731257}
   - component: {fileID: 1380389672127146769}
   - component: {fileID: 304300845428484361}
+  - component: {fileID: 627103503}
   m_Layer: 0
   m_Name: Helicopter
   m_TagString: Untagged
@@ -69,7 +70,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6920286610455431205}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -350,6 +351,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &627103503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6920286610455431205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036599412c2da774398ef0811aaf6c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7361371059449427081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -424,7 +437,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 43f3b91a23820cf4c8ce653347269348, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: a675dd1e3bde5e94f96ff64aeb1971eb, type: 2}
+      objectReference: {fileID: 2100000, guid: b7b4d5ccc2477ed43bbc96c830ccde83, type: 2}
     - target: {fileID: -1397468258154305849, guid: 43f3b91a23820cf4c8ce653347269348, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
