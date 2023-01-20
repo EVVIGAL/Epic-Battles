@@ -9,10 +9,19 @@ public class Volume : MonoBehaviour
     private string _volumeTxt = "Volume";
     private string _muteTxt = "Mute";
 
-    private void Start()
+    private void Awake()
     {
-        _slider.value = PlayerPrefs.GetFloat(_volumeTxt);    
-        _toggle.isOn = PlayerPrefs.GetInt(_muteTxt) == 1 ? true : false;
+        if (PlayerPrefs.HasKey(_volumeTxt))
+        {
+            _slider.value = PlayerPrefs.GetFloat(_volumeTxt);
+            AudioListener.volume = PlayerPrefs.GetFloat(_volumeTxt);
+        }
+
+        if (PlayerPrefs.HasKey(_muteTxt))
+        {
+            _toggle.isOn = PlayerPrefs.GetInt(_muteTxt) == 1 ? true : false;
+            AudioListener.pause = PlayerPrefs.GetInt(_muteTxt) == 1 ? false : true;
+        }
     }
 
     private void OnEnable()
@@ -31,11 +40,13 @@ public class Volume : MonoBehaviour
     {
         AudioListener.volume = volume;
         PlayerPrefs.SetFloat(_volumeTxt, volume);
+        PlayerPrefs.Save();
     }
 
     private void Mute(bool isMute)
     {
         AudioListener.pause = !isMute;
         PlayerPrefs.SetInt(_muteTxt, isMute ? 1 : 0);
+        PlayerPrefs.Save();
     }
 }

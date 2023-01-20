@@ -18,6 +18,8 @@ public class EndBattle : MonoBehaviour
     public void SetPanelInfo(bool isWin)
     {
         _text.text = isWin == true ? _winTxt : _loseTxt;
-        _nextLevel.gameObject.SetActive(isWin);
+
+        if(_nextLevel != null)
+            _nextLevel.gameObject.SetActive(isWin);
     }
 }

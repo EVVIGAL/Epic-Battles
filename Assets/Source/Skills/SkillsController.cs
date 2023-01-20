@@ -33,6 +33,7 @@ public class SkillsController : MonoBehaviour
 
     public void CheckUnits()
     {
+        Debug.Log(!_observer.CheckForUnit(_artUnit));
         if(!_observer.CheckForUnit(_artUnit) || _artCount <= 0)
             _artButton.Deactivate(_artCount);
         else

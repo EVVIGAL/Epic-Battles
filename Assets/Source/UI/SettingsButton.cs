@@ -27,11 +27,11 @@ public class SettingsButton : MonoBehaviour
 
     private void OpenClose()
     {
-        bool isInteractibleStart = _startButton.IsInteractable();
-
         if (_settingsPanel.activeSelf)
         {
-            _startButton.interactable = isInteractibleStart;
+            if(!_startButton.IsInteractable())
+                _startButton.interactable = true;
+
             _settingsPanel.SetActive(false);
 
             if (_tutorial != null)
@@ -42,7 +42,9 @@ public class SettingsButton : MonoBehaviour
         }
         else
         {
-            _startButton.interactable = false;
+            if (_startButton.IsInteractable())
+                _startButton.interactable = false;
+
             _settingsPanel.SetActive(true);
 
             if (_tutorial != null)
