@@ -2,18 +2,18 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-public class TurnTurret : Action
+public class TurnTurret : Conditional
 {
     public Transform Turret;
     public Transform Gun;
     public SharedTransform Target;
-    public float AngularSpeed = 1;
+    public SharedFloat AngularSpeed = 1;
 
     public override TaskStatus OnUpdate()
     {
         Vector3 direction = (Target.Value.position + Target.Value.up - Turret.position).normalized;
         var turretDirection = new Vector3(direction.x, 0f, direction.z);
-        float speed = AngularSpeed * Time.deltaTime;
+        float speed = AngularSpeed.Value * Time.deltaTime;
 
         Turret.rotation = Quaternion.RotateTowards(Turret.rotation, Quaternion.LookRotation(turretDirection), speed);
         Turret.localEulerAngles = new Vector3(0f, Turret.localEulerAngles.y, 0f);
