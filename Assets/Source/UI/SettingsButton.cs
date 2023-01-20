@@ -1,9 +1,11 @@
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
 
 public class SettingsButton : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private TextMeshProUGUI _tutorial;
     [SerializeField] private Button _startButton;
 
     private Button _button;
@@ -25,18 +27,27 @@ public class SettingsButton : MonoBehaviour
 
     private void OpenClose()
     {
+        bool isInteractibleStart = _startButton.IsInteractable();
+
         if (_settingsPanel.activeSelf)
         {
-            _startButton.enabled = true;
+            _startButton.interactable = isInteractibleStart;
             _settingsPanel.SetActive(false);
+
+            if (_tutorial != null)
+                _tutorial.enabled = true;
 
             if (!Start.IsPause)
                 Time.timeScale = 1;
         }
         else
         {
-            _startButton.enabled = false;
+            _startButton.interactable = false;
             _settingsPanel.SetActive(true);
+
+            if (_tutorial != null)
+                _tutorial.enabled = false;
+
             Time.timeScale = 0;
         }
     }
