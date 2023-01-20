@@ -67,7 +67,7 @@ public class Team : MonoBehaviour
                     nearbyObjectDistance = distance;
                     isPriorityObject = true;
                 }
-                else if(nearbyObject == null)
+                else if(isPriorityObject == false)
                 {
                     nearbyObject = _bots[i].transform;
                     nearbyObjectDistance = distance;
@@ -81,6 +81,8 @@ public class Team : MonoBehaviour
                     nearbyObjectDistance = distance;
                 }
             }
+
+
         }
 
         return nearbyObject;

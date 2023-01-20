@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85059f2fa7bd0374a87c8095ae35055a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 350
+  _speed: 200
   _pushForce: 50
-  _raycastDistance: 1
+  _raycastDistance: 5
   _hitFX: {fileID: 0}
 --- !u!1001 &9094328298011575833
 PrefabInstance:
@@ -70,6 +70,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4305105094855691663}
     m_Modifications:
+    - target: {fileID: 147564, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 163240, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 193226, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
       propertyPath: m_Name
       value: BulletSmallFire
@@ -118,9 +126,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19872520, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19872520, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 19879398, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
       propertyPath: scalingMode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19898402, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19898402, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19924450, guid: ed28e53c93fc7d2449d7c68bb8409223, type: 3}
       propertyPath: m_Materials.Array.size
