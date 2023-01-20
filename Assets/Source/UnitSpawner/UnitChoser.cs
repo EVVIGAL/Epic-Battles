@@ -26,6 +26,7 @@ public class UnitChoser : MonoBehaviour
         _button.onClick.AddListener(SetUnit);
         _text.text = $"{_unit.Cost}";
         _image.overrideSprite = _unit.Sprite;
+        _image.preserveAspect = true;
     }
 
     private void OnDisable()

@@ -9,24 +9,33 @@ public class LeaderboardPanel : MonoBehaviour
     private string _leaderboardTxt = "Leaderboard";
     private int _topCount = 7;
 
+    private void Awake()
+    {
+        _text.text = string.Empty;
+    }
+
     private void OnEnable()
     {
         GetLeaderboardEntries();
+    }
+
+    private void OnDisable()
+    {
+        _text.text = string.Empty;
     }
 
     public void GetLeaderboardEntries()
     {
         Leaderboard.GetEntries(_leaderboardTxt, (result) =>
         {
-            for (int i = 0; i < _topCount; i++)
+            for (int i = 0; i <= _topCount; i++)
             {
                 string name = result.entries[i].player.publicName;
 
                 if (string.IsNullOrEmpty(name))
                     name = "Anonymous";
 
-                Debug.Log($"{i} name {result.entries[i].score}");
-                _text.text += $"{i} {name} {result.entries[i].score}\n";
+                _text.text += $"{i}) {name} - {result.entries[i].score}\n";
             }
         });
     }

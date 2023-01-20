@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button _playButton;
     [SerializeField] private Button _settingsButton;
     [SerializeField] private GameObject _settingsPanel;
-    [SerializeField] private GameObject _playPanel;
+    [SerializeField] private GameObject _leaderboardPanel;
 
     private int _currentLevel;
 
@@ -36,9 +36,13 @@ public class MainMenu : MonoBehaviour
 
     private void OnSettingsClick()
     {
+        if (_leaderboardPanel.activeSelf)
+            _leaderboardPanel.SetActive(false);
+
         if (_settingsPanel.activeSelf)
             _settingsPanel.SetActive(false);
         else
             _settingsPanel.SetActive(true);
+
     }
 }
