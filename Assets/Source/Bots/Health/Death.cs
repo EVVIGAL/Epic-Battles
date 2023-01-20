@@ -12,7 +12,7 @@ public class Death : MonoBehaviour, IDeath
 
     private List<Material> _materials = new();
 
-    private void Awake()
+    private void Init()
     {
         MeshRenderer[] meshes = GetComponentsInChildren<MeshRenderer>();
         foreach (MeshRenderer meshRenderer in meshes)
@@ -25,6 +25,7 @@ public class Death : MonoBehaviour, IDeath
 
     public void Die()
     {
+        Init();
         StartCoroutine(SwitchColor());
         StartCoroutine(Fell());
         Destroy(gameObject, _destroyTime);
