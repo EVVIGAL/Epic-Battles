@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent (typeof(HumanAnimator))]
-public class SoldierGun : DefaultGun
+public class SoldierGun : SingleBarreledGun
 {
     private HumanAnimator _humanAnimator;
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour, IWeapon
 {
     [field: SerializeField] public uint Damage { get; private set; }
-    [SerializeField] private float _rateOfFire;
+    [field: SerializeField] public float RateOfFire { get; private set; }
     [SerializeField] private float _reloadSpeed;
     [SerializeField] private uint _magazineSize;
 
@@ -21,7 +21,7 @@ public abstract class Weapon : MonoBehaviour, IWeapon
         _ammoInMagazine = _magazineSize;
     }
 
-    public virtual void Shoot(Transform target)
+    public void Shoot(Transform target = null)
     {
         if (CanShoot == false)
             throw new InvalidOperationException();
@@ -36,7 +36,7 @@ public abstract class Weapon : MonoBehaviour, IWeapon
             return;
         }
 
-        StartCoroutine(Wait(_rateOfFire, () => _isReloading = false));
+        StartCoroutine(Wait(RateOfFire, () => _isReloading = false));
     }
 
     protected virtual void OnShoot(Transform target) { }

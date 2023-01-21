@@ -609,12 +609,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 65
-  _rateOfFire: 1
+  <RateOfFire>k__BackingField: 1
   _reloadSpeed: 4
   _magazineSize: 1
   _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
-  _shootPoint: {fileID: 2838687876174371308}
   _shootFX: {fileID: 0}
+  _shootPoint: {fileID: 2838687876174371308}
 --- !u!1 &1580168748538759616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,11 +3955,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1622575990542414, guid: 0dadc2722297b3044b16aa695fd8ee62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1791978394411468, guid: 0dadc2722297b3044b16aa695fd8ee62, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1978259775795392, guid: 0dadc2722297b3044b16aa695fd8ee62, type: 3}
       propertyPath: m_IsActive

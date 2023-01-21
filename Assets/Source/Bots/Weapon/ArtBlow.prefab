@@ -46,10 +46,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 100
+  <RateOfFire>k__BackingField: 1
+  _reloadSpeed: 1
+  _magazineSize: 1
   _bulletTemplate: {fileID: 765929526979976947, guid: 21a5b6fcb24b4094992a2b726af0da1b, type: 3}
+  _shootFX: {fileID: 0}
   _radius: 10
   _shootCount: 10
-  _rateOfFire: 1
 --- !u!114 &-5698164778684057777
 MonoBehaviour:
   m_ObjectHideFlags: 0

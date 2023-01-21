@@ -1,19 +1,27 @@
 using UnityEngine;
 
-public class DefaultGun : Weapon
+public abstract class DefaultGun : Weapon
 {
-    [SerializeField] private Bullet _bulletTemplate;
-    [SerializeField] private Transform _shootPoint;
+    [SerializeField] private Shell _bulletTemplate;
     [SerializeField] private ParticleSystem _shootFX;
 
-    protected override void OnShoot(Transform target)
+    protected override void OnShoot(Transform target = null)
     {
-        Vector3 direction = (target.position + target.up - _shootPoint.position).normalized;
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        Bullet newBullet = Instantiate(_bulletTemplate, _shootPoint.position, rotation);
-        newBullet.Init(Damage);
+        Vector3 shootPoint = GetShootPoint();
+        Vector3 targetPosition = target != null ? target.position + target.up : transform.forward;
+        Vector3 direction = (targetPosition - shootPoint).normalized;
+        Quaternion rotation = GetRotation(direction);
+        Shell newShell = Instantiate(_bulletTemplate, shootPoint, rotation);
+        newShell.Init(Damage);
 
         if (_shootFX != null)
-            Instantiate(_shootFX, _shootPoint.position, rotation);
+            Instantiate(_shootFX, shootPoint, rotation);
+    }
+
+    protected abstract Vector3 GetShootPoint();
+
+    protected virtual Quaternion GetRotation(Vector3 direction)
+    {
+        return Quaternion.LookRotation(direction);
     }
 }

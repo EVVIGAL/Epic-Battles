@@ -216,7 +216,7 @@ MonoBehaviour:
         Alive","Instant":true,"MonoBehaviourHealthSource":0}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(187.826782,106.491692)"},"ID":5,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-71.86444,106.281563)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"SetNearbyBot","NodeData":{"Offset":"(-88,114)"},"ID":7,"Name":"Set
         Nearby Bot","Instant":true,"SharedBotBot":{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":1},"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(89.79591,106.474205)"},"ID":8,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-158.860565,109.37925)"},"ID":9,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"CheckDistance","NodeData":{"Offset":"(-130,120)"},"ID":10,"Name":"Check
         Distance","Instant":true,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SharedAttackDistanceDistance":{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":2}},{"Type":"TurnTowards","NodeData":{"Offset":"(-2,118)"},"ID":11,"Name":"Turn
-        Towards","Instant":true,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SingleAngularSpeed":1},{"Type":"Shoot","NodeData":{"Offset":"(120,120)"},"ID":12,"Name":"Shoot","Instant":true,"MonoBehaviourWeaponSource":3,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}}]},{"Type":"Chase","NodeData":{"Offset":"(144.215134,226.355682)"},"ID":13,"Name":"Chase","Instant":true,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"MonoBehaviourMovementSource":4,"SharedVector2Direction":{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":null,"Vector2mValue":"(0,0)"}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(69.68411,110.434738)"},"ID":14,"Name":"Idle","Instant":true}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":5},{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":6}]}'
+        Towards","Instant":true,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SharedFloatAngularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"Shoot","NodeData":{"Offset":"(120,120)"},"ID":12,"Name":"Shoot","Instant":true,"MonoBehaviourWeaponSource":3,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}}]},{"Type":"Chase","NodeData":{"Offset":"(144.215134,226.355682)"},"ID":13,"Name":"Chase","Instant":true,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"MonoBehaviourMovementSource":4,"SharedVector2Direction":{"Type":"BehaviorDesigner.Runtime.SharedVector2","Name":null,"Vector2mValue":"(0,0)"}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(69.68411,110.434738)"},"ID":14,"Name":"Idle","Instant":true}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":5},{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":6}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -282,16 +282,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 6920286610455431205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d90f0a80f10a34d8b6c731816f9c85, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b6295b9788544449a36126ccc1c8d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 30
-  _rateOfFire: 0.3
+  <Damage>k__BackingField: 40
+  <RateOfFire>k__BackingField: 0.3
   _reloadSpeed: 1
-  _magazineSize: 4
-  _bulletTemplate: {fileID: 5267548810438248575, guid: 9f25ae4318c7f6d4e89bc2942d19d726, type: 3}
-  _shootPoint: {fileID: 1380389671020146190}
+  _magazineSize: 1
+  _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
   _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
+  _shootPoint: {fileID: 1380389671020146190}
 --- !u!114 &1380389671243731256
 MonoBehaviour:
   m_ObjectHideFlags: 0
