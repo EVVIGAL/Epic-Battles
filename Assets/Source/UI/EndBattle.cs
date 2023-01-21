@@ -6,9 +6,11 @@ public class EndBattle : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     
     private NextLevel _nextLevel;
-
+    private  bool _isFinished;
     private string _winTxt = "Win!";
     private string _loseTxt = "Lose...";
+
+    public bool IsFinished => _isFinished;
 
     private void Awake()
     {
@@ -17,7 +19,10 @@ public class EndBattle : MonoBehaviour
 
     public void SetPanelInfo(bool isWin)
     {
+        _isFinished = true;
         _text.text = isWin == true ? _winTxt : _loseTxt;
-        _nextLevel.gameObject.SetActive(isWin);
+
+        if(_nextLevel != null)
+            _nextLevel.gameObject.SetActive(isWin);
     }
 }

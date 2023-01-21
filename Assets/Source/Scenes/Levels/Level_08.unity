@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.40608668, g: 0.7225259, b: 0.5399907, a: 1}
+  m_IndirectSpecularColor: {r: 0.61384916, g: 0.8195599, b: 0.70088995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1269,6 +1269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390470422}
+  - component: {fileID: 390470423}
   m_Layer: 5
   m_Name: MobileController
   m_TagString: Untagged
@@ -1299,6 +1300,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 1000}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &390470423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390470421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2e914b46770a3468255dd1da6545e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &479387138
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,7 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c625225413a1fd1448fcf49ac51523a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _amount: 300
+  _amount: 1000
 --- !u!1 &516415617
 GameObject:
   m_ObjectHideFlags: 0
@@ -5948,6 +5961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <EnemyTeam>k__BackingField: {fileID: 2053982949}
+  <Material>k__BackingField: {fileID: 2100000, guid: 2e26ade1cc5ee6042af616aac791f629, type: 2}
 --- !u!4 &1231419132
 Transform:
   m_ObjectHideFlags: 0
@@ -10406,6 +10420,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _settingsPanel: {fileID: 499819515}
+  _endPanel: {fileID: 1829882582}
+  _tutorial: {fileID: 0}
   _startButton: {fileID: 7220482}
 --- !u!1 &1809847851
 GameObject:
@@ -11950,6 +11966,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <EnemyTeam>k__BackingField: {fileID: 1231419131}
+  <Material>k__BackingField: {fileID: 2100000, guid: c814e63947d1602419cb7c04a8db1719, type: 2}
 --- !u!4 &2053982950
 Transform:
   m_ObjectHideFlags: 0

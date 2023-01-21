@@ -7,12 +7,15 @@ public class Volume : MonoBehaviour
     [SerializeField] private Slider _slider;
 
     private string _volumeTxt = "Volume";
-    private string _muteTxt = "Mute";
 
-    private void Start()
+    private void Awake()
     {
-        _slider.value = PlayerPrefs.GetFloat(_volumeTxt);    
-        _toggle.isOn = PlayerPrefs.GetInt(_muteTxt) == 1 ? true : false;
+        if (PlayerPrefs.HasKey(_volumeTxt))
+        {
+            _slider.value = PlayerPrefs.GetFloat(_volumeTxt);
+            AudioListener.volume = PlayerPrefs.GetFloat(_volumeTxt);
+            _toggle.isOn = _slider.value == 0 ? false : true;
+        }
     }
 
     private void OnEnable()
@@ -31,11 +34,20 @@ public class Volume : MonoBehaviour
     {
         AudioListener.volume = volume;
         PlayerPrefs.SetFloat(_volumeTxt, volume);
+        PlayerPrefs.Save();
+
+        if(_slider.value == 0)
+            _toggle.isOn = false;
+
+        if (_slider.value > 0)
+            _toggle.isOn = true;
     }
 
-    private void Mute(bool isMute)
+    private void Mute(bool isntMute)
     {
-        AudioListener.pause = !isMute;
-        PlayerPrefs.SetInt(_muteTxt, isMute ? 1 : 0);
+        if (isntMute)
+            _slider.value = 0.5f;
+        else
+            _slider.value = 0;
     }
 }

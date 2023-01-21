@@ -5,6 +5,7 @@ using TMPro;
 public class SettingsButton : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private EndBattle _endPanel;
     [SerializeField] private TextMeshProUGUI _tutorial;
     [SerializeField] private Button _startButton;
 
@@ -27,12 +28,13 @@ public class SettingsButton : MonoBehaviour
 
     private void OpenClose()
     {
-        bool isInteractibleStart = _startButton.IsInteractable();
-
         if (_settingsPanel.activeSelf)
         {
-            _startButton.interactable = isInteractibleStart;
+            if (!_startButton.IsInteractable())
+                _startButton.interactable = true;
+
             _settingsPanel.SetActive(false);
+            _endPanel.gameObject.SetActive(_endPanel.IsFinished);
 
             if (_tutorial != null)
                 _tutorial.enabled = true;
@@ -42,8 +44,11 @@ public class SettingsButton : MonoBehaviour
         }
         else
         {
-            _startButton.interactable = false;
+            if (_startButton.IsInteractable())
+                _startButton.interactable = false;
+
             _settingsPanel.SetActive(true);
+            _endPanel.gameObject.SetActive(false);
 
             if (_tutorial != null)
                 _tutorial.enabled = false;

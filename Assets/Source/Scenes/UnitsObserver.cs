@@ -47,12 +47,12 @@ public class UnitsObserver : MonoBehaviour
 
             if (health.Value > 0)
                 unit = health.GetComponent<Unit>();
-
-            if (unit == null)
-                return false;
-          
-            if (unit.Name == neededUnit.Name && health.Value > 0)
-                return true;
+            
+            if(unit != null)
+            {
+                if (unit.Name == neededUnit.Name)
+                    return true;
+            }
         }
 
         return false;
