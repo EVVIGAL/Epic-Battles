@@ -22,7 +22,7 @@ public class LeaderboardButton : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(OpenLeaderboard);
     }
 
     private void OpenLeaderboard()

@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Quaternion _rotation;
 
     private Vector3 _tankColliderSize;
-    private Vector3 _helicopterSize = new(10f, 50f, 10f);
+    private Vector3 _helicopterSize = new(3f, 3f, 3f);
     private Vector3 _tankSize = new(3f, 3f, 3f);
     private Vector3 _soldierSize = new(1f, 1f, 1f);
     private Collider[] _colliders;
@@ -35,9 +35,12 @@ public class Spawner : MonoBehaviour
                 if (_unit != null && _money.Amount >= _unit.Cost)
                 {
                     Vector3 position = GetPosition();
-                    
+
                     if (position == Vector3.zero)
                         return;
+
+                    if (_unit.Name == _helicopterTxt)
+                        position.y = _helicopterHeight;
 
                     if (CheckSpawnPoint(position))
                         SpawnUnit(position);
@@ -60,9 +63,6 @@ public class Spawner : MonoBehaviour
 
     private void SpawnUnit(Vector3 position)
     {
-        if (_unit.Name == _helicopterTxt)
-            position.y = _helicopterHeight;
-
         Instantiate(_unit, position, _rotation, _alliedTeam.transform);
         _money.SpendMoney(_unit.Cost);
     }
@@ -76,6 +76,18 @@ public class Spawner : MonoBehaviour
         {
             if (hit.collider.name == _boundNameStr)
                 position = hit.point;
+
+            if (_unit.Name == _helicopterTxt)
+            {
+                if (hit.collider.TryGetComponent(out Unit unit))
+                {
+                    if (unit.Name != _helicopterTxt)
+                    {
+                        position = hit.point;
+                        position.y = 0f;
+                    }
+                }
+            }
         }
         else
         {

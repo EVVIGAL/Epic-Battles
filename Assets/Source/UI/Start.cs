@@ -12,9 +12,10 @@ public class Start : MonoBehaviour
     [SerializeField] private SkillsController _skillController;
     [SerializeField] private TextMeshProUGUI _text;
 
+    private Button _startButton;
+    private string _coroutineName = "HideAfterWait";
     private string _noUnitsText = "There are no blue units on the battlefield!";
     private static bool _isPause;
-    private Button _startButton;
 
     public static bool IsPause => _isPause;
 
@@ -53,7 +54,7 @@ public class Start : MonoBehaviour
         {
             _text.text = _noUnitsText;
             _text.gameObject.SetActive(true);
-            _text.GetComponent<InfoText>().StartCoroutine("HideAfterWait");
+            _text.GetComponent<InfoText>().StartCoroutine(_coroutineName);
         }
     }
 }

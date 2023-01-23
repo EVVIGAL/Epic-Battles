@@ -18,7 +18,7 @@ public class NextLevelButton : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(NextScene);
     }
 
     private void NextScene()

@@ -1,14 +1,17 @@
-using UnityEngine;
 using Agava.YandexGames;
 using UnityEngine.UI;
+using UnityEngine;
 
 public class Ad : MonoBehaviour
 {
+    [SerializeField] private Volume _volume;
+
     private Button _button;
     private Money _money;
+    private float _currentVolume;
     private int _reward = 50;
     private int _possibleRewardCount = 2;
-    private string _muteTxt = "Mute";
+    private string _volumeTxt = "Volume";
 
     private void Awake()
     {
@@ -46,7 +49,8 @@ public class Ad : MonoBehaviour
 
     private void Mute()
     {
-        AudioListener.pause = true;
+        _currentVolume = PlayerPrefs.GetFloat(_volumeTxt);
+        _volume.Mute(true);
     }
 
     private void Unpause()
@@ -54,6 +58,6 @@ public class Ad : MonoBehaviour
         if (!Start.IsPause)
             Time.timeScale = 1;
 
-        AudioListener.pause = PlayerPrefs.GetInt(_muteTxt) == 1 ? false : true;
+        _volume.SetSlider(_currentVolume);
     }
 }

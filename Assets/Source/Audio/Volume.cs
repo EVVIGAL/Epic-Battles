@@ -30,6 +30,19 @@ public class Volume : MonoBehaviour
         _toggle.onValueChanged.RemoveAllListeners();
     }
 
+    public void Mute(bool isntMute)
+    {
+        if (isntMute)
+            _slider.value = 0.5f;
+        else
+            _slider.value = 0;
+    }
+
+    public void SetSlider(float volume)
+    {
+        _slider.value = volume;
+    }
+
     private void SetVolume(float volume)
     {
         AudioListener.volume = volume;
@@ -41,13 +54,5 @@ public class Volume : MonoBehaviour
 
         if (_slider.value > 0)
             _toggle.isOn = true;
-    }
-
-    private void Mute(bool isntMute)
-    {
-        if (isntMute)
-            _slider.value = 0.5f;
-        else
-            _slider.value = 0;
     }
 }
