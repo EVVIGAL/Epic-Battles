@@ -1,26 +1,22 @@
 using System.Collections;
 using UnityEngine;
 
-public class ArtBlow : MonoBehaviour
+public class ArtBlow : DefaultGun
 {
-    [field: SerializeField] public uint Damage { get; private set; }
-    [SerializeField] private Bomb _bulletTemplate;
     [SerializeField] private float _radius;
     [SerializeField] private float _shootCount;
-    [SerializeField] private float _rateOfFire;
 
     private IEnumerator Start()
     {
         int _currentShootCount = 0;
         while(_currentShootCount < _shootCount)
         {
-            Vector2 positionOffset = Random.insideUnitCircle;
-            positionOffset *= _radius;
-            Bomb newBomb = Instantiate(_bulletTemplate, transform.position + new Vector3(positionOffset.x, 0f, positionOffset.y), Quaternion.LookRotation(Vector3.down));
-            newBomb.Init(Damage);
+            if (CanShoot == false)
+                yield return null;
 
+            Shoot();
             _currentShootCount++;
-            yield return new WaitForSeconds(_rateOfFire);
+            yield return new WaitForSeconds(RateOfFire);
         }
 
         Destroy(gameObject);
@@ -30,5 +26,17 @@ public class ArtBlow : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(new Vector3(transform.position.x, 0f, transform.position.z), _radius);
+    }
+
+    protected override Vector3 GetShootPoint()
+    {
+        Vector2 positionOffset = Random.insideUnitCircle;
+        positionOffset *= _radius;
+        return transform.position + new Vector3(positionOffset.x, 0f, positionOffset.y);
+    }
+
+    protected override Quaternion GetRotation(Vector3 direction)
+    {
+        return base.GetRotation(Vector3.down);
     }
 }

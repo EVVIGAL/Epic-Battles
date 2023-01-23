@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3651330418897345854, guid: 5877133cb29369840b6321edff82e50a, type: 3}
+  - {fileID: 2100000, guid: 9ddf9101e6d6e594ba34de743891fea1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -146,7 +146,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2505642851634945670, guid: 5877133cb29369840b6321edff82e50a, type: 3}
+  - {fileID: 2100000, guid: 47058b6c2ec2da644aa21ac9a3931b2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -233,7 +233,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2505642851634945670, guid: 5877133cb29369840b6321edff82e50a, type: 3}
+  - {fileID: 2100000, guid: 47058b6c2ec2da644aa21ac9a3931b2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -360,7 +360,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -400310251153081761, guid: 5877133cb29369840b6321edff82e50a, type: 3}
+  - {fileID: 2100000, guid: 9ddf9101e6d6e594ba34de743891fea1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -443,8 +443,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6690550229950003982, guid: 5877133cb29369840b6321edff82e50a, type: 3}
-  - {fileID: 2100000, guid: 5b54c289f536fd44ea72cfc01fdaf632, type: 2}
+  - {fileID: 2100000, guid: e6b8e6de3707f2c4ba85b8cc72c29861, type: 2}
+  - {fileID: 2100000, guid: eeb3d9bc38e711542afb9f1fce3b2c8a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -689,14 +689,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Damage>k__BackingField: 15
-  _rateOfFire: 0.4
+  <RateOfFire>k__BackingField: 0.4
   _reloadSpeed: 2
   _magazineSize: 12
   _bulletTemplate: {fileID: 5267548810438248575, guid: 9f25ae4318c7f6d4e89bc2942d19d726, type: 3}
+  _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
   _shootPoint:
   - {fileID: 8283069262490356904}
   - {fileID: 8283069262762115334}
-  _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
 --- !u!114 &-825894143828300847
 MonoBehaviour:
   m_ObjectHideFlags: 0
