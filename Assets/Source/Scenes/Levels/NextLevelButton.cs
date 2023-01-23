@@ -8,7 +8,7 @@ public class NextLevelButton : MonoBehaviour
 
     private void Awake()
     {
-        _button = GetComponent<Button>();
+        _button = GetComponent<Button>();      
     }
 
     private void OnEnable()
@@ -22,7 +22,7 @@ public class NextLevelButton : MonoBehaviour
     }
 
     private void NextScene()
-    {
+    {      
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
