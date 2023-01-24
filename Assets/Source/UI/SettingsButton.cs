@@ -25,7 +25,7 @@ public class SettingsButton : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(OpenClose);
     }
 
     private void OpenClose()

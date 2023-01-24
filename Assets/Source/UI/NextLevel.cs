@@ -24,22 +24,25 @@ public class NextLevel : MonoBehaviour
     private void OnEnable()
     {
         _button.onClick.AddListener(NextScene);
-
-        if (YandexGamesSdk.IsInitialized)
-        {
-            InterstitialAd.Show(Mute, onCloseCallback: (bool _) => Unpause(), onErrorCallback: (string _) => Unpause(), Unpause);
-        }
     }
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(NextScene);
     }
 
     private void NextScene()
     {
         PlayerPrefs.SetInt(_currentLevelStr, _currentSceneIndex + 1);
         PlayerPrefs.Save();
+
+#if UNITY_WEBGL || !UNITY_EDITOR
+        if (YandexGamesSdk.IsInitialized)
+        {
+            InterstitialAd.Show(Mute, onCloseCallback: (bool _) => Unpause(), onErrorCallback: (string _) => Unpause(), Unpause);
+        }
+#endif
+
         SetLeaderboardScore();
         SceneManager.LoadScene(_currentSceneIndex + 1);
     }
