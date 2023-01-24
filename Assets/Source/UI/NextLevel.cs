@@ -11,7 +11,9 @@ public class NextLevel : MonoBehaviour
     private int _currentSceneIndex;
     private float _currentVolume;
     private string _volumeTxt = "Volume";
-    private static string _currentLevelStr = "CurrentLevel";
+    private string _leaderboardTxt = "Leaderboard";
+    private const string _currentLevelStr = "CurrentLevel";
+    private const string _bestLevelStr = "BestLevel";
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class NextLevel : MonoBehaviour
     {
         PlayerPrefs.SetInt(_currentLevelStr, _currentSceneIndex + 1);
         PlayerPrefs.Save();
+        SetLeaderboardScore();
         SceneManager.LoadScene(_currentSceneIndex + 1);
     }
 
@@ -53,5 +56,20 @@ public class NextLevel : MonoBehaviour
             Time.timeScale = 1;
 
         _volume.SetSlider(_currentVolume);
+    }
+
+    private void SetLeaderboardScore()
+    {
+        if (PlayerPrefs.HasKey(_bestLevelStr))
+        {
+            int bestScore = PlayerPrefs.GetInt(_bestLevelStr);
+
+            if(bestScore < _currentSceneIndex + 1)
+            {
+                PlayerPrefs.SetInt(_bestLevelStr, _currentSceneIndex + 1);
+                PlayerPrefs.Save();
+                Leaderboard.SetScore(_leaderboardTxt, _currentSceneIndex + 1);
+            }
+        }
     }
 }
