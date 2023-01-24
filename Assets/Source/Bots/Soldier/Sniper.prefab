@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 3251666040369447545}
   - component: {fileID: 1958037900}
   - component: {fileID: 6097333085349771482}
+  - component: {fileID: 2066305246680706592}
   m_Layer: 7
   m_Name: Sniper
   m_TagString: Untagged
@@ -416,9 +417,10 @@ MonoBehaviour:
   _colorChangeSpeed: 1
   _fallingSpeed: 3
   _waitBeforeFall: 3
-  _destroyTime: 10
+  _destroyTime: 7
   _deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  _ragdollSource: {fileID: 1983284686682791274}
+  _ragdollSource: {fileID: 2066305246680706592}
+  _weaponPhysicSource: {fileID: 8227756822243693158}
 --- !u!114 &6430381997902544545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,7 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxValue>k__BackingField: 60
   _deathSource: {fileID: 2109309601631231881}
-  _ragdollSource: {fileID: 1983284686682791274}
+  _ragdollSource: {fileID: 2066305246680706592}
   _weaponPhysicSource: {fileID: 8227756822243693158}
 --- !u!114 &4542871963514180415
 MonoBehaviour:
@@ -613,9 +615,45 @@ MonoBehaviour:
   <RateOfFire>k__BackingField: 1
   _reloadSpeed: 4
   _magazineSize: 1
-  _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
+  _bulletTemplate: {fileID: -3932502187743780729, guid: 6fbd62f80f0144c468d4ec0d51f434bb, type: 3}
   _shootFX: {fileID: 0}
   _shootPoint: {fileID: 2838687876174371308}
+--- !u!114 &2066305246680706592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518070019359788922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22d92eb45952a545b2b0a90eddba7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbodies:
+  - {fileID: 7222931410271076855}
+  - {fileID: 2236407959143896737}
+  - {fileID: 300098341846770092}
+  - {fileID: 6319666659617064281}
+  - {fileID: 5425764022116061459}
+  - {fileID: 3214156839812084264}
+  - {fileID: 8328577284612245614}
+  - {fileID: 4226893104709135457}
+  - {fileID: 1657229689072037330}
+  - {fileID: 8605553637288458692}
+  - {fileID: 8150602555300027802}
+  _colliders:
+  - {fileID: 8774725305474477308}
+  - {fileID: 6983222932180198428}
+  - {fileID: 1619736393359321637}
+  - {fileID: 8751273233540016490}
+  - {fileID: 5635544926482090077}
+  - {fileID: 7277658012592361870}
+  - {fileID: 277367788950148303}
+  - {fileID: 755598493781714981}
+  - {fileID: 8731697407848420314}
+  - {fileID: 8471441713243901975}
+  - {fileID: 3083103019963463092}
 --- !u!1 &1580168748538759616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,7 +3694,6 @@ GameObject:
   - component: {fileID: 8663740314672668422}
   - component: {fileID: 8774725305474477308}
   - component: {fileID: 7222931410271076855}
-  - component: {fileID: 1983284686682791274}
   m_Layer: 7
   m_Name: Root
   m_TagString: Untagged
@@ -3711,18 +3748,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1983284686682791274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8758729870385516447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22d92eb45952a545b2b0a90eddba7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8850955028433334931
 GameObject:
   m_ObjectHideFlags: 0

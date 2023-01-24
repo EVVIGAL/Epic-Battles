@@ -4,7 +4,7 @@ using UnityEngine;
 public class HumanHealth : Health
 {
     [SerializeField] private MonoBehaviour _ragdollSource;
-    private IRagdoll _ragdoll => (IRagdoll)_ragdollSource;
+    private IObjectPhysics _ragdoll => (IObjectPhysics)_ragdollSource;
 
     [SerializeField] private MonoBehaviour _weaponPhysicSource;
     private IObjectPhysics _weaponPhysics => (IObjectPhysics)_weaponPhysicSource;
@@ -32,9 +32,9 @@ public class HumanHealth : Health
 
     private void OnValidate()
     {
-        if (_ragdollSource && !(_ragdollSource is IRagdoll))
+        if (_ragdollSource && !(_ragdollSource is IObjectPhysics))
         {
-            Debug.LogError(nameof(_ragdollSource) + " is not implement + " + nameof(IRagdoll));
+            Debug.LogError(nameof(_ragdollSource) + " is not implement + " + nameof(IObjectPhysics));
             _ragdollSource = null;
         }
 

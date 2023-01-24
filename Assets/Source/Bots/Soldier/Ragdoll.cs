@@ -1,14 +1,15 @@
+using System;
 using UnityEngine;
 
-public class Ragdoll : MonoBehaviour, IRagdoll
+public class Ragdoll : MonoBehaviour, IObjectPhysics
 {
-    private Rigidbody[] _rigidbodies;
-    private Collider[] _colliders;
+    [SerializeField] private Rigidbody[] _rigidbodies;
+    [SerializeField] private Collider[] _colliders;
+
+    public bool IsActive => !_rigidbodies[0].isKinematic;
 
     private void Awake()
     {
-        _rigidbodies = GetComponentsInChildren<Rigidbody>();
-        _colliders = GetComponentsInChildren<Collider>();
         Disable();
     }
 
@@ -28,5 +29,13 @@ public class Ragdoll : MonoBehaviour, IRagdoll
 
         foreach (Collider collider in _colliders)
             collider.enabled = false;
+    }
+
+    public void AddForce(Vector3 force)
+    {
+        if (IsActive == false)
+            throw new InvalidOperationException();
+
+        _rigidbodies[UnityEngine.Random.Range(0, _rigidbodies.Length)].AddForce(force, ForceMode.Impulse);
     }
 }

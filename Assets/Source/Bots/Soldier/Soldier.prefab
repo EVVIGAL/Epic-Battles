@@ -1343,7 +1343,6 @@ GameObject:
   - component: {fileID: 484603232276171447}
   - component: {fileID: 7476628946487499895}
   - component: {fileID: 7476628946487499883}
-  - component: {fileID: 7476628946487499888}
   m_Layer: 7
   m_Name: Root
   m_TagString: Untagged
@@ -1398,18 +1397,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7476628946487499888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3297655276631081840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22d92eb45952a545b2b0a90eddba7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3721220464100015912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3003,6 +2990,7 @@ GameObject:
   - component: {fileID: 7476628944813397042}
   - component: {fileID: 4812129664339160598}
   - component: {fileID: -4967529851598276479}
+  - component: {fileID: 9178910346357886797}
   m_Layer: 7
   m_Name: Soldier
   m_TagString: Untagged
@@ -3081,9 +3069,10 @@ MonoBehaviour:
   _colorChangeSpeed: 1
   _fallingSpeed: 2
   _waitBeforeFall: 5
-  _destroyTime: 10
+  _destroyTime: 7
   _deathColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  _ragdollSource: {fileID: 7476628946487499888}
+  _ragdollSource: {fileID: 9178910346357886797}
+  _weaponPhysicSource: {fileID: 5150736038001448166}
 --- !u!114 &7476628944813397050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3167,7 +3156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MaxValue>k__BackingField: 60
   _deathSource: {fileID: 7476628944813397051}
-  _ragdollSource: {fileID: 7476628946487499888}
+  _ragdollSource: {fileID: 9178910346357886797}
   _weaponPhysicSource: {fileID: 5150736038001448166}
 --- !u!114 &7476628944813397052
 MonoBehaviour:
@@ -3281,6 +3270,42 @@ MonoBehaviour:
   _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
   _shootFX: {fileID: 0}
   _shootPoint: {fileID: 6888201705605977057}
+--- !u!114 &9178910346357886797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711072648931270967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22d92eb45952a545b2b0a90eddba7bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbodies:
+  - {fileID: 7476628946487499883}
+  - {fileID: 7476628946439014756}
+  - {fileID: 7476628946487499892}
+  - {fileID: 7476628946073347619}
+  - {fileID: 7476628945523472863}
+  - {fileID: 7476628945224508645}
+  - {fileID: 7476628944564803726}
+  - {fileID: 7476628944660964406}
+  - {fileID: 7476628946164744056}
+  - {fileID: 7476628945365143556}
+  - {fileID: 7476628945318192223}
+  _colliders:
+  - {fileID: 7476628946487499895}
+  - {fileID: 7476628946439014758}
+  - {fileID: 7476628946487499894}
+  - {fileID: 7476628946073347629}
+  - {fileID: 7476628945523472856}
+  - {fileID: 7476628945224508646}
+  - {fileID: 7476628944564803727}
+  - {fileID: 7476628944660964400}
+  - {fileID: 7476628946164744057}
+  - {fileID: 7476628945365143558}
+  - {fileID: 7476628945318192216}
 --- !u!1 &7797128566733667608
 GameObject:
   m_ObjectHideFlags: 0
