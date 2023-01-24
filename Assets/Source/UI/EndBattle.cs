@@ -1,28 +1,12 @@
 using UnityEngine;
-using TMPro;
 
 public class EndBattle : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _text;
-    
-    private NextLevel _nextLevel;
-    private  bool _isFinished;
-    private string _winTxt = "Win!";
-    private string _loseTxt = "Lose...";
+    [SerializeField] private GameObject[] _objectsToHide;
 
-    public bool IsFinished => _isFinished;
-
-    private void Awake()
+    private void OnEnable()
     {
-        _nextLevel = GetComponentInChildren<NextLevel>();
-    }
-
-    public void SetPanelInfo(bool isWin)
-    {
-        _isFinished = true;
-        _text.text = isWin == true ? _winTxt : _loseTxt;
-
-        if(_nextLevel != null)
-            _nextLevel.gameObject.SetActive(isWin);
+        for (int i = 0; i < _objectsToHide.Length; i++)
+            _objectsToHide[i].SetActive(false);
     }
 }

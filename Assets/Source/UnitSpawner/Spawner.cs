@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Team _alliedTeam;
     [SerializeField] private Team _enemyTeam;
     [SerializeField] private Quaternion _rotation;
+    [SerializeField] private LayerMask _layerMask;
 
     private Vector3 _tankColliderSize;
     private Vector3 _helicopterSize = new(3f, 3f, 3f);
@@ -15,7 +16,6 @@ public class Spawner : MonoBehaviour
     private Collider[] _colliders;
     private Camera _camera;
     private Unit _unit;
-    private int _groundLayer = 3;
     private float _helicopterHeight = 10f;
     private string _boundNameStr = "Bounds";
     private string _soldierTxt = "Soldier";
@@ -75,17 +75,15 @@ public class Spawner : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             if (hit.collider.name == _boundNameStr)
-                position = hit.point;
-
-            if (_unit.Name == _helicopterTxt)
             {
-                if (hit.collider.TryGetComponent(out Unit unit))
+                position = hit.point;
+            }
+            else if (hit.collider.TryGetComponent(out Unit unit))
+            {
+                if (_unit.Name == _helicopterTxt && unit.Name != _helicopterTxt)
                 {
-                    if (unit.Name != _helicopterTxt)
-                    {
-                        position = hit.point;
-                        position.y = 0f;
-                    }
+                    position = hit.point;
+                    position.y = 0f;
                 }
             }
         }
@@ -99,7 +97,7 @@ public class Spawner : MonoBehaviour
 
     private bool CheckSpawnPoint(Vector3 position)
     {
-        _colliders = Physics.OverlapBox(position, _tankColliderSize, Quaternion.identity, _groundLayer);
+        _colliders = Physics.OverlapBox(position, _tankColliderSize, Quaternion.identity, _layerMask);
         return !(_colliders.Length > 0);
     }
 }
