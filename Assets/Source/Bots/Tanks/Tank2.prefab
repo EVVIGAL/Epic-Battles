@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 6680042404976102449}
   - component: {fileID: 1700543470826424767}
   - component: {fileID: 1281718114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tank2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ Transform:
   - {fileID: 4688262311058142395}
   - {fileID: 2660985513534245972}
   - {fileID: 3909037413787486232}
+  - {fileID: 1382511002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -296,7 +297,7 @@ GameObject:
   - component: {fileID: 1179986191155558210}
   - component: {fileID: 1665873306328329899}
   - component: {fileID: 2319934939052787299}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Gun12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3909037413596373254}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +411,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3909037414138477203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +444,7 @@ GameObject:
   - component: {fileID: 2661275458830594285}
   - component: {fileID: 5414588725562375449}
   - component: {fileID: 9148153282084390931}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Road Wheels12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -529,7 +530,7 @@ GameObject:
   - component: {fileID: 4759060718781952444}
   - component: {fileID: 4759060718781952443}
   - component: {fileID: 4759060718781952442}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +658,7 @@ GameObject:
   - component: {fileID: 4688262311058142395}
   - component: {fileID: 9069852186909455404}
   - component: {fileID: 8534498960439715336}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tracks12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +741,7 @@ GameObject:
   - component: {fileID: 5311467215629374732}
   - component: {fileID: 3735586882737801340}
   - component: {fileID: 9121363132122377949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,6 +814,68 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &1382116120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3255063950737228190}
+    m_Modifications:
+    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_Name
+      value: BlobShadowProjector
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+--- !u!4 &1382511002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+  m_PrefabInstance: {fileID: 1382116120}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3909037413787580936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,6 +886,10 @@ PrefabInstance:
     - target: {fileID: 150538, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: m_Name
       value: SmokeDarkSoftTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 150538, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 455184, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: m_RootOrder
