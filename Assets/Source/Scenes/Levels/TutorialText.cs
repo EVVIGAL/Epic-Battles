@@ -20,6 +20,7 @@ public class TutorialText : MonoBehaviour
     {
         _startButton.onClick.AddListener(Deactivate);
         _teamChecker._isReady += OnUnitSet;
+        _teamChecker._notReady += OnUnitsDelete;
         _tutorialText.text = _text1;
         _startButton.interactable = false;
     }
@@ -27,13 +28,20 @@ public class TutorialText : MonoBehaviour
     private void OnDisable()
     {
         _teamChecker._isReady -= OnUnitSet;
-        _startButton.onClick.RemoveAllListeners();
+        _teamChecker._notReady -= OnUnitsDelete;
+        _startButton.onClick.RemoveListener(Deactivate);
     }
 
     public void OnUnitSet()
     {
         _tutorialText.text = _text2;
         _startButton.interactable = true;
+    }
+
+    public void OnUnitsDelete()
+    {
+        _tutorialText.text = _text1;
+        _startButton.interactable = false;
     }
 
     private void Deactivate()

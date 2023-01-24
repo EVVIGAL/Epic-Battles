@@ -6,6 +6,7 @@ public class TutorialTeamChecker : MonoBehaviour
     [SerializeField] private GameObject _settingsPanel;
 
     public event UnityAction _isReady;
+    public event UnityAction _notReady;
 
     private void Update()
     {

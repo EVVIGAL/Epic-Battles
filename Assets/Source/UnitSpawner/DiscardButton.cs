@@ -20,7 +20,7 @@ public class DiscardButton : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(RemoveAllUnits);
     }
 
     public void RemoveAllUnits()

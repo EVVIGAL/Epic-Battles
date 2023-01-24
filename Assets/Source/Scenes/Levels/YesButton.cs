@@ -20,7 +20,7 @@ public class YesButton : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(Authorize);
     }
 
     private void Authorize()

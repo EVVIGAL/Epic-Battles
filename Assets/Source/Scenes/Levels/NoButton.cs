@@ -19,7 +19,7 @@ public class NoButton : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(Close);
     }
 
     private void Close()
