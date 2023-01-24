@@ -2020,7 +2020,6 @@ GameObject:
   - component: {fileID: 620321191}
   - component: {fileID: 620321192}
   - component: {fileID: 620321193}
-  - component: {fileID: 620321194}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2216,7 +2215,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4dfd6a9d3b992114b8411c789b22f05f, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -2224,18 +2223,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &620321194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620321187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5baa117c856237046bbb39ff70a97184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &684304185
 PrefabInstance:
   m_ObjectHideFlags: 0

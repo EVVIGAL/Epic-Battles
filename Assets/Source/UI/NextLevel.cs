@@ -33,18 +33,23 @@ public class NextLevel : MonoBehaviour
 
     private void NextScene()
     {
+#if !UNITY_WEBGL || UNITY_EDITOR
         PlayerPrefs.SetInt(_currentLevelStr, _currentSceneIndex + 1);
         PlayerPrefs.Save();
+        SceneManager.LoadScene(_currentSceneIndex + 1);
+#else
+        PlayerPrefs.SetInt(_currentLevelStr, _currentSceneIndex + 1);
+        PlayerPrefs.Save();        
 
-#if UNITY_WEBGL || !UNITY_EDITOR
         if (YandexGamesSdk.IsInitialized)
         {
             InterstitialAd.Show(Mute, onCloseCallback: (bool _) => Unpause(), onErrorCallback: (string _) => Unpause(), Unpause);
         }
-#endif
 
         SetLeaderboardScore();
+
         SceneManager.LoadScene(_currentSceneIndex + 1);
+#endif
     }
 
     private void Mute()

@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class UnitsObserver : MonoBehaviour
 {
-    [SerializeField] private EndBattle _end;
+    [SerializeField] private EndBattle _failPanel;
+    [SerializeField] private EndBattle _winPanel;
     [SerializeField] private GameObject _red;
     [SerializeField] private GameObject _blue;
     [SerializeField] private List<Health> _redTeam;
@@ -95,15 +96,9 @@ public class UnitsObserver : MonoBehaviour
         }
 
         if (redDefeated)
-        {
-            _end.gameObject.SetActive(true);
-            _end.SetPanelInfo(redDefeated);
-        }
+            _winPanel.gameObject.SetActive(true);
 
-        if (blueDefeated)
-        {           
-            _end.gameObject.SetActive(true);
-            _end.SetPanelInfo(!blueDefeated);
-        }
+        if (blueDefeated)         
+            _failPanel.gameObject.SetActive(true);
     }
 }
