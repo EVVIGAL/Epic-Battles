@@ -1,42 +1,37 @@
+using System.Collections.Generic;
+using Lean.Localization;
 using UnityEngine;
-using TMPro;
 
 public class InternationalText : MonoBehaviour
 {
-    [SerializeField] private string _en;
-    [SerializeField] private string _ru;
-    [SerializeField] private string _tr;
+    private LeanLocalization _localization;
+    private const string _defaultKey = "en";
 
-    private TextMeshProUGUI _text;
-    private string EnglishCode = "en";
-    private string RussianCode = "ru";
-    private string TurkishCode = "tr";
+    private Dictionary<string, string> _languageISO639_1Codes = new()
+    {
+        { "ru", "Russian" },
+        { "en", "English" },
+        { "tr", "Turkish" },
+    };
 
     private void Awake()
     {
-        _text = GetComponent<TextMeshProUGUI>();
+        _localization = GetComponent<LeanLocalization>();
     }
 
     private void Start()
     {
-        ChangeLanguage();
+        Set();
     }
 
-    public void ChangeLanguage()
+    public void Set()
     {
         if (Yandex.Instance == null)
         {
-            _text.text = _en;
+            _localization.SetCurrentLanguage(_languageISO639_1Codes[_defaultKey]);
             return;
         }
 
-        if (Yandex.Instance.CurrentLanguage == EnglishCode)
-            _text.text = _en;
-        else if (Yandex.Instance.CurrentLanguage == RussianCode)
-            _text.text = _ru;
-        else if (Yandex.Instance.CurrentLanguage == TurkishCode)
-            _text.text = _tr;
-        else
-            _text.text = _en;
+        _localization.SetCurrentLanguage(_languageISO639_1Codes[Yandex.Instance.CurrentLanguage]);
     }
 }
