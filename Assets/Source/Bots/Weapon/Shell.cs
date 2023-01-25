@@ -31,5 +31,9 @@ public class Shell : MonoBehaviour
 
         if (hitInfo.rigidbody != null)
             hitInfo.rigidbody.AddForce(transform.forward * _pushForce, ForceMode.Impulse);
+
+        if (hitInfo.transform.TryGetComponent(out IObjectPhysics objectPhysics))
+            if (objectPhysics.IsActive)
+                objectPhysics.AddForce(transform.forward * _pushForce);
     }
 }

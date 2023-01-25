@@ -4,8 +4,6 @@ public class Bullet : Shell
 {
     protected override void OnHit(RaycastHit hitInfo)
     {
-        base.OnHit(hitInfo);
-
         if (hitInfo.transform.TryGetComponent(out IHealth health))
         {
             int securityValue = 0;
@@ -16,5 +14,7 @@ public class Bullet : Shell
             if (health.IsAlive && hitChance >= securityValue)
                 health.TakeDamage(Damage);
         }
+
+        base.OnHit(hitInfo);
     }
 }

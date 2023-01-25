@@ -9,6 +9,8 @@ public class Team : MonoBehaviour
 
     private List<Bot> _bots = new();
 
+    public bool IsAlive => _bots.Find(bot => bot.IsAlive);
+
     public void AddBot(Bot bot)
     {
         if (_bots.Contains(bot))
