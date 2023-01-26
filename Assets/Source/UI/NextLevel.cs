@@ -45,12 +45,12 @@ public class NextLevel : MonoBehaviour
     private void Mute()
     {
         _currentVolume = PlayerPrefs.GetFloat(_volumeTxt);
-        _volume.Mute(false);
+        AudioListener.volume = 0f;
     }
 
     private void LoadNextLEvel()
     {
-        _volume.SetSlider(_currentVolume);
+        AudioListener.volume = _currentVolume;
         SetLeaderboardScore();
         SceneManager.LoadScene(_currentSceneIndex + 1);
     }
@@ -62,11 +62,19 @@ public class NextLevel : MonoBehaviour
             int bestScore = PlayerPrefs.GetInt(_bestLevelStr);
 
             if(bestScore < _currentSceneIndex + 1)
-            {
-                PlayerPrefs.SetInt(_bestLevelStr, _currentSceneIndex + 1);
-                PlayerPrefs.Save();
-                Leaderboard.SetScore(_leaderboardTxt, _currentSceneIndex + 1);
-            }
+                SaveBestScore(_currentSceneIndex);
         }
+        else
+        {
+            int bestScore = _currentSceneIndex;
+            SaveBestScore(bestScore);
+        }
+    }
+
+    private void SaveBestScore(int bestScore)
+    {
+        PlayerPrefs.SetInt(_bestLevelStr, bestScore);
+        PlayerPrefs.Save();
+        Leaderboard.SetScore(_leaderboardTxt, bestScore);
     }
 }

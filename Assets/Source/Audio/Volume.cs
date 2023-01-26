@@ -15,7 +15,7 @@ public class Volume : MonoBehaviour
         {
             _slider.value = PlayerPrefs.GetFloat(_volumeTxt);
             AudioListener.volume = PlayerPrefs.GetFloat(_volumeTxt);
-            _toggle.isOn = _slider.value == 0 ? false : true;
+            _toggle.isOn = _slider.value != 0;
         }
     }
 
