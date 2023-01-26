@@ -61,7 +61,7 @@ public class NextLevel : MonoBehaviour
         {
             int bestScore = PlayerPrefs.GetInt(_bestLevelStr);
 
-            if(bestScore < _currentSceneIndex + 1)
+            if(bestScore < _currentSceneIndex)
                 SaveBestScore(_currentSceneIndex);
         }
         else
