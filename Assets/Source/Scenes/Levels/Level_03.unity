@@ -5473,6 +5473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volume: {fileID: 963194233}
+  _money: {fileID: 499955489}
 --- !u!95 &341839811
 Animator:
   serializedVersion: 4
@@ -11761,8 +11762,8 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.043537606, y: 0.59427726}
-  m_AnchorMax: {x: 0.3404624, y: 0.7256278}
+  m_AnchorMin: {x: 0.17645186, y: 0.59427726}
+  m_AnchorMax: {x: 0.46800002, y: 0.7256278}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11820,7 +11821,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -11876,7 +11877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: Volume
-  FallbackText: 
+  FallbackText: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C"
 --- !u!4 &540431204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6938053699352083341, guid: 84cb85a6d6424fe4c90a2016db70f12d, type: 3}
@@ -13691,10 +13692,10 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3913083, y: 0.59427726}
-  m_AnchorMax: {x: 0.799, y: 0.7256278}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -160, y: -30}
+  m_AnchorMin: {x: 0.4876366, y: 0.59427726}
+  m_AnchorMax: {x: 0.9424847, y: 0.7256278}
+  m_AnchoredPosition: {x: 2, y: 0}
+  m_SizeDelta: {x: -203, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669612450
 MonoBehaviour:
@@ -15238,8 +15239,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23809,8 +23810,8 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.89845186, y: 0.59427726}
-  m_AnchorMax: {x: 0.9777286, y: 0.7256278}
+  m_AnchorMin: {x: 0.05972545, y: 0.59427726}
+  m_AnchorMax: {x: 0.132, y: 0.7256278}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -31819,7 +31820,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: + 50
+  m_text: +50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -31846,13 +31847,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -32877,7 +32878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: Pause
-  FallbackText: 
+  FallbackText: "\u041F\u0430\u0443\u0437\u0430"
 --- !u!1 &1917756667
 GameObject:
   m_ObjectHideFlags: 0

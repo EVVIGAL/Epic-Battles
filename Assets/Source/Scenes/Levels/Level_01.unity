@@ -4006,10 +4006,10 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.05972545, y: 0.3924892}
-  m_AnchorMax: {x: 0.132, y: 0.5118614}
-  m_AnchoredPosition: {x: -0.5, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_AnchorMin: {x: 0.043537606, y: 0.3924892}
+  m_AnchorMax: {x: 0.117425054, y: 0.5118614}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313649054
 MonoBehaviour:
@@ -4264,6 +4264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volume: {fileID: 963194233}
+  _money: {fileID: 499955489}
 --- !u!95 &341839811
 Animator:
   serializedVersion: 4
@@ -8020,8 +8021,8 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.043537606, y: 0.59427726}
-  m_AnchorMax: {x: 0.3404624, y: 0.7256278}
+  m_AnchorMin: {x: 0.16187885, y: 0.59427726}
+  m_AnchorMax: {x: 0.46015197, y: 0.7256278}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8079,7 +8080,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -8108,7 +8109,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0.000045784152, y: 0, z: 2.4267807, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8135,7 +8136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: Volume
-  FallbackText: 
+  FallbackText: "\u0413\u0440\u043E\u043C\u043A\u043E\u0441\u0442\u044C"
 --- !u!4 &540431204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6938053699352083341, guid: 84cb85a6d6424fe4c90a2016db70f12d, type: 3}
@@ -8684,10 +8685,10 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.3913083, y: 0.59427726}
-  m_AnchorMax: {x: 0.799, y: 0.7256278}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -160, y: -30}
+  m_AnchorMin: {x: 0.48315194, y: 0.59427726}
+  m_AnchorMax: {x: 0.940727, y: 0.7256278}
+  m_AnchoredPosition: {x: 1, y: -1}
+  m_SizeDelta: {x: -205, y: -30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669612450
 MonoBehaviour:
@@ -8965,8 +8966,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9118,14 +9119,15 @@ MonoBehaviour:
   data: 0
   entries:
   - Language: English
-    Text: Can use artillery
+    Text: Strike at the specified point
     Object: {fileID: 0}
   - Language: Russian
-    Text: "\u041C\u043E\u0433\u0443\u0442 \u0432\u044B\u0437\u044B\u0432\u0430\u0442\u044C
-      \u0430\u0440\u0442\u0438\u043B\u043B\u0435\u0440\u0438\u044E"
+    Text: "\u0412\u044B\u0437\u043E\u0432 \u0430\u0440\u0442\u0438\u043B\u043B\u0435\u0440\u0438\u0438.
+      \u041E\u0431\u0441\u0442\u0440\u0435\u043B\u0438\u0432\u0430\u0435\u0442 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+      \u0442\u043E\u0447\u043A\u0443."
     Object: {fileID: 0}
   - Language: Turkish
-    Text: "Top\xE7u kullanabilir"
+    Text: "Top\xE7u kullanabilir. Belirtilen noktada grev."
     Object: {fileID: 0}
 --- !u!1001 &736864887
 PrefabInstance:
@@ -17541,8 +17543,8 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.89845186, y: 0.59427726}
-  m_AnchorMax: {x: 0.9777286, y: 0.7256278}
+  m_AnchorMin: {x: 0.043537606, y: 0.59427726}
+  m_AnchorMax: {x: 0.117425054, y: 0.7256278}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -20434,10 +20436,10 @@ RectTransform:
   m_Father: {fileID: 499819516}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.17645186, y: 0.3924892}
+  m_AnchorMin: {x: 0.16187885, y: 0.3924892}
   m_AnchorMax: {x: 0.9777286, y: 0.5118614}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 6.5, y: 0}
+  m_SizeDelta: {x: -13, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1361106541
 MonoBehaviour:
@@ -20522,7 +20524,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -11.774658, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -20813,15 +20815,17 @@ MonoBehaviour:
   data: 0
   entries:
   - Language: English
-    Text: Can attack helicopter and use smoke
+    Text: Can attack helicopter and use smoke. 50% chance to dodge strike.
     Object: {fileID: 0}
   - Language: Russian
     Text: "\u041C\u043E\u0436\u0435\u0442 \u0430\u0442\u0430\u043A\u043E\u0432\u0430\u0442\u044C
       \u0432\u0435\u0440\u0442\u043E\u043B\u0451\u0442\u044B \u0438 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
-      \u0434\u044B\u043C"
+      \u0434\u044B\u043C. 50% \u0448\u0430\u043D\u0441 \u0438\u0437\u0431\u0435\u0436\u0430\u0442\u044C
+      \u043F\u043E\u043F\u0430\u0434\u0430\u043D\u0438\u044F."
     Object: {fileID: 0}
   - Language: Turkish
-    Text: "Helikoptere sald\u0131rabilir ve duman kullanabilir"
+    Text: "Helikoptere sald\u0131rabilir ve duman kullanabilir. Grevi atlatmak i\xE7in%
+      50 \u015Fans."
     Object: {fileID: 0}
 --- !u!1 &1404590493
 GameObject:
@@ -24217,7 +24221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: + 50
+  m_text: +50
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 02fea1fb776e0ad43a5e684a1ab0ce9e, type: 2}
@@ -24244,13 +24248,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -25332,7 +25336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   translationName: Pause
-  FallbackText: 
+  FallbackText: "\u041F\u0430\u0443\u0437\u0430"
 --- !u!1 &1917756667
 GameObject:
   m_ObjectHideFlags: 0

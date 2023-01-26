@@ -7,6 +7,7 @@ public class Volume : MonoBehaviour
     [SerializeField] private Slider _slider;
 
     private string _volumeTxt = "Volume";
+    private float _defaultVolume = 0.5f;
 
     private void Awake()
     {
@@ -26,16 +27,23 @@ public class Volume : MonoBehaviour
 
     private void OnDisable()
     {
-        _slider.onValueChanged.RemoveAllListeners();
-        _toggle.onValueChanged.RemoveAllListeners();
+        _slider.onValueChanged.RemoveListener(SetVolume);
+        _toggle.onValueChanged.RemoveListener(Mute);
     }
 
     public void Mute(bool isntMute)
     {
         if (isntMute)
-            _slider.value = 0.5f;
+        {
+            if(PlayerPrefs.HasKey(_volumeTxt))
+                _slider.value = PlayerPrefs.GetFloat(_volumeTxt);
+            else
+                _slider.value = _defaultVolume;
+        }
         else
+        {
             _slider.value = 0;
+        }
     }
 
     public void SetSlider(float volume)
