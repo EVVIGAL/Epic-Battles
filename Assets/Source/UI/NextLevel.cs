@@ -50,7 +50,6 @@ public class NextLevel : MonoBehaviour
 
     private void LoadNextLEvel()
     {
-        Debug.Log("Volume: " + _currentVolume);
         _volume.SetSlider(_currentVolume);
         SetLeaderboardScore();
         SceneManager.LoadScene(_currentSceneIndex + 1);
