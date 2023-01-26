@@ -19,5 +19,6 @@ public static class LevelHolder
     public static void SetCurrentLevel(int level)
     {
         PlayerPrefs.SetInt(_currentLevelStr, level);
+        PlayerPrefs.Save();
     }
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SkillCaster : MonoBehaviour
 {
+    [SerializeField] private Circle _circle;
     [SerializeField] private GameObject _skillTxt;
     [SerializeField] private Skill[] _skills;
     [SerializeField] private Camera _camera;
@@ -41,6 +42,8 @@ public class SkillCaster : MonoBehaviour
     public void Activate(int index)
     {
         _isReady = true;
+        _circle.gameObject.SetActive(true);
+        _circle.Activate();
         _currentSkill = _skills[index];
     }
 
@@ -66,6 +69,7 @@ public class SkillCaster : MonoBehaviour
     private void SpawnSkill(Vector3 position)
     {
         Instantiate(_currentSkill, position, Quaternion.identity);
+        _circle.ActivateCircle();
     }
 
     private void HideText()
