@@ -14,7 +14,6 @@ public class Start : MonoBehaviour
 
     private Button _startButton;
     private string _coroutineName = "HideAfterWait";
-    private string _noUnitsText = "There are no blue units on the battlefield!";
     private static bool _isPause;
 
     public static bool IsPause => _isPause;
@@ -52,7 +51,6 @@ public class Start : MonoBehaviour
         }
         else
         {
-            _text.text = _noUnitsText;
             _text.gameObject.SetActive(true);
             _text.GetComponent<InfoText>().StartCoroutine(_coroutineName);
         }

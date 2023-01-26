@@ -33,37 +33,27 @@ public class NextLevel : MonoBehaviour
 
     private void NextScene()
     {
-#if !UNITY_WEBGL || UNITY_EDITOR
         PlayerPrefs.SetInt(_currentLevelStr, _currentSceneIndex + 1);
         PlayerPrefs.Save();
-        SceneManager.LoadScene(_currentSceneIndex + 1);
-#else
-        PlayerPrefs.SetInt(_currentLevelStr, _currentSceneIndex + 1);
-        PlayerPrefs.Save();        
 
         if (YandexGamesSdk.IsInitialized)
         {
-            InterstitialAd.Show(Mute, onCloseCallback: (bool _) => Unpause(), onErrorCallback: (string _) => Unpause(), Unpause);
-        }
-
-        SetLeaderboardScore();
-
-        SceneManager.LoadScene(_currentSceneIndex + 1);
-#endif
+            InterstitialAd.Show(Mute, onCloseCallback: (bool _) => LoadNextLEvel(), onErrorCallback: (string _) => LoadNextLEvel(), LoadNextLEvel);
+        }            
     }
 
     private void Mute()
     {
         _currentVolume = PlayerPrefs.GetFloat(_volumeTxt);
-        _volume.Mute(true);
+        _volume.Mute(false);
     }
 
-    private void Unpause()
+    private void LoadNextLEvel()
     {
-        if (!Start.IsPause)
-            Time.timeScale = 1;
-
+        Debug.Log("Volume: " + _currentVolume);
         _volume.SetSlider(_currentVolume);
+        SetLeaderboardScore();
+        SceneManager.LoadScene(_currentSceneIndex + 1);
     }
 
     private void SetLeaderboardScore()

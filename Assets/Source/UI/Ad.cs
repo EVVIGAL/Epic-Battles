@@ -5,9 +5,9 @@ using UnityEngine;
 public class Ad : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
+    [SerializeField] private Money _money;
 
     private Button _button;
-    private Money _money;
     private float _currentVolume;
     private int _reward = 50;
     private int _possibleRewardCount = 2;
@@ -15,7 +15,6 @@ public class Ad : MonoBehaviour
 
     private void Awake()
     {
-        _money = GetComponentInParent<Money>();
         _button = GetComponentInParent<Button>();
     }
 
@@ -50,7 +49,7 @@ public class Ad : MonoBehaviour
     private void Mute()
     {
         _currentVolume = PlayerPrefs.GetFloat(_volumeTxt);
-        _volume.Mute(true);
+        _volume.Mute(false);
     }
 
     private void Unpause()

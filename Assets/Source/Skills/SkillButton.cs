@@ -12,7 +12,6 @@ public class SkillButton : MonoBehaviour
 
     private Button _button;
     private Image _image;
-    private string _skillText = "Point on battle field to use skill!";
 
     public event UnityAction OnActivateSkill;
 
@@ -35,7 +34,6 @@ public class SkillButton : MonoBehaviour
     public void ActivateSkill()
     {
         _caster.Activate(_skillIndex);
-        _skillTxt.text = _skillText;
         _skillTxt.gameObject.SetActive(true);
         OnActivateSkill?.Invoke();
     }
