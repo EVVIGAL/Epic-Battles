@@ -67,5 +67,6 @@ public class InfoPanel : MonoBehaviour
             _infoPanels[i].gameObject.SetActive(false);
 
         gameObject.SetActive(true);
+        Canvas.ForceUpdateCanvases();
     }
 }
