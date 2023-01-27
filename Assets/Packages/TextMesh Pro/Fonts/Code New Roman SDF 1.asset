@@ -78,12 +78,12 @@ MonoBehaviour:
     m_CapLine: 29
     m_MeanLine: 22
     m_Baseline: 0
-    m_DescentLine: -11.322266
+    m_DescentLine: -7
     m_SuperscriptOffset: 32.677734
     m_SuperscriptSize: 0.5
     m_SubscriptOffset: -11.322266
     m_SubscriptSize: 0.5
-    m_UnderlineOffset: -7.2617188
+    m_UnderlineOffset: -7.261719
     m_UnderlineThickness: 3.09375
     m_StrikethroughOffset: 8.8
     m_StrikethroughThickness: 3.09375
@@ -5149,7 +5149,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Code New Roman SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - UNDERLAY_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -5226,8 +5227,8 @@ Material:
     - _TextureHeight: 512
     - _TextureWidth: 512
     - _UnderlayDilate: 0
-    - _UnderlayOffsetX: 0
-    - _UnderlayOffsetY: 0
+    - _UnderlayOffsetX: 1
+    - _UnderlayOffsetY: -1
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
