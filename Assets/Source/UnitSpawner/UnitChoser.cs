@@ -18,7 +18,7 @@ public class UnitChoser : MonoBehaviour
     private void Awake()
     {
         _button = GetComponent<Button>();
-        _text = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        _text = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
     private void OnEnable()

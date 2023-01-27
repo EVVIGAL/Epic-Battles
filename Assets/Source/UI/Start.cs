@@ -1,5 +1,6 @@
-using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine;
 using TMPro;
 
 public class Start : MonoBehaviour
@@ -15,6 +16,8 @@ public class Start : MonoBehaviour
     private Button _startButton;
     private string _coroutineName = "HideAfterWait";
     private static bool _isPause;
+
+    public event UnityAction<bool> isInteractable;
 
     public static bool IsPause => _isPause;
 
