@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class UnitsPanel : MonoBehaviour
 {
-    [SerializeField] private InfoPanel _infoPanel;
-
     private UnitChoser[] _allButtons;
 
     private void Awake()
@@ -24,20 +22,14 @@ public class UnitsPanel : MonoBehaviour
             button.OnUnitSet -= SetActiveUnit;
     }
 
-    private void SetActiveUnit(Unit unit)
+    private void SetActiveUnit()
     {      
         ChangeButtonsColor();
-        ShowInfo(unit);
     }
 
     private void ChangeButtonsColor()
     {
         foreach (UnitChoser button in _allButtons)
             button.GetComponent<Image>().color = Color.white;
-    }
-
-    private void ShowInfo(Unit unit)
-    {
-        _infoPanel.Activate(unit);
     }
 }
