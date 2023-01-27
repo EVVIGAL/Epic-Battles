@@ -6486,7 +6486,7 @@ MonoBehaviour:
     Text: Helicopter
     Object: {fileID: 0}
   - Language: Russian
-    Text: "\u0412\u0435\u0440\u0442\u043E\u043B\u0451\u0442"
+    Text: "\u0412\u0435\u0440\u0442\u043E\u043B\u0435\u0442"
     Object: {fileID: 0}
   - Language: Turkish
     Text: Helikopter
@@ -14712,7 +14712,7 @@ MonoBehaviour:
     Text: Grenadier
     Object: {fileID: 0}
   - Language: Russian
-    Text: "\u0413\u0440\u0430\u043D\u0430\u0442\u043E\u043C\u0451\u0442\u0447\u0438\u043A"
+    Text: "\u0413\u0440\u0430\u043D\u0430\u0442\u043E\u043C\u0435\u0442\u0447\u0438\u043A"
     Object: {fileID: 0}
   - Language: Turkish
     Text: "El bombas\u0131"
@@ -24614,6 +24614,10 @@ PrefabInstance:
     - target: {fileID: 8331095028129383581, guid: be1b19b763b2d5240a04e0580950e9df, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8331095028473472485, guid: be1b19b763b2d5240a04e0580950e9df, type: 3}
+      propertyPath: FallbackText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8331095028900231943, guid: be1b19b763b2d5240a04e0580950e9df, type: 3}
       propertyPath: _volume

@@ -23,7 +23,7 @@ public class InfoPanel : MonoBehaviour
 
     private void Start()
     {
-        _nameText.text = _unit.Name;
+        _nameText.text = LeanLocalization.GetTranslationText(_unit.Name);
         _healthText.text = _unit.GetComponent<Health>().MaxValue.ToString();
         _damageText.text = _unit.GetComponent<Weapon>().Damage.ToString();
 
