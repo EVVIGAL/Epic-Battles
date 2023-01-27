@@ -46,7 +46,6 @@ public class Start : MonoBehaviour
             _isPause = false;
             _slider.SetActive(true);
             _line.SetActive(false);
-            _infoPanel.SetActive(false);
             _spawner.enabled = false;
             _spawner.GetComponent<Remover>().enabled = false;
             _observer.Init();
