@@ -30,6 +30,9 @@ public class Remover : MonoBehaviour
         {
             _currentTimer = 0;
         }
+
+        if (Input.GetMouseButton(1))
+            RemoveUnit();
     }
 
     private void RemoveUnit()
