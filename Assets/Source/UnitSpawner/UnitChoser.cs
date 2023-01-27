@@ -11,14 +11,18 @@ public class UnitChoser : MonoBehaviour
     [SerializeField] private Image[] _allButtons;
 
     private TextMeshProUGUI _text;
+    private InfoPanel _infoPanel;
     private Button _button;
 
-    public event UnityAction<Unit> OnUnitSet;
+    public event UnityAction OnUnitSet;
+
+    public Unit Unit => _unit;
 
     private void Awake()
     {
         _button = GetComponent<Button>();
         _text = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        _infoPanel = GetComponentInChildren<InfoPanel>();
     }
 
     private void OnEnable()
@@ -31,13 +35,14 @@ public class UnitChoser : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(SetUnit);
     }
 
     private void SetUnit()
     {
         _spawner.SetUnit(_unit);
-        OnUnitSet?.Invoke(_unit);
+        OnUnitSet?.Invoke();
+        _infoPanel.Activate();
         GetComponent<Image>().color = Color.blue;
     }
 }

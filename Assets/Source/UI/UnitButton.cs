@@ -1,18 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class UnitButton : MonoBehaviour
+public class UnitButton : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject _info;
+
+    private bool _isSelected;
+
+    public void OnPointerDown(PointerEventData eventData)
     {
-        
+        _isSelected = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        
+
+        _info.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if(!_isSelected)
+            _info.SetActive(false);
     }
 }
