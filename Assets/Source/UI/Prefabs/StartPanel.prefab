@@ -539,7 +539,6 @@ GameObject:
   - component: {fileID: 8144831505323089800}
   - component: {fileID: 8144831505323089911}
   - component: {fileID: 8144831505323089802}
-  - component: {fileID: 8144831505323089803}
   m_Layer: 5
   m_Name: Ad_btn
   m_TagString: Untagged
@@ -664,26 +663,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _volume: {fileID: 0}
   _money: {fileID: 8144831505481197417}
---- !u!95 &8144831505323089803
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8144831505323089908}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3296b1b2096e95b49bc993634559ffd0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8144831505481197397
 GameObject:
   m_ObjectHideFlags: 0

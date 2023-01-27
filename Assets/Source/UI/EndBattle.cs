@@ -7,6 +7,9 @@ public class EndBattle : MonoBehaviour
     private void OnEnable()
     {
         for (int i = 0; i < _objectsToHide.Length; i++)
-            _objectsToHide[i].SetActive(false);
+        {
+            if(_objectsToHide[i] != null)
+                _objectsToHide[i].SetActive(false);
+        }
     }
 }

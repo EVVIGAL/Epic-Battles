@@ -40,6 +40,12 @@ public class InfoPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    private void Update()
+    {
+        if(Time.timeScale > 0)
+            gameObject.SetActive(false);
+    }
+
     public void Activate()
     {
         for(int i = 0; i < _infoPanels.Length; i++)
