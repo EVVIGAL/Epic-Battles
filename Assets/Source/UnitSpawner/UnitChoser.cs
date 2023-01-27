@@ -43,6 +43,6 @@ public class UnitChoser : MonoBehaviour
         _spawner.SetUnit(_unit);
         OnUnitSet?.Invoke();
         _infoPanel.Activate();
-        GetComponent<Image>().color = Color.blue;
+        GetComponent<Image>().color = Color.white;
     }
 }
