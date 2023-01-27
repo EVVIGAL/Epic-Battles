@@ -50,6 +50,11 @@ public class InfoPanel : MonoBehaviour
         Canvas.ForceUpdateCanvases();
     }
 
+    private void OnDisable()
+    {
+        Canvas.ForceUpdateCanvases();
+    }
+
     private void Update()
     {
         if(Time.timeScale > 0)
