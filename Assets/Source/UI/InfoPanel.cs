@@ -11,6 +11,7 @@ public class InfoPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _damageText;
     [SerializeField] private TextMeshProUGUI _skillText;
     [SerializeField] private Image _skillImage;
+    [SerializeField] private RectTransform _rectTransform;
 
     private InfoPanel[] _infoPanels;
     private Unit _unit;
@@ -30,7 +31,8 @@ public class InfoPanel : MonoBehaviour
         if (!string.IsNullOrEmpty(_unit.Skill))
         {
             string skillDescriptionTxt = LeanLocalization.GetTranslationText(_unit.Skill);
-            _skillText.text = skillDescriptionTxt;           
+            _skillText.text = skillDescriptionTxt;
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_rectTransform);
         }
         else
         {
@@ -45,16 +47,6 @@ public class InfoPanel : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnEnable()
-    {
-        Canvas.ForceUpdateCanvases();
-    }
-
-    private void OnDisable()
-    {
-        Canvas.ForceUpdateCanvases();
-    }
-
     private void Update()
     {
         if(Time.timeScale > 0)
@@ -67,6 +59,5 @@ public class InfoPanel : MonoBehaviour
             _infoPanels[i].gameObject.SetActive(false);
 
         gameObject.SetActive(true);
-        Canvas.ForceUpdateCanvases();
     }
 }

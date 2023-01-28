@@ -773,6 +773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6bf5a6ab790ad243aee3bced410e125, type: 3}
+--- !u!224 &8356040695845468846 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4077834882105955334, guid: f6bf5a6ab790ad243aee3bced410e125, type: 3}
+  m_PrefabInstance: {fileID: 5431903575704661672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8356040695845468847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4077834882105955335, guid: f6bf5a6ab790ad243aee3bced410e125, type: 3}
@@ -834,6 +839,7 @@ MonoBehaviour:
   _damageText: {fileID: 8356040696575494959}
   _skillText: {fileID: 8356040695881591912}
   _skillImage: {fileID: 8356040697499317446}
+  _rectTransform: {fileID: 8356040695845468846}
 --- !u!224 &8356040696335309179 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4077834882729572307, guid: f6bf5a6ab790ad243aee3bced410e125, type: 3}

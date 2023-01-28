@@ -6,14 +6,16 @@ public class Circle : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
 
-    private Coroutine _coroutine;
     private SpriteRenderer _renderer;
+    private Coroutine _coroutine;
+    private Color _color;
     private bool _isActive;
     private float _waitTime = 3f;
 
-    private void OnEnable()
+    private void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
+        _color = _renderer.color;
     }
 
     private void OnDisable()
@@ -55,9 +57,9 @@ public class Circle : MonoBehaviour
 
     private IEnumerator Use()
     {
-        _renderer.color = new Color(1f, 1f, 1f, 1f);
+        _renderer.color = Color.red;
         yield return new WaitForSeconds(_waitTime);
-        _renderer.color = new Color(1f, 1f, 1f, 0.5f);
+        _renderer.color = _color;
         gameObject.SetActive(false);
         yield break;
     }
