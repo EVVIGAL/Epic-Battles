@@ -5,7 +5,7 @@ using UnityEngine;
 public class InternationalText : MonoBehaviour
 {
     private LeanLocalization _localization;
-    private const string _defaultKey = "ru";
+    private const string _defaultKey = "en";
 
     private Dictionary<string, string> _languageISO639_1Codes = new()
     {

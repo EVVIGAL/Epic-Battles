@@ -28,23 +28,23 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (Input.GetMouseButtonDown(0))
         {
-            if (!EventSystem.current.IsPointerOverGameObject())
+            if (_unit != null && _money.Amount >= _unit.Cost)
             {
-                if (_unit != null && _money.Amount >= _unit.Cost)
-                {
-                    Vector3 position = GetPosition();
+                Vector3 position = GetPosition();
 
-                    if (position == Vector3.zero)
-                        return;
+                if (position == Vector3.zero)
+                    return;
 
-                    if (_unit.Name == _helicopterTxt)
-                        position.y = _helicopterHeight;
+                if (_unit.Name == _helicopterTxt)
+                    position.y = _helicopterHeight;
 
-                    if (CheckSpawnPoint(position))
-                        SpawnUnit(position);
-                }
+                if (CheckSpawnPoint(position))
+                    SpawnUnit(position);
             }
         }
     }

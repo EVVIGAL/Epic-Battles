@@ -1,3 +1,4 @@
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class Remover : MonoBehaviour
@@ -37,6 +38,9 @@ public class Remover : MonoBehaviour
 
     private void RemoveUnit()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
         Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out RaycastHit hit))
