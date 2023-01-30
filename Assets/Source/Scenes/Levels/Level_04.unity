@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.62752426, g: 0.7742448, b: 0.47617716, a: 1}
+  m_IndirectSpecularColor: {r: 0.78557616, g: 0.88649774, b: 0.70615536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -479,6 +479,61 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1527055450098318974, guid: 971ef8207f535194faf411d40b27fb77, type: 3}
   m_PrefabInstance: {fileID: 202809622}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &272597903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272597904}
+  - component: {fileID: 272597905}
+  m_Layer: 0
+  m_Name: PressToContinue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272597904
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272597903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386209133}
+  m_RootOrder: 37
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272597905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272597903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: English
+    Text: PRESS TO CONTINUE
+    Object: {fileID: 0}
+  - Language: Russian
+    Text: "\u041D\u0410\u0416\u041C\u0418\u0422\u0415 \u0414\u041B\u042F \u041F\u0420\u041E\u0414\u041E\u0416\u0415\u041D\u0418\u042F"
+    Object: {fileID: 0}
+  - Language: Turkish
+    Text: "DEVAM ETMEK \u0130\xC7\u0130N BASIN"
+    Object: {fileID: 0}
 --- !u!1 &289400928
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,6 +784,10 @@ Transform:
   - {fileID: 1395066584}
   - {fileID: 144803119}
   - {fileID: 6207768}
+  - {fileID: 986534830}
+  - {fileID: 809931929}
+  - {fileID: 272597904}
+  - {fileID: 1200349836}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1481,6 +1540,61 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 5, y: -5}
   m_UseGraphicAlpha: 1
+--- !u!1 &809931928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809931929}
+  - component: {fileID: 809931930}
+  m_Layer: 0
+  m_Name: Defeat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &809931929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809931928}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386209133}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809931930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809931928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: English
+    Text: DEFEAT!
+    Object: {fileID: 0}
+  - Language: Russian
+    Text: "\u041F\u041E\u0420\u0410\u0416\u0415\u041D\u0418\u0415!"
+    Object: {fileID: 0}
+  - Language: Turkish
+    Text: YENMEK!
+    Object: {fileID: 0}
 --- !u!1 &818054205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,6 +1775,61 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1700388127314791952, guid: 2efb1e06d63877e45bf28e4cdfb8f837, type: 3}
   m_PrefabInstance: {fileID: 1700388127202277796}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &986534829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 986534830}
+  - component: {fileID: 986534831}
+  m_Layer: 0
+  m_Name: Victory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &986534830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986534829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386209133}
+  m_RootOrder: 35
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986534831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986534829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: English
+    Text: VICTORY!
+    Object: {fileID: 0}
+  - Language: Russian
+    Text: "\u041F\u041E\u0411\u0415\u0414\u0410!"
+    Object: {fileID: 0}
+  - Language: Turkish
+    Text: ZAFER!
+    Object: {fileID: 0}
 --- !u!1 &1006315485 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5801532600762687458, guid: fdabd6196ef8315479bf746f9b741edc, type: 3}
@@ -2090,6 +2259,61 @@ MonoBehaviour:
     Object: {fileID: 0}
   - Language: Turkish
     Text: Yeni oyun
+    Object: {fileID: 0}
+--- !u!1 &1200349835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1200349836}
+  - component: {fileID: 1200349837}
+  m_Layer: 0
+  m_Name: PressToRestart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1200349836
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200349835}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 386209133}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200349837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200349835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: English
+    Text: PRESS TO RESTART
+    Object: {fileID: 0}
+  - Language: Russian
+    Text: "\u041D\u0410\u0416\u041C\u0418\u0422\u0415 \u0414\u041B\u042F \u041F\u0415\u0420\u0415\u0417\u0410\u041F\u0423\u0421\u041A\u0410"
+    Object: {fileID: 0}
+  - Language: Turkish
+    Text: "YEN\u0130DEN BA\u015ELATMAK \u0130\xC7\u0130N BASIN"
     Object: {fileID: 0}
 --- !u!1 &1203035279
 GameObject:
@@ -6803,7 +7027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6102418944190760546, guid: 52df92d2e82120245b0ec63c9ad567fe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.999939
+      value: -1.9998779
       objectReference: {fileID: 0}
     - target: {fileID: 6102418944190760546, guid: 52df92d2e82120245b0ec63c9ad567fe, type: 3}
       propertyPath: m_AnchoredPosition.y

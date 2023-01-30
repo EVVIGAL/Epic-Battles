@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.78557616, g: 0.88649774, b: 0.70615536, a: 1}
+  m_IndirectSpecularColor: {r: 0.81382406, g: 0.893313, b: 0.7194427, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Devam et
+  m_text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
@@ -728,7 +728,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yeni oyun
+  m_text: "\u041D\u043E\u0432\u0430\u044F \u0438\u0433\u0440\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
@@ -868,7 +868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -4.9999847, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &361897804
@@ -1303,7 +1303,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ayarlar
+  m_text: "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
@@ -2464,7 +2464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 806f0696300aeac44a0e17efee222854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLanguage: Turkish
+  currentLanguage: Russian
   detectLanguage: 0
   defaultLanguage: Turkish
   saveLoad: 2
@@ -3264,10 +3264,10 @@ RectTransform:
   m_Father: {fileID: 1750493987}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.08839553, y: 0.34052214}
-  m_AnchorMax: {x: 0.6923993, y: 0.5}
-  m_AnchoredPosition: {x: -0.5, y: 0.5}
-  m_SizeDelta: {x: -261.03, y: -37.663002}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -43, y: -30}
+  m_SizeDelta: {x: 200, y: 19.336998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916074782
 MonoBehaviour:
@@ -4295,8 +4295,8 @@ RectTransform:
   m_Father: {fileID: 1760393379}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.05775706, y: 0.06310215}
-  m_AnchorMax: {x: 0.9486964, y: 0.84048975}
+  m_AnchorMin: {x: 0.023000002, y: 0.10527888}
+  m_AnchorMax: {x: 0.9723907, y: 0.79228777}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4320,7 +4320,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: "1-\u041C\u0430\u0440\u0430\u0442 \u0424\u0430\u0440\u0445\u0443\u0442\u0434\u0438\u043D\u043E\u0432-20\n1-\u041C\u0430\u0440\u0430\u0442
+    \u0424\u0430\u0440\u0445\u0443\u0442\u0434\u0438\u043D\u043E\u0432-11500\n1-\u041C\u0430\u0440\u0430\u0442
+    \u0424\u0430\u0440\u0445\u0443\u0442\u0434\u0438\u043D\u043E\u0432-11500\n1-\u041C\u0430\u0440\u0430\u0442
+    \u0424\u0430\u0440\u0445\u0443\u0442\u0434\u0438\u043D\u043E\u0432-11500\n1-\u041C\u0430\u0440\u0430\u0442
+    \u0424\u0430\u0440\u0445\u0443\u0442\u0434\u0438\u043D\u043E\u0432-11500\n1-\u041C\u0430\u0440\u0430\u0442
+    \u0424\u0430\u0440\u0445\u0443\u0442\u0434\u0438\u043D\u043E\u0432-11500\n1-\u041C\u0430\u0440\u0430\u0442
+    \u0424\u0430\u0440\u0445\u0443\u0442\u0434\u0438\u043D\u043E\u0432-11500"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
@@ -4354,7 +4360,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 17
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -4383,7 +4389,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 4.113571, y: 6.66086, z: 3.3495483, w: 9.0321045}
+  m_margin: {x: -19.632889, y: 6.66086, z: -15.647674, w: 5.8657303}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5598,7 +5604,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Liderler S\u0131ralamas\u0131"
+  m_text: "\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u043B\u0438\u0434\u0435\u0440\u043E\u0432"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
   m_sharedMaterial: {fileID: 942589445191879500, guid: 17dd390de18854b4c8da4dfa56fb7abd, type: 2}
@@ -5744,10 +5750,10 @@ RectTransform:
   m_Father: {fileID: 1760393379}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.1196681, y: 0.8638368}
-  m_AnchorMax: {x: 0.9111822, y: 0.97951037}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 5, y: -24}
+  m_SizeDelta: {x: 569, y: 58}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1641415563
 MonoBehaviour:
@@ -6106,10 +6112,10 @@ RectTransform:
   m_Father: {fileID: 523178855}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.33800003, y: 0.31738648}
-  m_AnchorMax: {x: 0.75349844, y: 0.70100003}
+  m_AnchorMin: {x: 0.397, y: 0.404}
+  m_AnchorMax: {x: 0.6905798, y: 0.69772965}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.000015258789, y: 0.0000076293945}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1750493988
 MonoBehaviour:
@@ -6185,10 +6191,10 @@ RectTransform:
   m_Father: {fileID: 523178855}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.36559278, y: 0.049000002}
-  m_AnchorMax: {x: 0.88381463, y: 0.96500003}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.44700003, y: 0.38000003}
+  m_AnchorMax: {x: 0.7972277, y: 0.87500006}
+  m_AnchoredPosition: {x: 0, y: -1}
+  m_SizeDelta: {x: 0, y: -2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760393380
 MonoBehaviour:
@@ -6920,10 +6926,6 @@ PrefabInstance:
     - target: {fileID: 682130806602811785, guid: fe71c08f1636407409d447352e141423, type: 3}
       propertyPath: m_Shadows.m_Type
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 682130806602811786, guid: fe71c08f1636407409d447352e141423, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 682130806602811786, guid: fe71c08f1636407409d447352e141423, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7761,10 +7763,10 @@ RectTransform:
   m_Father: {fileID: 1750493987}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.764405, y: 0.34052214}
-  m_AnchorMax: {x: 0.8424012, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 209, y: -31.5}
+  m_SizeDelta: {x: 66, y: 63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2128105801
 MonoBehaviour:

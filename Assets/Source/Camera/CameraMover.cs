@@ -24,6 +24,8 @@ public class CameraMover : MonoBehaviour
     private float _maxZoom = 70f;
     private float _wheelSpeedMultiplier = 3f;
 
+    private string _mouseWheel = "Mouse ScrollWheel";
+
     public float MinZoom => _minZoom;
 
     public float MaxZoom => _maxZoom;
@@ -48,10 +50,10 @@ public class CameraMover : MonoBehaviour
         if (Input.GetKey(KeyCode.Q))
             ZoomOut();
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        if (Input.GetAxis(_mouseWheel) > 0)
             ZoomIn(_wheelSpeedMultiplier);
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis(_mouseWheel) < 0)
             ZoomOut(_wheelSpeedMultiplier);
     }
 
