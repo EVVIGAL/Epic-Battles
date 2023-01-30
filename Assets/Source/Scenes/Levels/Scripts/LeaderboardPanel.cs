@@ -5,6 +5,7 @@ using TMPro;
 public class LeaderboardPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private TextMeshProUGUI _scoreText;
 
     private string _leaderboardTxt = "Leaderboard";
     private int _topCount = 7;
@@ -17,6 +18,7 @@ public class LeaderboardPanel : MonoBehaviour
     private void OnDisable()
     {
         _text.text = string.Empty;
+        _scoreText.text = string.Empty;
     }
 
     public void GetLeaderboardEntries()
@@ -30,7 +32,8 @@ public class LeaderboardPanel : MonoBehaviour
                 if (string.IsNullOrEmpty(name))
                     name = "Anonymous";
 
-                _text.text += $"{i + 1} - {name} - {result.entries[i].score}\n";
+                _text.text += $"{i + 1}.{name}\n";
+                _scoreText.text += $"{result.entries[i].score}\n";
             }
         });
     }
