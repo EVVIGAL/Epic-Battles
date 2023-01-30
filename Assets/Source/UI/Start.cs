@@ -7,7 +7,6 @@ public class Start : MonoBehaviour
 {
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _line;
-    [SerializeField] private GameObject _infoPanel;
     [SerializeField] private Spawner _spawner;
     [SerializeField] private UnitsObserver _observer;
     [SerializeField] private SkillsController _skillController;
