@@ -7,6 +7,7 @@ public class LeaderboardButton : MonoBehaviour
     [SerializeField] private GameObject _leaderboardPanel;
     [SerializeField] private GameObject _authorizationPanel;
     [SerializeField] private GameObject _settingsPanel;
+    [SerializeField] private GameObject _mainPanel;
 
     private Button _button;
 
@@ -27,22 +28,20 @@ public class LeaderboardButton : MonoBehaviour
 
     private void OpenLeaderboard()
     {
-        if(!YandexGamesSdk.IsInitialized)
+        if (!YandexGamesSdk.IsInitialized)
             return;
 
-        if(_settingsPanel.activeSelf)
-            _settingsPanel.SetActive(false);
+        _settingsPanel.SetActive(false);
 
         if (PlayerAccount.IsAuthorized)
         {
-            if(_leaderboardPanel.activeSelf)
-                _leaderboardPanel.SetActive(false);
-            else
-                _leaderboardPanel.SetActive(true);
+            _leaderboardPanel.SetActive(!_leaderboardPanel.activeSelf);
+            _mainPanel.SetActive(false);
         }
         else
         {
             _authorizationPanel.SetActive(true);
+            _mainPanel.SetActive(false);
         }
     }
 }

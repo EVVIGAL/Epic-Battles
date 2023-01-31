@@ -5,12 +5,12 @@ using TMPro;
 
 public class Start : MonoBehaviour
 {
+    [SerializeField] private SkillsController _skillController;
+    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private UnitsObserver _observer;
     [SerializeField] private GameObject _slider;
     [SerializeField] private GameObject _line;
     [SerializeField] private Spawner _spawner;
-    [SerializeField] private UnitsObserver _observer;
-    [SerializeField] private SkillsController _skillController;
-    [SerializeField] private TextMeshProUGUI _text;
 
     private Button _startButton;
     private string _coroutineName = "HideAfterWait";

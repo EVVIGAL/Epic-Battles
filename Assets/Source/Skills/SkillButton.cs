@@ -1,6 +1,6 @@
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEngine.Events;
 using TMPro;
 
 public class SkillButton : MonoBehaviour
@@ -28,7 +28,7 @@ public class SkillButton : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(ActivateSkill);
     }
 
     public void ActivateSkill()

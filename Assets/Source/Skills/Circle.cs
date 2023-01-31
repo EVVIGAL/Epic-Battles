@@ -40,7 +40,7 @@ public class Circle : MonoBehaviour
         _isActive = true;
     }
 
-    public void ActivateCircle()
+    public void ActivateAim()
     {
         _isActive = false;
 

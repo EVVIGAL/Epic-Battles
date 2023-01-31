@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Lean.Localization;
 using UnityEngine;
 
-public class InternationalText : MonoBehaviour
+public class Localization : MonoBehaviour
 {
     private LeanLocalization _localization;
     private const string _defaultKey = "en";

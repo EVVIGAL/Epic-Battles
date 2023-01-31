@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class YesButton : MonoBehaviour
 {
+    [SerializeField] private GameObject _mainPanel;
     [SerializeField] private GameObject _authorizationPanel;
 
     private Button _button;
@@ -27,8 +28,10 @@ public class YesButton : MonoBehaviour
     {
         if (YandexGamesSdk.IsInitialized)
         {
-            _authorizationPanel.SetActive(false);
             PlayerAccount.Authorize();
+            _authorizationPanel.SetActive(false);
         }
+
+        _mainPanel.SetActive(true);
     }
 }
