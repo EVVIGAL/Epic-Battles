@@ -449,7 +449,7 @@ MonoBehaviour:
   _skillSprite: {fileID: 0}
   _name: Sniper
   _skill: 
-  _cost: 10
+  _cost: 20
 --- !u!114 &5983583485096501388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d323119df89604aa8d16cf4410901b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxValue>k__BackingField: 60
+  <MaxValue>k__BackingField: 30
   _deathSource: {fileID: 2109309601631231881}
   _ragdollSource: {fileID: 2066305246680706592}
   _weaponPhysicSource: {fileID: 8227756822243693158}
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf687c6c1c7fd842a7e715454eb1c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Damage>k__BackingField: 65
+  <Damage>k__BackingField: 35
   <RateOfFire>k__BackingField: 1
   _reloadSpeed: 3
   _magazineSize: 1

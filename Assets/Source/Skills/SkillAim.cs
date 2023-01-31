@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class Circle : MonoBehaviour
+public class SkillAim : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
 
@@ -31,7 +31,7 @@ public class Circle : MonoBehaviour
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit))
-                transform.position = hit.point;
+                transform.position = new Vector3(hit.point.x, transform.position.y, hit.point.z);
         }
     }
 

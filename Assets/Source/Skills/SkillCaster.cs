@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SkillCaster : MonoBehaviour
 {
-    [SerializeField] private Circle _circle;
+    [SerializeField] private SkillAim _circle;
     [SerializeField] private GameObject _skillTxt;
     [SerializeField] private Skill[] _skills;
     [SerializeField] private Camera _camera;
