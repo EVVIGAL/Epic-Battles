@@ -8830,7 +8830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -8976,7 +8976,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.246, y: 0.712}
   m_AnchorMax: {x: 0.7564639, y: 0.8018302}
-  m_AnchoredPosition: {x: -1.5005798, y: -0.5}
+  m_AnchoredPosition: {x: -1.5006104, y: -0.5}
   m_SizeDelta: {x: -7, y: -9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &803552098
@@ -19170,7 +19170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.246, y: 0.712}
   m_AnchorMax: {x: 0.7564639, y: 0.8018302}
-  m_AnchoredPosition: {x: -1.5005798, y: -0.5}
+  m_AnchoredPosition: {x: -1.5006104, y: -0.5}
   m_SizeDelta: {x: -7, y: -9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1480181230
@@ -19187,7 +19187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -24722,19 +24722,19 @@ PrefabInstance:
       objectReference: {fileID: 963194230}
     - target: {fileID: 213201096910868526, guid: fdabd6196ef8315479bf746f9b741edc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 213201096910868526, guid: fdabd6196ef8315479bf746f9b741edc, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 213201096910868526, guid: fdabd6196ef8315479bf746f9b741edc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 120
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 213201096910868526, guid: fdabd6196ef8315479bf746f9b741edc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 213201096926219622, guid: fdabd6196ef8315479bf746f9b741edc, type: 3}
       propertyPath: _spawner
