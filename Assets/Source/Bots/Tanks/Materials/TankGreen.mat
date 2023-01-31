@@ -8,14 +8,13 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TankGreen
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
   m_ValidKeywords:
-  - _GLOSSYREFLECTIONS_OFF
-  - _SPECULARHIGHLIGHTS_OFF
-  m_InvalidKeywords:
-  - DR_SPECULAR_ON
   - _CELPRIMARYMODE_SINGLE
   - _TEXTUREBLENDINGMODE_MULTIPLY
+  m_InvalidKeywords:
+  - _GLOSSYREFLECTIONS_OFF
+  - _SPECULARHIGHLIGHTS_OFF
   - _UNITYSHADOWMODE_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -82,12 +81,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FlatRimEdgeSmoothness: 0.5
-    - _FlatRimLightAlign: 0
-    - _FlatRimSize: 0.5
-    - _FlatSpecularEdgeSmoothness: 0.433
-    - _FlatSpecularSize: 0.158
-    - _Flatness: 0.51
+    - _FlatRimEdgeSmoothness: 0.235
+    - _FlatRimLightAlign: 0.087
+    - _FlatRimSize: 0.296
+    - _FlatSpecularEdgeSmoothness: 0.209
+    - _FlatSpecularSize: 0.651
+    - _Flatness: 1
     - _FlatnessExtra: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.2
@@ -97,7 +96,7 @@ Material:
     - _GradientCenterY: 0
     - _GradientEnabled: 0
     - _GradientSize: 10
-    - _LightContribution: 0
+    - _LightContribution: 1
     - _LightmapDirectionPitch: 0
     - _LightmapDirectionYaw: 0
     - _Metallic: 0.3
@@ -107,12 +106,12 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _RimEnabled: 0
-    - _SelfShadingSize: 0.664
+    - _SelfShadingSize: 0.725
     - _SelfShadingSizeExtra: 0.6
-    - _ShadowEdgeSize: 0.143
+    - _ShadowEdgeSize: 0.251
     - _ShadowEdgeSizeExtra: 0.05
     - _SmoothnessTextureChannel: 0
-    - _SpecularEnabled: 1
+    - _SpecularEnabled: 0
     - _SpecularHighlights: 0
     - _SrcBlend: 1
     - _Surface: 0
@@ -132,8 +131,8 @@ Material:
     - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
-    - _FlatSpecularColor: {r: 0.24891317, g: 0.34905657, b: 0.15312383, a: 1}
+    - _FlatRimColor: {r: 0.2487297, g: 0.3584906, b: 0.15726237, a: 1}
+    - _FlatSpecularColor: {r: 0.27288502, g: 0.4245283, b: 0.18623175, a: 1}
     - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
     - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
   m_BuildTextureStacks: []
