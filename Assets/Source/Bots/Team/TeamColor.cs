@@ -4,7 +4,7 @@ using UnityEngine;
 public class TeamColor : MonoBehaviour
 {
     private Material _teamColor;
-    private string TeamMaterial = "TeamColor (Instance)";
+    private const string TeamMaterial = "TeamColor (Instance)";
 
     private void Awake()
     {
