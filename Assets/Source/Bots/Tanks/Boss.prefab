@@ -219,10 +219,10 @@ GameObject:
   - component: {fileID: 3383380530604027393}
   - component: {fileID: 3383380530604027392}
   - component: {fileID: 3383380530604027395}
-  - component: {fileID: 3383380530604027394}
   - component: {fileID: 3383380530604027397}
   - component: {fileID: 3383380530604027396}
   - component: {fileID: 314604533700238670}
+  - component: {fileID: 6725106696711541219}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -258,10 +258,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 4
   m_Radius: 4
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 0.1
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 4, z: 0}
@@ -298,7 +298,7 @@ MonoBehaviour:
         Complete","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-70,110)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Self","Children":[{"Type":"SetNearbyBot","NodeData":{"Offset":"(-92,106)"},"ID":7,"Name":"Set
         Nearby Bot","Instant":true,"SharedBotBot":{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":1},"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(110,105.416626)"},"ID":8,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Self","Children":[{"Type":"CheckDistance","NodeData":{"Offset":"(-140,140)"},"ID":9,"Name":"Check
         Distance","Instant":true,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SharedAttackDistanceDistance":{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":2}},{"Type":"TurnTurret","NodeData":{"Offset":"(0,140)"},"ID":10,"Name":"Turn
-        Turret","Instant":true,"TransformTurret":3,"TransformGun":4,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SharedFloatAngularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"_turretRotateSpeed","IsShared":true,"SinglemValue":30}},{"Type":"Shoot","NodeData":{"Offset":"(131.428558,140)"},"ID":11,"Name":"Shoot","Instant":true,"MonoBehaviourWeaponSource":5,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}}]}]},{"Type":"Patrol","NodeData":{"Offset":"(90,110)"},"ID":12,"Name":"Patrol","Instant":true,"SharedTransformPath":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_patrolPath","IsShared":true},"Single_stopingDistance":5,"MonoBehaviourMovementSource":6}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":7},{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":8},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_patrolPath","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"_turretRotateSpeed","IsShared":true,"SinglemValue":30}]}'
+        Turret","Instant":true,"TransformTurret":3,"TransformGun":4,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},"SharedFloatAngularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"_turretRotateSpeed","IsShared":true,"SinglemValue":30}},{"Type":"Shoot","NodeData":{"Offset":"(131.428558,140)"},"ID":11,"Name":"Shoot","Instant":true,"MonoBehaviourWeaponSource":5,"SharedTransformTarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true}}]}]},{"Type":"Patrol","NodeData":{"Offset":"(90,110)"},"ID":12,"Name":"Patrol","Instant":true,"SharedTransformPath":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_patrolPath","IsShared":true,"TransformmValue":6},"Single_stopingDistance":5,"MonoBehaviourMovementSource":7}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_target","IsShared":true},{"Type":"SharedAttackDistance","Name":"_attackDistance","IsShared":true,"AttackDistancemValue":8},{"Type":"SharedBot","Name":"_bot","IsShared":true,"BotmValue":9},{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"_patrolPath","IsShared":true,"TransformmValue":10},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"_turretRotateSpeed","IsShared":true,"SinglemValue":30}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -311,9 +311,11 @@ MonoBehaviour:
         - {fileID: 3597905552340047076}
         - {fileID: 1128297876553085426}
         - {fileID: 3383380530604027420}
+        - {fileID: 0}
         - {fileID: 3383380530604027421}
         - {fileID: 3383380530604027395}
         - {fileID: 3383380530604027422}
+        - {fileID: 0}
         byteData: 
         byteDataArray: 
       Version: 1.7.2
@@ -368,7 +370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53db212c6d34fd146bf54af02514d443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxValue>k__BackingField: 3500
+  <MaxValue>k__BackingField: 100
   _deathSource: {fileID: 3383380530604027396}
   _turelExplosion: {fileID: 7047055613913909053}
 --- !u!114 &3383380530604027422
@@ -429,19 +431,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultValue: 200
---- !u!65 &3383380530604027394
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3383380530604027399}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 12, y: 8, z: 20}
-  m_Center: {x: 0.00006645918, y: 4, z: -0.051959157}
 --- !u!114 &3383380530604027397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +472,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036599412c2da774398ef0811aaf6c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &6725106696711541219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3383380530604027399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 4.5, z: 18}
+  m_Center: {x: 0, y: 3.5, z: 0}
 --- !u!1 &3383380530657066089
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,8 +744,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 1.902982, y: 0.8174415, z: 3.1519628}
-  m_Center: {x: -0.00041928887, y: 0.04758507, z: 0.075565934}
+  m_Size: {x: 5, y: 2, z: 14.5}
+  m_Center: {x: -0.00041928887, y: 0, z: 2.54}
 --- !u!114 &7047055613913909053
 MonoBehaviour:
   m_ObjectHideFlags: 0
