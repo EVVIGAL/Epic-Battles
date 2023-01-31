@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button _settingsButton;
     [SerializeField] private GameObject _settingsPanel;
     [SerializeField] private GameObject _leaderboardPanel;
+    [SerializeField] private GameObject _authorizationPanel;
+    [SerializeField] private GameObject _mainPanel;
 
     private static string _currentLevelStr = "CurrentLevel";
     private static int _firstLevelIndex = 2;
@@ -55,12 +57,9 @@ public class MainMenu : MonoBehaviour
 
     private void OnSettingsClick()
     {
-        if (_leaderboardPanel.activeSelf)
-            _leaderboardPanel.SetActive(false);
-
-        if (_settingsPanel.activeSelf)
-            _settingsPanel.SetActive(false);
-        else
-            _settingsPanel.SetActive(true);
+        _leaderboardPanel.SetActive(false);
+        _authorizationPanel.SetActive(false);
+        _settingsPanel.SetActive(!_settingsPanel.activeSelf);
+        _mainPanel.SetActive(false);
     }
 }

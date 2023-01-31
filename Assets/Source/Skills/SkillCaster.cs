@@ -69,7 +69,7 @@ public class SkillCaster : MonoBehaviour
     private void SpawnSkill(Vector3 position)
     {
         Instantiate(_currentSkill, position, Quaternion.identity);
-        _circle.ActivateCircle();
+        _circle.ActivateAim();
     }
 
     private void HideText()

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class NoButton : MonoBehaviour
 {
+    [SerializeField] private GameObject _mainPanel;
     [SerializeField] private GameObject _authorizationPanel;
 
     private Button _button;
@@ -24,6 +25,7 @@ public class NoButton : MonoBehaviour
 
     private void Close()
     {
+        _mainPanel.SetActive(true);    
         _authorizationPanel.SetActive(false);
     }
 }
