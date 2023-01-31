@@ -1,6 +1,7 @@
 using UnityEngine;
 
 [RequireComponent (typeof(Rigidbody), typeof(CapsuleCollider), typeof(Movement))]
+[RequireComponent(typeof(Animator), typeof(CharacterController))]
 public class HelicopterHealth : Health
 {
     [SerializeField] private ObjectPhysics[] _objectPhysics;

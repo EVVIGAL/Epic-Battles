@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1128297876553085426}
   - component: {fileID: 4209145686652970597}
   - component: {fileID: 1868534823150956702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Gun6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 406638993919536157}
   - component: {fileID: 8020079695451050498}
   - component: {fileID: 4378403387842821029}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3383380530580103837}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 3383380530604027396}
   - component: {fileID: 314604533700238670}
   - component: {fileID: 6725106696711541219}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,6 +244,7 @@ Transform:
   m_Children:
   - {fileID: 9003069291266668676}
   - {fileID: 3037576179006181886}
+  - {fileID: 2055475203641327006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
@@ -494,7 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3383380530657066086}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3383380530758484526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +559,7 @@ GameObject:
   - component: {fileID: 3506184388558723487}
   - component: {fileID: 4122757673521708399}
   - component: {fileID: 5629181081805429042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tracks6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +645,7 @@ GameObject:
   - component: {fileID: 7047055613913909051}
   - component: {fileID: 7047055613913909050}
   - component: {fileID: 7047055613913909053}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Turret6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +774,7 @@ GameObject:
   - component: {fileID: 3919984334223462397}
   - component: {fileID: 4870090013280780452}
   - component: {fileID: 5051082984117198173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Road Wheels6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -854,7 +855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9003069291266668676}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,6 +881,72 @@ Transform:
   m_Father: {fileID: 3383380530604027416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2055475203641452316
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3383380530604027416}
+    m_Modifications:
+    - target: {fileID: 100002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_Name
+      value: BlobShadowProjector
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+      propertyPath: m_FieldOfView
+      value: 104.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+--- !u!4 &2055475203641327006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: 28a5e79925e3ce04a82856c16a572cbe, type: 3}
+  m_PrefabInstance: {fileID: 2055475203641452316}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3037576179006366702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -890,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 150538, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: m_Name
       value: SmokeDarkSoftTrail
+      objectReference: {fileID: 0}
+    - target: {fileID: 150538, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 455184, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: m_RootOrder
@@ -945,7 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: ShapeModule.radius.value
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 19869376, guid: 29b0b627c85f5e94b83fbe9f44272436, type: 3}
       propertyPath: ShapeModule.radiusThickness

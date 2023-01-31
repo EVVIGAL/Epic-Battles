@@ -9,6 +9,9 @@ public class Team : MonoBehaviour
 
     private List<Bot> _bots = new();
 
+    private Transform _nearbyObject;
+    private float _nearbyObjectDistance;
+
     public bool IsAlive => _bots.Find(bot => bot.IsAlive);
 
     public void AddBot(Bot bot)
@@ -49,9 +52,10 @@ public class Team : MonoBehaviour
 
     public Transform GetNearbyBot(Bot bot)
     {
-        Transform nearbyObject = null;
-        float nearbyObjectDistance = float.PositiveInfinity;
+        _nearbyObject = null;
+        _nearbyObjectDistance = float.PositiveInfinity;
         bool isPriorityObject = false;
+
         for (int i = 0; i < _bots.Count; i++)
         {
             if (_bots[i].IsAlive == false)
@@ -62,30 +66,31 @@ public class Team : MonoBehaviour
 
             float distance = (bot.transform.position - _bots[i].transform.position).sqrMagnitude;
 
-            if (distance < nearbyObjectDistance)
+            if (distance < _nearbyObjectDistance)
             {
                 if (bot.PriorityAttackArmy == TypeOfArmy.All || bot.PriorityAttackArmy == _bots[i].TypeOfArmy)
                 {
-                    nearbyObject = _bots[i].transform;
-                    nearbyObjectDistance = distance;
+                    SetNearbyBot(_bots[i].transform, distance);
                     isPriorityObject = true;
                 }
-                else if(isPriorityObject == false)
+                else if (isPriorityObject == false)
                 {
-                    nearbyObject = _bots[i].transform;
-                    nearbyObjectDistance = distance;
+                    SetNearbyBot(_bots[i].transform, distance);
                 }
             }
             else
             {
                 if (bot.PriorityAttackArmy == _bots[i].TypeOfArmy && isPriorityObject == false)
-                {
-                    nearbyObject = _bots[i].transform;
-                    nearbyObjectDistance = distance;
-                }
+                    SetNearbyBot(_bots[i].transform, distance);
             }
         }
 
-        return nearbyObject;
+        return _nearbyObject;
+    }
+
+    private void SetNearbyBot(Transform bot, float distance)
+    {
+        _nearbyObject = bot;
+        _nearbyObjectDistance = distance;
     }
 }
