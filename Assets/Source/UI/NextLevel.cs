@@ -9,6 +9,8 @@ public class NextLevel : MonoBehaviour
 
     private Button _button;
     private int _currentSceneIndex;
+    private int _lastLevelIndex = 21;
+    private int _loopLevelIndex = 5;
     private float _currentVolume;
     private string _volumeTxt = "Volume";
     private string _leaderboardTxt = "Leaderboard";
@@ -52,7 +54,11 @@ public class NextLevel : MonoBehaviour
     {
         AudioListener.volume = _currentVolume;
         SetLeaderboardScore();
-        SceneManager.LoadScene(_currentSceneIndex + 1);
+
+        if(_currentSceneIndex == _lastLevelIndex)
+            SceneManager.LoadScene(_loopLevelIndex);
+        else
+            SceneManager.LoadScene(_currentSceneIndex + 1);
     }
 
     private void SetLeaderboardScore()
