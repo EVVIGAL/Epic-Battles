@@ -9,4 +9,9 @@ public class SceneMerger : MonoBehaviour
     {
         SceneManager.LoadScene(_environmentSceneName, LoadSceneMode.Additive);
     }
+
+    private void Start()
+    {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(_environmentSceneName));
+    }
 }
