@@ -387,6 +387,7 @@ GameObject:
   - component: {fileID: 8344182096992119652}
   - component: {fileID: 4192450524720838975}
   - component: {fileID: 3769310571080402811}
+  - component: {fileID: -3552986680194481377}
   m_Layer: 7
   m_Name: Tank
   m_TagString: Untagged
@@ -520,7 +521,7 @@ MonoBehaviour:
   <RateOfFire>k__BackingField: 1
   _reloadSpeed: 2
   _magazineSize: 1
-  _bulletTemplate: {fileID: 8610013831426296578, guid: 70eb4052568cadb45b984c8421ab2855, type: 3}
+  _projectileFactoryBehaviour: {fileID: -3552986680194481377}
   _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
   _shootPoint: {fileID: 5922764944940656101}
 --- !u!114 &6841120150045946425
@@ -596,6 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultValue: 30
+  _heightBonus: 0
 --- !u!65 &4501625123422457088
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -650,6 +652,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036599412c2da774398ef0811aaf6c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3552986680194481377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6841120150045946424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ceff4d695607e14eb27f219a63134bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 8610013831426296578, guid: 70eb4052568cadb45b984c8421ab2855, type: 3}
+  _poolCapacity: 2
 --- !u!1 &6846498749650067080
 GameObject:
   m_ObjectHideFlags: 0

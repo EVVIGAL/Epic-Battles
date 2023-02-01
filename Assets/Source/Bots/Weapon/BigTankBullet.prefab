@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5947286081805184900}
   - component: {fileID: 7609696762600524930}
   - component: {fileID: 2712427268161393221}
-  - component: {fileID: 5716778813514096125}
   - component: {fileID: -7740368880068117903}
   m_Layer: 6
   m_Name: BigTankBullet
@@ -86,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5716778813514096125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986823653343027362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dcf2ef49f11cc0499dbfc827c2fa63b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _liveTime: 4
 --- !u!114 &-7740368880068117903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +100,7 @@ MonoBehaviour:
   _speed: 100
   _pushForce: 600
   _raycastDistance: 2
+  _liveTime: 3
   _hitFX: {fileID: 19849376, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
 --- !u!1001 &64234725850435130
 PrefabInstance:

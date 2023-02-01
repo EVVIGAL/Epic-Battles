@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 7855747301937204020}
   - component: {fileID: 1354160598259081707}
   - component: {fileID: 5113846363587677715}
+  - component: {fileID: -8235902984038099804}
   m_Layer: 7
   m_Name: GrenadeLauncher
   m_TagString: Untagged
@@ -651,6 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultValue: 35
+  _heightBonus: 0
 --- !u!114 &2266320849002347234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,7 +808,7 @@ MonoBehaviour:
   <RateOfFire>k__BackingField: 1
   _reloadSpeed: 2
   _magazineSize: 1
-  _bulletTemplate: {fileID: 1717522081854441459, guid: 9ae334be4c029f449829b9a2796b5eb2, type: 3}
+  _projectileFactoryBehaviour: {fileID: -8235902984038099804}
   _shootFX: {fileID: 19896092, guid: 5c2bdcf6f0badc34f9f192b0995e4a79, type: 3}
   _shootPoint: {fileID: 5722820582898868718}
 --- !u!114 &5113846363587677715
@@ -845,6 +847,20 @@ MonoBehaviour:
   - {fileID: 2266320847114621348}
   - {fileID: 2266320848455319259}
   - {fileID: 2266320848363260549}
+--- !u!114 &-8235902984038099804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419477330280992746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ceff4d695607e14eb27f219a63134bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 1717522081854441459, guid: 9ae334be4c029f449829b9a2796b5eb2, type: 3}
+  _poolCapacity: 1
 --- !u!1 &1478644929619874757
 GameObject:
   m_ObjectHideFlags: 0

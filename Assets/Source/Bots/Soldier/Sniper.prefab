@@ -339,6 +339,7 @@ GameObject:
   - component: {fileID: 1958037900}
   - component: {fileID: 6097333085349771482}
   - component: {fileID: 2066305246680706592}
+  - component: {fileID: 6163399115401620524}
   m_Layer: 7
   m_Name: Sniper
   m_TagString: Untagged
@@ -463,6 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultValue: 90
+  _heightBonus: 0
 --- !u!114 &3410447207200840321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +620,7 @@ MonoBehaviour:
   <RateOfFire>k__BackingField: 1
   _reloadSpeed: 3
   _magazineSize: 1
-  _bulletTemplate: {fileID: -3932502187743780729, guid: 6fbd62f80f0144c468d4ec0d51f434bb, type: 3}
+  _projectileFactoryBehaviour: {fileID: 6163399115401620524}
   _shootFX: {fileID: 0}
   _shootPoint: {fileID: 2838687876174371308}
 --- !u!114 &2066305246680706592
@@ -657,6 +659,20 @@ MonoBehaviour:
   - {fileID: 8731697407848420314}
   - {fileID: 8471441713243901975}
   - {fileID: 3083103019963463092}
+--- !u!114 &6163399115401620524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518070019359788922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ceff4d695607e14eb27f219a63134bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: -3932502187743780729, guid: 6fbd62f80f0144c468d4ec0d51f434bb, type: 3}
+  _poolCapacity: 1
 --- !u!1 &1580168748538759616
 GameObject:
   m_ObjectHideFlags: 0
