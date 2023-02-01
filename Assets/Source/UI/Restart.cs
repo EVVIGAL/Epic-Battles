@@ -3,13 +3,15 @@ using Agava.YandexGames;
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Button))]
 public class Restart : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
 
+    private const string _volumeTxt = "Volume";
+
     private Button _button;
     private float _currentVolume;
-    private string _volumeTxt = "Volume";
 
     private void Awake()
     {
@@ -29,9 +31,7 @@ public class Restart : MonoBehaviour
     private void RestartWithAd()
     {
         if (YandexGamesSdk.IsInitialized)
-        {
             InterstitialAd.Show(Mute, onCloseCallback: (bool _) => RestartLevel(), onErrorCallback: (string _) => RestartLevel(), RestartLevel);
-        }
     }
 
     private void Mute()

@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Button))]
 public class SettingsButton : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsPanel;

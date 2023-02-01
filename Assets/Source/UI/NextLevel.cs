@@ -3,9 +3,15 @@ using Agava.YandexGames;
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Button))]
 public class NextLevel : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
+
+    private const string _volumeTxt = "Volume";
+    private const string _leaderboardTxt = "Leaderboard";
+    private const string _currentLevelStr = "CurrentLevel";
+    private const string _bestLevelStr = "BestLevel";
 
     private Button _button;
     private int _currentSceneIndex;
@@ -13,17 +19,12 @@ public class NextLevel : MonoBehaviour
     private int _loopLevelIndex = 5;
     private int _notPlayableScenesCount = 4;
     private float _currentVolume;
-    private string _volumeTxt = "Volume";
-    private string _leaderboardTxt = "Leaderboard";
-    private const string _currentLevelStr = "CurrentLevel";
-    private const string _bestLevelStr = "BestLevel";
 
     private void Awake()
     {
         _button = GetComponent<Button>();
         _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         _lastLevelIndex = SceneManager.sceneCountInBuildSettings - _notPlayableScenesCount;
-        Debug.Log(_lastLevelIndex);
     }
 
     private void OnEnable()

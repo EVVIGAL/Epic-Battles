@@ -2,16 +2,18 @@ using Agava.YandexGames;
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Button))]
 public class Ad : MonoBehaviour
 {
     [SerializeField] private Volume _volume;
     [SerializeField] private Money _money;
 
+    private const string _volumeTxt = "Volume";
+
     private Button _button;
     private float _currentVolume;
     private int _reward = 50;
     private int _possibleRewardCount = 2;
-    private string _volumeTxt = "Volume";
 
     private void Awake()
     {
@@ -25,7 +27,7 @@ public class Ad : MonoBehaviour
 
     private void OnDisable()
     {
-        _button.onClick.RemoveAllListeners();
+        _button.onClick.RemoveListener(OnButtonClick);
     }
 
     private void OnButtonClick()

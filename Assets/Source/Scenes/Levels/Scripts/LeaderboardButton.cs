@@ -2,6 +2,7 @@ using Agava.YandexGames;
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Button))]
 public class LeaderboardButton : MonoBehaviour
 {
     [SerializeField] private GameObject _leaderboardPanel;

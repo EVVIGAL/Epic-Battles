@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class CameraMover : MonoBehaviour
 {
     [Header("Bounds")]
@@ -16,15 +17,14 @@ public class CameraMover : MonoBehaviour
     [SerializeField] private Quaternion _startRotation;
     [SerializeField] private Vector3 _startPosition;
 
-    private Transform _transform;
     private Camera _camera;
     private Zoom _zoomBounds;
+
+    private const string _mouseWheel = "Mouse ScrollWheel";
 
     private float _minZoom = 15f;
     private float _maxZoom = 70f;
     private float _wheelSpeedMultiplier = 3f;
-
-    private string _mouseWheel = "Mouse ScrollWheel";
 
     public float MinZoom => _minZoom;
 
@@ -32,7 +32,6 @@ public class CameraMover : MonoBehaviour
 
     private void Awake()
     {
-        _transform = GetComponent<Transform>();       
         _camera = GetComponent<Camera>();
         _camera.fieldOfView = _maxZoom;
         _camera.transform.position = _startPosition;
@@ -59,7 +58,7 @@ public class CameraMover : MonoBehaviour
 
     public void Move(Vector3 direction)
     {
-        _transform.position = Vector3.Lerp(_transform.position, new Vector3(Mathf.Clamp(_transform.position.x, _zoomBounds.Left, _zoomBounds.Right), _transform.position.y, Mathf.Clamp(_transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top)) + direction, Time.unscaledDeltaTime * _speed);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(Mathf.Clamp(transform.position.x, _zoomBounds.Left, _zoomBounds.Right), transform.position.y, Mathf.Clamp(transform.position.z, _zoomBounds.Bottom, _zoomBounds.Top)) + direction, Time.unscaledDeltaTime * _speed);
     }
 
     private Vector3 GetDirection()

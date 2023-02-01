@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Button))]
 public class MenuButton : MonoBehaviour
 {
     private Button _button;

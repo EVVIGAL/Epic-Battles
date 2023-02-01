@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Image))]
 public class StartImage : MonoBehaviour
 {
     [SerializeField] private Button _startButton;
