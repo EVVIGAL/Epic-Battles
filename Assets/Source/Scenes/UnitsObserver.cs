@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SkillsController))]
 public class UnitsObserver : MonoBehaviour
 {
     [SerializeField] private EndBattle _failPanel;

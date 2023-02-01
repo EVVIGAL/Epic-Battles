@@ -13,8 +13,6 @@ public class UnitButtonPanel : MonoBehaviour
     public void Activate(bool isInteractable)
     {
         for(int i = 0; i < _buttons.Length; i++)
-        {
             _buttons[i].interactable = isInteractable;
-        }
     }
 }

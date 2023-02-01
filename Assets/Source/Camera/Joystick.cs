@@ -1,12 +1,12 @@
-using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using UnityEngine;
 
+[RequireComponent(typeof(Image))]
 public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
-    [SerializeField] private Image _joystick;
-    [SerializeField] private Image _touch;
-
+    private Image _joystick;
+    private Image _touch;
     private Vector2 _inputPos;
     private int _speedIncrease = 2;
 
@@ -25,6 +25,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
             position.x /= _joystick.rectTransform.sizeDelta.x;
             position.y /= _joystick.rectTransform.sizeDelta.x;
         }
+
         _inputPos = new(position.x, position.y);
         _inputPos = (_inputPos.magnitude > 1.0f) ? _inputPos.normalized : _inputPos;
         _touch.rectTransform.anchoredPosition = new(_inputPos.x * (_joystick.rectTransform.sizeDelta.x / 2), _inputPos.y * (_joystick.rectTransform.sizeDelta.y / 2));

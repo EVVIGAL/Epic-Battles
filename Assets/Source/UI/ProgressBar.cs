@@ -1,7 +1,9 @@
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
+[RequireComponent(typeof(Slider))]
+[RequireComponent(typeof(Animator))]
 public class ProgressBar : MonoBehaviour
 {
     [SerializeField] private GameObject _blueTeam;
@@ -26,11 +28,6 @@ public class ProgressBar : MonoBehaviour
     {
         Refresh();
         _animator.Play(_animName);
-    }
-
-    private void OnDisable()
-    {
-
     }
 
     public void Refresh()

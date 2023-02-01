@@ -1,12 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Toggle))]
 public class MobileControlPanel : MonoBehaviour
 {
     [SerializeField] private GameObject _mobileContorlPanel;
 
+    private const string _controllerTxt = "MobileController";
+
     private Toggle _toggle;
-    private string _controllerTxt = "MobileController";
 
     private void Awake()
     {
@@ -23,7 +25,7 @@ public class MobileControlPanel : MonoBehaviour
 
     private void OnDisable()
     {
-        _toggle.onValueChanged.RemoveAllListeners();
+        _toggle.onValueChanged.RemoveListener(OpenClose);
     }
 
     private void OpenClose(bool isOn)

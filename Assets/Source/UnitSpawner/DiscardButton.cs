@@ -1,6 +1,7 @@
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
 
+[RequireComponent(typeof(Button))]
 public class DiscardButton : MonoBehaviour
 {
     [SerializeField] private GameObject _team;

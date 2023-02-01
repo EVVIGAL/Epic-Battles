@@ -1,6 +1,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
+[RequireComponent(typeof(Button))]
 public class NoButton : MonoBehaviour
 {
     [SerializeField] private GameObject _mainPanel;

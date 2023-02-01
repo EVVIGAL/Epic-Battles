@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Lean.Localization;
 using UnityEngine;
 
+[RequireComponent(typeof(LeanLocalization))]
 public class Localization : MonoBehaviour
 {
     private LeanLocalization _localization;

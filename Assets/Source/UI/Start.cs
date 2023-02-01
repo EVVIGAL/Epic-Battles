@@ -1,8 +1,8 @@
-using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Button))]
 public class Start : MonoBehaviour
 {
     [SerializeField] private SkillsController _skillController;
@@ -12,8 +12,9 @@ public class Start : MonoBehaviour
     [SerializeField] private GameObject _line;
     [SerializeField] private Spawner _spawner;
 
+    private const string _coroutineName = "HideAfterWait";
+
     private Button _startButton;
-    private string _coroutineName = "HideAfterWait";
     private static bool _isPause;
 
     public static bool IsPause => _isPause;

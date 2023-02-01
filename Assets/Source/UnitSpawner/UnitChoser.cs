@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(Image))]
 public class UnitChoser : MonoBehaviour
 {
     [SerializeField] private Spawner _spawner;

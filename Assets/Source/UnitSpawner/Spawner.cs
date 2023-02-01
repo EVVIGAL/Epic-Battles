@@ -1,6 +1,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Money _money;
@@ -9,6 +10,10 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Quaternion _rotation;
     [SerializeField] private LayerMask _layerMask;
 
+    private const string _boundNameStr = "Bounds";
+    private const string _soldierTxt = "Soldier";
+    private const string _helicopterTxt = "Helicopter";
+
     private Vector3 _tankColliderSize;
     private Vector3 _helicopterSize = new(3f, 3f, 3f);
     private Vector3 _tankSize = new(3f, 3f, 3f);
@@ -16,10 +21,7 @@ public class Spawner : MonoBehaviour
     private Collider[] _colliders;
     private Camera _camera;
     private Unit _unit;
-    private float _helicopterHeight = 10f;
-    private string _boundNameStr = "Bounds";
-    private string _soldierTxt = "Soldier";
-    private string _helicopterTxt = "Helicopter";
+    private float _helicopterHeight = 15f;
 
     private void Awake()
     {

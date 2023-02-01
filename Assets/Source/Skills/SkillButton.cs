@@ -3,6 +3,8 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(Image))]
 public class SkillButton : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _skillTxt;

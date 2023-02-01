@@ -2,6 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class TutorialText : MonoBehaviour
 {
     [SerializeField] private TutorialTeamChecker _teamChecker;
@@ -22,7 +23,6 @@ public class TutorialText : MonoBehaviour
     private TextMeshProUGUI _tutorialText;
     private string _ruCode = "ru";
     private string _trCode = "tr";
-
 
     private void Awake()
     {

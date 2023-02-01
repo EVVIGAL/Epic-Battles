@@ -10,12 +10,13 @@ public class SkillCaster : MonoBehaviour
     [SerializeField] private int _artHeight;
     [SerializeField] private int _smokeHeight;
 
+    private const string _hideMethodName = "HideText";  
+
     private Skill _currentSkill;
     private bool _isReady;
     private int _artIndex = 0;
     private int _smokeIndex = 1;
     private float _waitTime = 0.5f;
-    private string _hideMethodName = "HideText";  
 
     public bool IsReady => _isReady;
 

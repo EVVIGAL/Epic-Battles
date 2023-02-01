@@ -1,6 +1,7 @@
 using UnityEngine.EventSystems;
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class Remover : MonoBehaviour
 {
     [SerializeField] private Money _money;

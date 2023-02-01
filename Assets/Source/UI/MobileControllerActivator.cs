@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MobileControllerActivator : MonoBehaviour
 {
-    private string _controllerTxt = "MobileController";
+    private const string _controllerTxt = "MobileController";
 
     private void Awake()
     {

@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
+[RequireComponent(typeof(UnitsObserver))]
 public class SkillsController : MonoBehaviour
 {
     [SerializeField] private SkillButton _artButton;

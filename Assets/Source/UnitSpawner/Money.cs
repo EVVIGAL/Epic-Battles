@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class Money : MonoBehaviour
 {
     [SerializeField] private int _amount;

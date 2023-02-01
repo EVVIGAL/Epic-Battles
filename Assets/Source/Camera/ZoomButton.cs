@@ -9,11 +9,9 @@ public class ZoomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     protected CameraMover _cameraMover;
     private Coroutine _zoom;
-    private Button _button;
 
     private void Awake()
     {
-        _button = GetComponent<Button>();
         _cameraMover = _camera.GetComponent<CameraMover>();
     }
 
