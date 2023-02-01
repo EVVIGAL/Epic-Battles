@@ -8,7 +8,8 @@ public class LeaderboardPanel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scoreText;
 
     private string _leaderboardTxt = "Leaderboard";
-    private int _topCount = 7;
+    private int _topPlayersCount = 7;
+    private int _competingPlayers = 1;
 
     private void OnEnable()
     {       
@@ -25,16 +26,16 @@ public class LeaderboardPanel : MonoBehaviour
     {
         Leaderboard.GetEntries(_leaderboardTxt, (result) =>
         {
-            for (int i = 0; i < _topCount; i++)
+            foreach (var entry in result.entries)
             {
-                string name = result.entries[i].player.publicName;
+                string name = entry.player.publicName;
 
                 if (string.IsNullOrEmpty(name))
                     name = "Anonymous";
 
-                _text.text += $"{i + 1}.{name}\n";
-                _scoreText.text += $"{result.entries[i].score}\n";
+                _text.text += $"{entry.rank}.{name}\n";
+                _scoreText.text += $"{entry.score}\n";
             }
-        });
+        }, null, _topPlayersCount, _competingPlayers);
     }
 }

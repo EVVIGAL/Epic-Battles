@@ -9,8 +9,9 @@ public class NextLevel : MonoBehaviour
 
     private Button _button;
     private int _currentSceneIndex;
-    private int _lastLevelIndex = 21;
+    private int _lastLevelIndex;
     private int _loopLevelIndex = 5;
+    private int _notPlayableScenesCount = 4;
     private float _currentVolume;
     private string _volumeTxt = "Volume";
     private string _leaderboardTxt = "Leaderboard";
@@ -21,6 +22,8 @@ public class NextLevel : MonoBehaviour
     {
         _button = GetComponent<Button>();
         _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        _lastLevelIndex = SceneManager.sceneCountInBuildSettings - _notPlayableScenesCount;
+        Debug.Log(_lastLevelIndex);
     }
 
     private void OnEnable()

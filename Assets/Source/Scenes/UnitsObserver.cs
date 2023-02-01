@@ -96,9 +96,19 @@ public class UnitsObserver : MonoBehaviour
         }
 
         if (redDefeated)
-            _winPanel.gameObject.SetActive(true);
+        {
+            if (_failPanel.gameObject.activeSelf)
+                return;
 
-        if (blueDefeated)         
+            _winPanel.gameObject.SetActive(true);
+        }
+
+        if (blueDefeated)
+        {
+            if (_winPanel.gameObject.activeSelf)
+                return;
+
             _failPanel.gameObject.SetActive(true);
+        }      
     }
 }

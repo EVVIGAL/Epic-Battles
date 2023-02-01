@@ -16,8 +16,6 @@ public class Start : MonoBehaviour
     private string _coroutineName = "HideAfterWait";
     private static bool _isPause;
 
-    public event UnityAction<bool> isInteractable;
-
     public static bool IsPause => _isPause;
 
     private void Awake()
