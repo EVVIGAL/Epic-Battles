@@ -13,7 +13,7 @@ public class Ad : MonoBehaviour
     private Button _button;
     private float _currentVolume;
     private int _reward = 50;
-    private int _possibleRewardCount = 2;
+    private int _possibleRewardCount = 5;
 
     private void Awake()
     {
