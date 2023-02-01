@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Bullet : Shell
+public class Bullet : Projectile
 {
     protected override void OnHit(RaycastHit hitInfo)
     {

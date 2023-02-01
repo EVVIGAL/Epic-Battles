@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Bomb : Shell
+public class Bomb : Projectile
 {
     [SerializeField] private float _radius;
 

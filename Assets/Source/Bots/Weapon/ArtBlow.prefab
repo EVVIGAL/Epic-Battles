@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7382329009109926283}
   - component: {fileID: 7382329009109926280}
   - component: {fileID: -5698164778684057777}
+  - component: {fileID: 3747422687499489029}
   m_Layer: 0
   m_Name: ArtBlow
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   <RateOfFire>k__BackingField: 1
   _reloadSpeed: 1
   _magazineSize: 1
-  _bulletTemplate: {fileID: 765929526979976947, guid: 21a5b6fcb24b4094992a2b726af0da1b, type: 3}
+  _projectileFactoryBehaviour: {fileID: 3747422687499489029}
   _shootFX: {fileID: 0}
   _radius: 10
   _shootCount: 10
@@ -65,3 +66,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825e0c75ec4c7464b8d94b27daa0cf99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3747422687499489029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7382329009109926281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ceff4d695607e14eb27f219a63134bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 765929526979976947, guid: 21a5b6fcb24b4094992a2b726af0da1b, type: 3}
+  _poolCapacity: 3

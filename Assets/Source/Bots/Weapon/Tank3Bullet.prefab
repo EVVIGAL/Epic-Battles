@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4305105094855691663}
-  - component: {fileID: 2765732862668505078}
   - component: {fileID: 5267548810438248575}
   m_Layer: 6
   m_Name: Tank3Bullet
@@ -34,19 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2765732862668505078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7243522724183704233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dcf2ef49f11cc0499dbfc827c2fa63b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _liveTime: 4
 --- !u!114 &5267548810438248575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +48,7 @@ MonoBehaviour:
   _speed: 100
   _pushForce: 300
   _raycastDistance: 3
+  _liveTime: 3
   _hitFX: {fileID: 0}
 --- !u!1001 &9094328298011575833
 PrefabInstance:

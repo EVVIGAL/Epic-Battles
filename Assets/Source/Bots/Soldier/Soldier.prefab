@@ -2991,6 +2991,7 @@ GameObject:
   - component: {fileID: 4812129664339160598}
   - component: {fileID: -4967529851598276479}
   - component: {fileID: 9178910346357886797}
+  - component: {fileID: 2086988133926712932}
   m_Layer: 7
   m_Name: Soldier
   m_TagString: Untagged
@@ -3115,6 +3116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultValue: 30
+  _heightBonus: 0
 --- !u!114 &7476628944813397055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,7 +3272,7 @@ MonoBehaviour:
   <RateOfFire>k__BackingField: 0.2
   _reloadSpeed: 2
   _magazineSize: 15
-  _bulletTemplate: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
+  _projectileFactoryBehaviour: {fileID: 2086988133926712932}
   _shootFX: {fileID: 0}
   _shootPoint: {fileID: 6888201705605977057}
 --- !u!114 &9178910346357886797
@@ -3309,6 +3311,20 @@ MonoBehaviour:
   - {fileID: 7476628946164744057}
   - {fileID: 7476628945365143558}
   - {fileID: 7476628945318192216}
+--- !u!114 &2086988133926712932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711072648931270967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ceff4d695607e14eb27f219a63134bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: -3932502187743780729, guid: da935ad47af3e7946b6bdf6a7063650c, type: 3}
+  _poolCapacity: 3
 --- !u!1 &7797128566733667608
 GameObject:
   m_ObjectHideFlags: 0
