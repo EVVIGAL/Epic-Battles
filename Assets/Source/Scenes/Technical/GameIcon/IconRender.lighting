@@ -22,9 +22,9 @@ LightingSettings:
   m_Padding: 2
   m_LightmapCompression: 3
   m_AO: 1
-  m_AOMaxDistance: 2
-  m_CompAOExponent: 1
-  m_CompAOExponentDirect: 0
+  m_AOMaxDistance: 0
+  m_CompAOExponent: 5
+  m_CompAOExponentDirect: 5
   m_ExtractAO: 0
   m_MixedBakeMode: 2
   m_LightmapsBakeMode: 1
@@ -48,10 +48,10 @@ LightingSettings:
   m_PVRBounces: 2
   m_PVRMinBounces: 1
   m_PVREnvironmentMIS: 1
-  m_PVRFilteringMode: 1
-  m_PVRDenoiserTypeDirect: 1
-  m_PVRDenoiserTypeIndirect: 1
-  m_PVRDenoiserTypeAO: 1
+  m_PVRFilteringMode: 2
+  m_PVRDenoiserTypeDirect: 3
+  m_PVRDenoiserTypeIndirect: 3
+  m_PVRDenoiserTypeAO: 3
   m_PVRFilterTypeDirect: 0
   m_PVRFilterTypeIndirect: 0
   m_PVRFilterTypeAO: 0
