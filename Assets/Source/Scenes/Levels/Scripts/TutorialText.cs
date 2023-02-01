@@ -32,16 +32,14 @@ public class TutorialText : MonoBehaviour
     private void OnEnable()
     {       
         _startButton.onClick.AddListener(Deactivate);
-        _teamChecker._isReady += OnUnitSet;
-        _teamChecker._notReady += OnUnitsDelete;
+        _teamChecker.IsReady += OnUnitSet;
         SetText1();
         _startButton.interactable = false;
     }
 
     private void OnDisable()
     {
-        _teamChecker._isReady -= OnUnitSet;
-        _teamChecker._notReady -= OnUnitsDelete;
+        _teamChecker.IsReady -= OnUnitSet;
         _startButton.onClick.RemoveListener(Deactivate);
     }
 
