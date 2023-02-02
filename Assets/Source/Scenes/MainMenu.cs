@@ -45,11 +45,14 @@ public class MainMenu : MonoBehaviour
 
     private void OnContinueClick()
     {
+        ScoreHolder.Init();
         SceneManager.LoadScene(_currentLevelIndex);
     }
 
     private void OnPlayClick()
     {
+        ScoreHolder.Init();
+        ScoreHolder.Refresh();
         PlayerPrefs.SetInt(_currentLevelStr, _firstLevelIndex);
         PlayerPrefs.Save();
         SceneManager.LoadScene(_firstLevelIndex);
