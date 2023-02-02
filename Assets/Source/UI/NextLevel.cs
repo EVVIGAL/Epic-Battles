@@ -11,7 +11,6 @@ public class NextLevel : MonoBehaviour
     private const string _volumeTxt = "Volume";
     private const string _leaderboardTxt = "Leaderboard";
     private const string _currentLevelStr = "CurrentLevel";
-    private const string _bestLevelStr = "BestLevel";
 
     private Button _button;
     private Scene _currentScene;
@@ -59,7 +58,7 @@ public class NextLevel : MonoBehaviour
         AudioListener.volume = _currentVolume;
         SetLeaderboardScore();
 
-        if(_currentScene.buildIndex == _lastLevelIndex)
+        if (_currentScene.buildIndex == _lastLevelIndex)
             SceneManager.LoadScene(_loopLevelIndex);
         else
             SceneManager.LoadScene(_currentScene.buildIndex + 1);
@@ -67,24 +66,14 @@ public class NextLevel : MonoBehaviour
 
     private void SetLeaderboardScore()
     {
-        if (PlayerPrefs.HasKey(_bestLevelStr))
-        {
-            int bestScore = PlayerPrefs.GetInt(_bestLevelStr);
+        ScoreHolder.Set();
 
-            if(bestScore < _currentScene.buildIndex)
-                SaveBestScore(_currentScene.buildIndex);
-        }
-        else
-        {
-            int bestScore = _currentScene.buildIndex;
-            SaveBestScore(bestScore);
-        }
+        if (ScoreHolder.CurrentScore >= ScoreHolder.BestScore)
+            SaveBestScore(ScoreHolder.CurrentScore);
     }
 
     private void SaveBestScore(int bestScore)
     {
-        PlayerPrefs.SetInt(_bestLevelStr, bestScore);
-        PlayerPrefs.Save();
         Leaderboard.SetScore(_leaderboardTxt, bestScore);
     }
 }
