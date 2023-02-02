@@ -11,11 +11,13 @@ public class Restart : MonoBehaviour
     private const string _volumeTxt = "Volume";
 
     private Button _button;
+    private Scene _currentScene;
     private float _currentVolume;
 
     private void Awake()
     {
         _button = GetComponent<Button>();
+        _currentScene = SceneManager.GetSceneAt(0);
     }
 
     private void OnEnable()
@@ -43,6 +45,6 @@ public class Restart : MonoBehaviour
     public void RestartLevel()
     {
         AudioListener.volume = _currentVolume;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(_currentScene.name);
     }
 }

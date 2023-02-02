@@ -8,7 +8,7 @@ public class EndBattle : MonoBehaviour
     {
         for (int i = 0; i < _objectsToHide.Length; i++)
         {
-            if(_objectsToHide[i] != null)
+            if (_objectsToHide[i] != null)
                 _objectsToHide[i].SetActive(false);
         }
     }

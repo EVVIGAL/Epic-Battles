@@ -14,7 +14,7 @@ public class NextLevel : MonoBehaviour
     private const string _bestLevelStr = "BestLevel";
 
     private Button _button;
-    private int _currentSceneIndex;
+    private Scene _currentScene;
     private int _lastLevelIndex;
     private int _loopLevelIndex = 5;
     private int _notPlayableScenesCount = 4;
@@ -23,7 +23,7 @@ public class NextLevel : MonoBehaviour
     private void Awake()
     {
         _button = GetComponent<Button>();
-        _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        _currentScene = SceneManager.GetSceneAt(0);
         _lastLevelIndex = SceneManager.sceneCountInBuildSettings - _notPlayableScenesCount;
     }
 
@@ -39,13 +39,13 @@ public class NextLevel : MonoBehaviour
 
     private void NextScene()
     {
-        PlayerPrefs.SetInt(_currentLevelStr, _currentSceneIndex + 1);
+        PlayerPrefs.SetInt(_currentLevelStr, _currentScene.buildIndex + 1);
         PlayerPrefs.Save();
 
         if (YandexGamesSdk.IsInitialized)
         {
             InterstitialAd.Show(Mute, onCloseCallback: (bool _) => LoadNextLEvel(), onErrorCallback: (string _) => LoadNextLEvel(), LoadNextLEvel);
-        }            
+        }
     }
 
     private void Mute()
@@ -59,10 +59,10 @@ public class NextLevel : MonoBehaviour
         AudioListener.volume = _currentVolume;
         SetLeaderboardScore();
 
-        if(_currentSceneIndex == _lastLevelIndex)
+        if(_currentScene.buildIndex == _lastLevelIndex)
             SceneManager.LoadScene(_loopLevelIndex);
         else
-            SceneManager.LoadScene(_currentSceneIndex + 1);
+            SceneManager.LoadScene(_currentScene.buildIndex + 1);
     }
 
     private void SetLeaderboardScore()
@@ -71,12 +71,12 @@ public class NextLevel : MonoBehaviour
         {
             int bestScore = PlayerPrefs.GetInt(_bestLevelStr);
 
-            if(bestScore < _currentSceneIndex)
-                SaveBestScore(_currentSceneIndex);
+            if(bestScore < _currentScene.buildIndex)
+                SaveBestScore(_currentScene.buildIndex);
         }
         else
         {
-            int bestScore = _currentSceneIndex;
+            int bestScore = _currentScene.buildIndex;
             SaveBestScore(bestScore);
         }
     }
