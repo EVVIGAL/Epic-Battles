@@ -13690,7 +13690,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231419130}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0eb27b82dbfcc9d44b424c78077e427e, type: 3}
   m_Name: 
@@ -19459,7 +19459,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1520260780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19494,18 +19494,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _teamChecker: {fileID: 1231419133}
   _startButton: {fileID: 7220482}
-  _text1en: Select a unit and place it on the battlefield
-  _text1ru: "\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0438 \u0440\u0430\u0437\u043C\u0435\u0441\u0442\u0438\u0442\u0435
-    \u044E\u043D\u0438\u0442\u0430 \u043D\u0430 \u043F\u043E\u043B\u0435"
-  _text1tr: "Bir birim se\xE7in ve sava\u015F alan\u0131na yerle\u015Ftirin"
-  _text2en: '"Trash" - remove units.
-
-    "Swords" - start a battle.'
-  _text2ru: "\"\u041A\u043E\u0440\u0437\u0438\u043D\u0430\" - \u0443\u0434\u0430\u043B\u0438\u0442\u044C
-    \u044E\u043D\u0438\u0442\u043E\u0432.\n\"\u041C\u0435\u0447\u0438\" - \u043D\u0430\u0447\u0430\u0442\u044C
-    \u0431\u043E\u0439."
-  _text2tr: "\"\xC7\xF6p Kutusu\" - birimleri kald\u0131r\u0131n.\n\"K\u0131l\u0131\xE7lar\"
-    - bir sava\u015F ba\u015Flat."
+  _text1en: Artillery strike will help to win this fight
+  _text1ru: "\u0410\u0440\u0442\u0443\u0434\u0430\u0440 \u043F\u043E\u043C\u043E\u0436\u0435\u0442
+    \u0432\u044B\u0438\u0433\u0440\u0430\u0442\u044C \u044D\u0442\u043E\u0442 \u0431\u043E\u0439"
+  _text1tr: "Top\xE7u sald\u0131r\u0131s\u0131 bu sava\u015F\u0131 kazanmaya yard\u0131mc\u0131
+    olacak"
+  _text2en: Call the artillery during the battle
+  _text2ru: "\u0412 \u0431\u043E\u044E \u0432\u044B\u0437\u043E\u0432\u0438\u0442\u0435
+    \u0430\u0440\u0442\u0443\u0434\u0430\u0440"
+  _text2tr: "Sava\u015F s\u0131ras\u0131nda top\xE7ular\u0131 aray\u0131n"
 --- !u!114 &1520260782
 MonoBehaviour:
   m_ObjectHideFlags: 0
