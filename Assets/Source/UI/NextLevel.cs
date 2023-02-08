@@ -67,8 +67,14 @@ public class NextLevel : MonoBehaviour
     private void SetLeaderboardScore()
     {
         ScoreHolder.Set();
+        int best = ScoreHolder.BestScore;
 
-        if (ScoreHolder.CurrentScore >= ScoreHolder.BestScore)
+        Leaderboard.GetPlayerEntry(_leaderboardTxt, (result) =>
+        {
+            best = result.score;
+        });
+
+        if (ScoreHolder.CurrentScore >= best)
             SaveBestScore(ScoreHolder.CurrentScore);
     }
 
