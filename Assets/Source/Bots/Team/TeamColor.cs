@@ -6,6 +6,8 @@ public class TeamColor : MonoBehaviour
     private Material _teamColor;
     private const string TeamMaterial = "TeamColor (Instance)";
 
+    public Material ColorOfTeam => _teamColor;
+
     private void Awake()
     {
         _teamColor = transform.parent.GetComponent<Team>().Material;

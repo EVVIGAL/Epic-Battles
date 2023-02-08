@@ -4,6 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Camera))]
 public class Remover : MonoBehaviour
 {
+    [SerializeField] private Material _blueTeam;
     [SerializeField] private Money _money;
     [SerializeField] private float _timerToRemove;
 
@@ -51,8 +52,11 @@ public class Remover : MonoBehaviour
 
             if (hit.collider.GetComponentInParent<Unit>().TryGetComponent(out Unit unit))
             {
-                unit.Remove();
-                _money.AddMoney(unit.Cost);
+                if (unit.GetComponent<TeamColor>().ColorOfTeam == _blueTeam)
+                {
+                    unit.Remove();
+                    _money.AddMoney(unit.Cost);
+                }
             }
         }
     }

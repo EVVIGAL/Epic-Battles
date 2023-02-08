@@ -1492,7 +1492,7 @@ MonoBehaviour:
     Text: PRESS TO CONTINUE
     Object: {fileID: 0}
   - Language: Russian
-    Text: "\u041D\u0410\u0416\u041C\u0418\u0422\u0415 \u0414\u041B\u042F \u041F\u0420\u041E\u0414\u041E\u0416\u0415\u041D\u0418\u042F"
+    Text: "\u041D\u0410\u0416\u041C\u0418\u0422\u0415 \u0414\u041B\u042F \u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0415\u041D\u0418\u042F"
     Object: {fileID: 0}
   - Language: Turkish
     Text: "DEVAM ETMEK \u0130\xC7\u0130N BASIN"
@@ -6001,6 +6001,10 @@ PrefabInstance:
       propertyPath: _money
       value: 
       objectReference: {fileID: 499955489}
+    - target: {fileID: 1357394667813240718, guid: ff7acc4323fc8c84a89ee77f8c158740, type: 3}
+      propertyPath: _blueTeam
+      value: 
+      objectReference: {fileID: 2100000, guid: 2e26ade1cc5ee6042af616aac791f629, type: 2}
     - target: {fileID: 1357394667813240719, guid: ff7acc4323fc8c84a89ee77f8c158740, type: 3}
       propertyPath: _money
       value: 
