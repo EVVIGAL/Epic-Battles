@@ -7,6 +7,9 @@ public class TutorialText : MonoBehaviour
 {
     [SerializeField] private TutorialTeamChecker _teamChecker;
     [SerializeField] private Button _startButton;
+    [SerializeField] private GameObject _downArrow;
+    [SerializeField] private GameObject _upArrow;
+    [SerializeField] private GameObject _artArrow;
     [TextArea]
     [SerializeField] private string _text1en;
     [TextArea]
@@ -58,11 +61,26 @@ public class TutorialText : MonoBehaviour
     private void Deactivate()
     {
         gameObject.SetActive(false);
+
+        if (_artArrow != null)
+            _artArrow.SetActive(true);
+
+        if (_downArrow != null)
+            _downArrow.SetActive(false);
+
+        if (_upArrow != null)
+            _upArrow.SetActive(false);
     }
 
     private void SetText1()
     {
-        if(Yandex.Instance == null)
+        if (_downArrow != null)
+            _downArrow.SetActive(true);
+
+        if (_upArrow != null)
+            _upArrow.SetActive(false);
+
+        if (Yandex.Instance == null)
         {
             _tutorialText.text = _text1en;
             return;
@@ -78,6 +96,12 @@ public class TutorialText : MonoBehaviour
 
     private void SetText2()
     {
+        if (_downArrow != null)
+            _downArrow.SetActive(false);
+
+        if (_upArrow != null)
+            _upArrow.SetActive(true);
+
         if (Yandex.Instance == null)
         {
             _tutorialText.text = _text2en;
