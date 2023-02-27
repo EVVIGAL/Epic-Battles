@@ -16,7 +16,7 @@ public class NextLevel : MonoBehaviour
     private Scene _currentScene;
     private int _lastLevelIndex;
     private int _loopLevelIndex = 5;
-    private int _notPlayableScenesCount = 4;
+    private int _notPlayableScenesCount = 5;
     private float _currentVolume;
 
     private void Awake()
