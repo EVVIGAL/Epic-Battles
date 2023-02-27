@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53db212c6d34fd146bf54af02514d443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MaxValue>k__BackingField: 500
+  <MaxValue>k__BackingField: 400
   _deathSource: {fileID: 4140619652023215606}
   _turelExplosion: {fileID: 9047871520076303642}
 --- !u!114 &8508953649899324042
@@ -652,10 +652,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprite: {fileID: 21300000, guid: bb03665c084323745b56d7e2446b66cf, type: 3}
-  _skillSprite: {fileID: 0}
-  _name: Tank
+  _skillSprite: {fileID: 21300000, guid: 369d8c995c97cb54e804e34e90946483, type: 3}
+  _name: RapidTank
   _skill: 
-  _cost: 35
+  _cost: 30
 --- !u!114 &5767252529532448686
 MonoBehaviour:
   m_ObjectHideFlags: 0
