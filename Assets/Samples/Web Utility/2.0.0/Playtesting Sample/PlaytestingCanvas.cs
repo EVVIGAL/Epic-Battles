@@ -7,6 +7,8 @@ namespace Agava.WebUtility.Samples
     {
         [SerializeField] private Slider _slider;
 
+        private const string _volumeTxt = "Volume";
+
         private void OnEnable()
         {
             WebApplication.InBackgroundChangeEvent += OnInBackgroundChange;
@@ -26,7 +28,7 @@ namespace Agava.WebUtility.Samples
             }
 
             AudioListener.pause = inBackground;
-            AudioListener.volume = inBackground ? 0f : 1f;
+            AudioListener.volume = inBackground ? 0f : PlayerPrefs.GetFloat(_volumeTxt);
         }
     }
 }
