@@ -16,8 +16,6 @@ namespace Agava.WebUtility.Samples
 
         private void OnInBackgroundChange(bool inBackground)
         {
-            // Use both pause and volume muting methods at the same time.
-            // They're both broken in Web, but work perfect together. Trust me on this.
             AudioListener.pause = inBackground;
             AudioListener.volume = inBackground ? 0f : 1f;
         }
