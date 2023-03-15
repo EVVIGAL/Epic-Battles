@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1357394667813240719}
   - component: {fileID: 1357394667813240718}
   - component: {fileID: 1357394667813240704}
+  - component: {fileID: 4792885221960072421}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -237,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d9956315b264f44ea4e07482e831086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _blueTeam: {fileID: 0}
   _money: {fileID: 0}
   _timerToRemove: 0.5
 --- !u!114 &1357394667813240704
@@ -253,3 +255,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggle: {fileID: 0}
   _slider: {fileID: 0}
+--- !u!114 &4792885221960072421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357394667813240712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b783307247c83546be77b8593486450, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
