@@ -806,7 +806,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 1
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    WebGL: VK_GAMES
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using Agava.YandexGames;
 using UnityEngine.UI;
 using UnityEngine;
+using DungeonGames.VKGames;
 
 [RequireComponent(typeof(Button))]
 public class NextLevel : MonoBehaviour
@@ -40,11 +41,16 @@ public class NextLevel : MonoBehaviour
     {
         PlayerPrefs.SetInt(_currentLevelStr, _currentScene.buildIndex + 1);
         PlayerPrefs.Save();
-
+#if VK_GAMES
+        if (VKGamesSdk.Initialized)
+            Interstitial.Show(LoadNextLEvel, LoadNextLEvel);
+#endif
+#if YANDEX_GAMES
         if (YandexGamesSdk.IsInitialized)
         {
             InterstitialAd.Show(Mute, onCloseCallback: (bool _) => LoadNextLEvel(), onErrorCallback: (string _) => LoadNextLEvel(), LoadNextLEvel);
         }
+#endif
     }
 
     private void Mute()
@@ -55,8 +61,10 @@ public class NextLevel : MonoBehaviour
 
     private void LoadNextLEvel()
     {
+#if YANDEX_GAMES
         AudioListener.volume = _currentVolume;
         SetLeaderboardScore();
+#endif
 
         if (_currentScene.buildIndex == _lastLevelIndex)
             SceneManager.LoadScene(_loopLevelIndex);
@@ -66,6 +74,7 @@ public class NextLevel : MonoBehaviour
 
     private void SetLeaderboardScore()
     {
+#if YANDEX_GAMES
         ScoreHolder.Set();
         int current = ScoreHolder.CurrentScore;
 
@@ -74,10 +83,13 @@ public class NextLevel : MonoBehaviour
             if (current >= result.score)
                 SaveBestScore(current);
         });
+#endif
     }
 
     private void SaveBestScore(int bestScore)
     {
+#if YANDEX_GAMES
         Leaderboard.SetScore(_leaderboardTxt, bestScore);
+#endif
     }
 }

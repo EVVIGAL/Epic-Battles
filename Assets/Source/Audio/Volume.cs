@@ -22,6 +22,8 @@ public class Volume : MonoBehaviour
             _slider.value = _defaultVolume;
             AudioListener.volume = _defaultVolume;
             _toggle.isOn = true;
+            PlayerPrefs.SetFloat(_volumeTxt, _defaultVolume);
+            PlayerPrefs.Save();
         }
     }
 

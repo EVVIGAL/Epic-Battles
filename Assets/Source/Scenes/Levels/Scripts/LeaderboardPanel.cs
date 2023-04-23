@@ -12,8 +12,10 @@ public class LeaderboardPanel : MonoBehaviour
     private int _competingPlayers = 1;
 
     private void OnEnable()
-    {       
+    {
+#if YANDEX_GAMES
         GetLeaderboardEntries();
+#endif
     }
 
     private void OnDisable()
@@ -24,6 +26,7 @@ public class LeaderboardPanel : MonoBehaviour
 
     public void GetLeaderboardEntries()
     {
+#if YANDEX_GAMES
         Leaderboard.GetEntries(_leaderboardTxt, (result) =>
         {
             foreach (var entry in result.entries)
@@ -37,5 +40,6 @@ public class LeaderboardPanel : MonoBehaviour
                 _scoreText.text += $"{entry.score}\n";
             }
         }, null, _topPlayersCount, _competingPlayers);
+#endif
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine.SceneManagement;
 using Agava.YandexGames;
 using UnityEngine.UI;
 using UnityEngine;
+using DungeonGames.VKGames;
 
 [RequireComponent(typeof(Button))]
 public class Restart : MonoBehaviour
@@ -32,8 +33,14 @@ public class Restart : MonoBehaviour
 
     private void RestartWithAd()
     {
+#if VK_GAMES
+        if (VKGamesSdk.Initialized)
+            Interstitial.Show(RestartLevel, RestartLevel);
+#endif
+#if YANDEX_GAMES
         if (YandexGamesSdk.IsInitialized)
             InterstitialAd.Show(Mute, onCloseCallback: (bool _) => RestartLevel(), onErrorCallback: (string _) => RestartLevel(), RestartLevel);
+#endif
     }
 
     private void Mute()
@@ -44,7 +51,7 @@ public class Restart : MonoBehaviour
 
     public void RestartLevel()
     {
-        AudioListener.volume = _currentVolume;
+        //AudioListener.volume = _currentVolume;
         SceneManager.LoadScene(_currentScene.name);
     }
 }

@@ -1,6 +1,9 @@
-using Agava.YandexGames;
 using UnityEngine.UI;
 using UnityEngine;
+using DungeonGames.VKGames;
+#if YANDEX_GAMES
+using Agava.YandexGames;
+#endif
 
 [RequireComponent(typeof(Button))]
 public class Ad : MonoBehaviour
@@ -32,11 +35,16 @@ public class Ad : MonoBehaviour
 
     private void OnButtonClick()
     {
+#if VK_GAMES
+        VideoAd.Show(GiveReward);
+#endif
+#if YANDEX_GAMES
         if (YandexGamesSdk.IsInitialized)
         {
             Time.timeScale = 0;
             VideoAd.Show(Mute, GiveReward, Unpause, null);
         }
+#endif
     }
 
     private void GiveReward()
